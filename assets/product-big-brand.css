@@ -1,0 +1,106 @@
+/* Big-brand Product Page refinements: spacing, hierarchy, and clean UI */
+
+.product--big-brand .product__media-wrapper {
+    /* tighter edge alignment */
+    padding-left: 0;
+}
+
+@media screen and (min-width: 990px) {
+    .product--big-brand.product--large:not(.product--no-media) .product__media-wrapper {
+        max-width: 62%;
+        width: calc(62% - var(--grid-desktop-horizontal-spacing) / 2);
+    }
+
+    .product--big-brand.product--large:not(.product--no-media) .product__info-wrapper {
+        max-width: 38%;
+        width: calc(38% - var(--grid-desktop-horizontal-spacing) / 2);
+        padding-left: 5rem;
+    }
+}
+
+.product--big-brand .product__title h1,
+.product--big-brand .product__title .h1 {
+    letter-spacing: -0.02em;
+}
+
+.product--big-brand .price .price-item--regular,
+.product--big-brand .price .price-item--sale {
+    font-size: clamp(2.2rem, 1.4rem + 1.6vw, 3.2rem);
+}
+
+.product--big-brand .product__info-container>*+* {
+    margin: 1.2rem 0;
+}
+
+.product--big-brand .product-form__buttons .product-form__submit {
+    min-height: 4.6rem;
+    font-weight: 600;
+}
+
+.product--big-brand .shopify-payment-button__more-options {
+    opacity: 0.7;
+}
+
+/* Variant pills spacing */
+.product--big-brand .product-form__input.product-form__input--pill {
+    row-gap: 0.6rem;
+}
+
+/* Trust badges row after buy-box (optional hook) */
+.product--big-brand .product__trust-badges {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    align-items: center;
+}
+
+.product--big-brand .product__trust-badges-item {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    font-size: 1.3rem;
+}
+
+/* Sticky ATC minimal baseline so it's presentable */
+.sticky-atc {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(var(--color-background));
+    border-top: 1px solid rgba(var(--color-foreground), 0.08);
+    padding: 0.8rem 0;
+}
+
+.sticky-atc.visually-hidden {
+    display: none;
+}
+
+.sticky-atc__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.sticky-atc__left {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.sticky-atc__thumb {
+    border-radius: 0.4rem;
+}
+
+.sticky-atc__title {
+    margin: 0;
+}
+
+.sticky-atc__price .price {
+    margin: 0;
+}
+
+.sticky-atc__button {
+    min-width: 14rem;
+}

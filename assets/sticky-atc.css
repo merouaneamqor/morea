@@ -1,3 +1,17 @@
+/* Dedicated sticky ATC styling (extended baseline in product-big-brand.css) */
+
+.sticky-atc {
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.sticky-atc__title {
+    font-weight: 600;
+}
+
+.sticky-atc__button.button {
+    font-weight: 600;
+}
+
 .sticky-atc {
     position: fixed;
     left: 0;

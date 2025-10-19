@@ -1,3 +1,40 @@
+/**
+ * Minimal sticky ATC controller.
+ * Shows sticky bar when the main product submit is off-screen.
+ */
+(function() {
+  function init() {
+    var sticky = document.querySelector('.sticky-atc');
+    if (!sticky) return;
+    var sectionId = sticky.getAttribute('data-section');
+    var submit = document.getElementById('ProductSubmitButton-' + sectionId);
+    var btn = document.getElementById('StickyATCButton-' + sectionId);
+    if (!submit || !btn) return;
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          sticky.classList.add('visually-hidden');
+        } else {
+          sticky.classList.remove('visually-hidden');
+        }
+      });
+    }, { root: null, threshold: 0 });
+
+    observer.observe(submit);
+
+    btn.addEventListener('click', function() {
+      submit.click();
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+
 (function(){
   function initStickyATC(root){
     var sectionId = root.dataset.section;
