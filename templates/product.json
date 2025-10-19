@@ -118,14 +118,14 @@
         "image-with-text-0": {
           "type": "heading",
           "settings": {
-            "heading": "Image with text",
+            "heading": "Elevate Your Everyday",
             "heading_size": "h1"
           }
         },
         "image-with-text-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>Elevate your everyday with a timeless essential—crafted with premium materials, clean lines, and all‑day comfort. Minimal by design, powerful in performance.<\/p><p>Built to last. Easy to love.<\/p>",
             "text_style": "body"
           }
         }
