@@ -219,6 +219,33 @@ input[type="submit"],
     }
 }
 
+/* RTL overrides */
+[dir='rtl'] .header .list-menu__item--link::after,
+[dir='rtl'] .header .list-menu__item--active::after {
+    left: auto;
+    right: 0;
+}
+
+[dir='rtl'] .header__icons {
+    direction: rtl;
+}
+
+[dir='rtl'] .header__heading-link {
+    direction: rtl;
+}
+
+[dir='rtl'] .sticky-atc__left {
+    direction: rtl;
+}
+
+[dir='rtl'] .sticky-atc__inner {
+    flex-direction: row-reverse;
+}
+
+[dir='rtl'] .footer .policies {
+    direction: rtl;
+}
+
 /* Announcement bar */
 .announcement-bar {
     text-transform: uppercase;

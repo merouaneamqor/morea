@@ -1,0 +1,29 @@
+{
+  "general": {
+    "accessibility": {
+      "skip_to_text": "تخطي إلى المحتوى"
+    },
+    "search": {
+      "search": "بحث"
+    }
+  },
+  "sections": {
+    "header": {
+      "cart_count": "العربة ({count})"
+    },
+    "footer": {
+      "payment": "طرق الدفع"
+    }
+  },
+  "newsletter": {
+    "label": "بريدك الإلكتروني",
+    "success": "تم الاشتراك بنجاح"
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "أضف إلى السلة",
+      "sold_out": "غير متوفر",
+      "unavailable": "غير متاح"
+    }
+  }
+}
