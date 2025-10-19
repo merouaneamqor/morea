@@ -64,14 +64,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Talk about your brand",
+            "heading": "Made to Move — Styled to Stand Out.",
             "heading_size": "h1"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+            "text": "<p><strong>Morea Styles</strong> was created for people who live in motion — the ones who chase goals, beats, and new horizons. It’s more than clothing; it’s a mindset. Every piece blends <strong>performance and street attitude</strong>, crafted to transition seamlessly from training sessions to city nights.</p><p>Our mission is to redefine what it means to be active — not just physically, but creatively and mentally. Whether you’re in the gym, on the move, or making your own lane, <strong>Morea Styles</strong> moves with you.</p>"
           }
         }
       },
@@ -122,20 +122,20 @@
         "collection-0": {
           "type": "collection",
           "settings": {
-            "collection": ""
+            "collection": "الطقم-الرياضي-المحتشم"
           }
         },
         "product": {
           "type": "product",
           "settings": {
-            "product": "",
-            "second_image": false
+            "product": "oversized-hoodie-jogger-set-charcoal",
+            "second_image": true
           }
         },
         "collection-1": {
           "type": "collection",
           "settings": {
-            "collection": ""
+            "collection": "streetwear"
           }
         }
       },
@@ -145,7 +145,7 @@
         "collection-1"
       ],
       "settings": {
-        "heading": "Multimedia collage",
+        "heading": "The Motion Edit",
         "heading_size": "h2",
         "desktop_layout": "left",
         "mobile_layout": "collage",
@@ -161,6 +161,7 @@
         "heading": "",
         "heading_size": "h1",
         "enable_video_looping": false,
+        "video": "shopify://files/videos/70f9ef1227524fadae6850fc1180f1b1.HD-1080p-7.2Mbps-49293321.mp4",
         "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
         "description": "",
         "full_width": false,
