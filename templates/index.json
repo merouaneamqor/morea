@@ -15,21 +15,21 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Image banner",
+            "heading": "New Drop Now Live",
             "heading_size": "h0"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text": "Elevated essentials engineered for daily wear.",
             "text_style": "body"
           }
         },
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "Shop all",
+            "button_label_1": "Shop New Arrivals",
             "button_link_1": "shopify://collections/all",
             "button_style_secondary_1": true,
             "button_label_2": "",
@@ -46,14 +46,14 @@
       "settings": {
         "image": "shopify://shop_images/Google_AI_Studio_2025-10-02T12_34_23.526Z.png",
         "image_overlay_opacity": 40,
-        "image_height": "small",
+        "image_height": "large",
         "image_behavior": "none",
-        "desktop_content_position": "bottom-center",
-        "desktop_content_alignment": "center",
+        "desktop_content_position": "middle-left",
+        "desktop_content_alignment": "left",
         "show_text_box": false,
         "color_scheme": "scheme-3",
         "stack_images_on_mobile": false,
-        "mobile_content_alignment": "center",
+        "mobile_content_alignment": "left",
         "show_text_below": false
       }
     },
@@ -92,23 +92,23 @@
       "settings": {
         "collection": "all",
         "products_to_show": 8,
-        "title": "Featured products",
+        "title": "Featured",
         "heading_size": "h2",
         "description": "",
         "show_description": false,
         "description_style": "body",
         "columns_desktop": 4,
-        "enable_desktop_slider": false,
+        "enable_desktop_slider": true,
         "full_width": false,
-        "show_view_all": false,
+        "show_view_all": true,
         "view_all_style": "solid",
         "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
+        "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": true,
         "show_vendor": false,
         "show_rating": false,
-        "quick_add": "none",
+        "quick_add": "standard",
         "columns_mobile": "2",
         "swipe_on_mobile": false,
         "padding_top": 28,
@@ -174,8 +174,8 @@
         "column1": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "title": "Premium Materials",
+            "text": "<p>Heavyweight cotton, durable hardware, next-level finishing.</p>",
             "link_label": "",
             "link": ""
           }
@@ -183,8 +183,8 @@
         "column2": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "title": "Engineered Fit",
+            "text": "<p>Modern silhouettes designed for movement and comfort.</p>",
             "link_label": "",
             "link": ""
           }
@@ -192,8 +192,8 @@
         "column3": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "title": "Sustainable Mindset",
+            "text": "<p>Lower-impact choices without compromising quality.</p>",
             "link_label": "",
             "link": ""
           }
@@ -205,7 +205,7 @@
         "column3"
       ],
       "settings": {
-        "title": "",
+        "title": "Why Morea",
         "heading_size": "h1",
         "image_width": "third",
         "image_ratio": "adapt",
@@ -221,6 +221,18 @@
         "padding_bottom": 36
       }
     }
+    ,
+    "newsletter": {
+      "type": "email-signup-banner",
+      "settings": {
+        "image": null,
+        "heading": "Stay in the loop",
+        "text": "<p>Get drops, restocks, and early access.</p>",
+        "color_scheme": "scheme-1",
+        "padding_top": 28,
+        "padding_bottom": 36
+      }
+    }
   },
   "order": [
     "image_banner",
@@ -228,6 +240,7 @@
     "featured_collection",
     "collage",
     "video",
-    "multicolumn"
+    "multicolumn",
+    "newsletter"
   ]
 }
