@@ -26,6 +26,12 @@
       <meta name="description" content="{{ page_description | escape }}">
     {% endif %}
 
+    {%- comment -%} Canonical hreflang for alternate languages {%- endcomment -%}
+    {%- for locale in shop.enabled_locales -%}
+      <link rel="alternate" href="{{ canonical_url | within: locale }}" hreflang="{{ locale.iso_code }}" />
+    {%- endfor -%}
+    <link rel="alternate" href="{{ canonical_url }}" hreflang="x-default" />
+
     {% render 'meta-tags' %}
 
     <script src="{{ 'constants.js' | asset_url }}" defer="defer"></script>

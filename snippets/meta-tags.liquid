@@ -37,3 +37,15 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ og_title | escape }}">
 <meta name="twitter:description" content="{{ og_description | escape }}">
+
+{%- comment -%} Robots directives {%- endcomment -%}
+{%- liquid
+  assign noindex = false
+  if request.page_type == 'cart' or request.page_type == 'search' or request.page_type == 'password' or request.page_type == '404'
+    assign noindex = true
+  endif
+  if request.page_type contains 'customers'
+    assign noindex = true
+  endif
+-%}
+<meta name="robots" content="{%- if noindex -%}noindex, nofollow{%- else -%}index, follow{%- endif -%}">
