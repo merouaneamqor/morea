@@ -1,0 +1,46 @@
+{%- comment -%}
+  Sticky Add-To-Cart bar: shows when the main buy box is off-screen.
+  Uses the existing main product form's submit button for reliability.
+{%- endcomment -%}
+
+<link rel="stylesheet" href="{{ 'sticky-atc.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<div
+  class="sticky-atc visually-hidden"
+  data-section="{{ section.id }}"
+  data-product-available="{{ product.available }}"
+>
+  <div class="sticky-atc__inner page-width">
+    <div class="sticky-atc__left">
+      {%- if product.featured_image -%}
+        <img
+          class="sticky-atc__thumb"
+          src="{{ product.featured_image | image_url: width: 120 }}"
+          width="48"
+          height="48"
+          alt="{{ product.title | escape }}"
+          loading="lazy"
+        >
+      {%- endif -%}
+      <div class="sticky-atc__meta">
+        <div class="sticky-atc__title h5">{{ product.title | escape }}</div>
+        <div class="sticky-atc__price" id="StickyATC-Price-{{ section.id }}">
+          {%- render 'price', product: product, use_variant: true, show_badges: false -%}
+        </div>
+      </div>
+    </div>
+    <div class="sticky-atc__right">
+      <button
+        type="button"
+        class="button sticky-atc__button"
+        id="StickyATCButton-{{ section.id }}"
+        aria-label="{{ 'products.product.add_to_cart' | t }}"
+      >
+        <span>{{ 'products.product.add_to_cart' | t }}</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script src="{{ 'sticky-atc.js' | asset_url }}" defer="defer"></script>
+

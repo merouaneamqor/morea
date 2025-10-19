@@ -114,6 +114,29 @@ input[type="submit"],
     font-weight: 800;
 }
 
+/* Product page refinements */
+.product__title h1 {
+    font-weight: 900;
+    letter-spacing: 0.02em;
+}
+
+.product__info-container .price .price-item {
+    font-weight: 800;
+}
+
+/* Variant pills more brandy */
+.product-form__input--pill input[type='radio']+label {
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 800;
+}
+
+.product-form__input--pill input[type='radio']:checked+label {
+    background-color: rgb(var(--color-foreground));
+    color: rgb(var(--color-background));
+}
+
 /* Footer */
 .footer {
     border-top: 1px solid rgba(var(--color-foreground), 0.08);
