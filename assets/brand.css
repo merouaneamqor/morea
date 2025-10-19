@@ -218,3 +218,30 @@ input[type="submit"],
         padding-right: 2rem;
     }
 }
+
+/* Announcement bar */
+.announcement-bar {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 800;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+}
+
+.announcement-bar a,
+.announcement-bar .link {
+    text-decoration: none;
+}
+
+/* Collection grid polish */
+.facets-container .facets__summary,
+.facets-container .facets__label {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+}
+
+.pagination__list .pagination__item--current,
+.pagination__list .pagination__item:hover {
+    border-color: rgb(var(--color-foreground));
+}
