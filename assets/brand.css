@@ -1,0 +1,142 @@
+/* Brand layer: modern streetwear-inspired overrides for Dawn */
+
+/* Typography */
+:root {
+    --brand-letter-spacing-wide: 0.08em;
+}
+
+body,
+.rte,
+.rte p {
+    letter-spacing: var(--brand-letter-spacing-wide);
+}
+
+/* Headings: bold, tighter line-height */
+.h0,
+.h1,
+.h2,
+.h3,
+h1,
+h2,
+h3 {
+    font-weight: var(--font-heading-weight);
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    text-transform: none;
+}
+
+/* Buttons: bold, squared, uppercase */
+.button,
+button,
+input[type="submit"],
+.shopify-payment-button__button {
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+}
+
+.button--secondary,
+.button--tertiary {
+    border-radius: 6px;
+}
+
+/* Header/Nav */
+.header {
+    border-bottom: 1px solid rgba(var(--color-foreground), 0.08);
+}
+
+.header .list-menu__item--link {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 700;
+    position: relative;
+}
+
+.header .list-menu__item--link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: rgb(var(--color-foreground));
+    transition: width 200ms ease;
+}
+
+.header .list-menu__item--link:hover::after,
+.header .list-menu__item--link:focus-visible::after {
+    width: 100%;
+}
+
+/* Product cards */
+.card-wrapper:hover .card__inner {
+    transform: translateY(-2px);
+}
+
+.card__inner {
+    transition: transform 240ms ease, box-shadow 240ms ease;
+}
+
+.card__inner .media {
+    overflow: hidden;
+}
+
+.card__inner .media img {
+    transition: transform 300ms ease;
+}
+
+.card-wrapper:hover .media img {
+    transform: scale(1.05);
+}
+
+.card-information .price {
+    font-weight: 700;
+}
+
+/* Quick add prominence */
+.quick-add__submit,
+.card__badge {
+    border-radius: 6px;
+}
+
+.quick-add__submit {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 800;
+}
+
+/* Badges: square and bold */
+.badge {
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 800;
+}
+
+/* Footer */
+.footer {
+    border-top: 1px solid rgba(var(--color-foreground), 0.08);
+}
+
+.footer .footer-block__heading {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 800;
+}
+
+.footer a.link--text {
+    opacity: 0.9;
+}
+
+.footer a.link--text:hover {
+    opacity: 1;
+}
+
+/* Subtle page width breathing room on mobile */
+@media screen and (max-width: 749px) {
+    .page-width {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
