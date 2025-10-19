@@ -106,6 +106,21 @@ input[type="submit"],
     font-weight: 700;
 }
 
+/* Slideshow/Banner typography */
+.banner__heading.h0,
+.banner__heading.h1 {
+    font-weight: 900;
+    letter-spacing: 0.02em;
+}
+
+.banner__buttons .button {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 800;
+    border-radius: 6px;
+}
+
+
 .mega-menu__title {
     text-transform: uppercase;
     letter-spacing: 0.14em;

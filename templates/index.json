@@ -9,6 +9,79 @@
  */
 {
   "sections": {
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "slide1": {
+          "type": "slide",
+          "settings": {
+            "image": null,
+            "image_overlay_opacity": 20,
+            "heading": "Run The Streets",
+            "heading_size": "h0",
+            "subheading": "New season. New energy.",
+            "button_label": "Shop Men",
+            "link": "shopify://collections/all",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-left",
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "color_scheme": "scheme-3"
+          }
+        },
+        "slide2": {
+          "type": "slide",
+          "settings": {
+            "image": null,
+            "image_overlay_opacity": 20,
+            "heading": "Own Your Pace",
+            "heading_size": "h0",
+            "subheading": "Performance meets everyday.",
+            "button_label": "Shop Women",
+            "link": "shopify://collections/all",
+            "button_style_secondary": true,
+            "show_text_box": false,
+            "box_align": "middle-left",
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "color_scheme": "scheme-3"
+          }
+        }
+      },
+      "block_order": ["slide1","slide2"],
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "large",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_behavior": "ambient",
+        "show_text_below": false,
+        "accessibility_info": "Home hero carousel"
+      }
+    },
+    "shop_by_category": {
+      "type": "collection-list",
+      "blocks": {
+        "men": {"type": "featured_collection", "settings": {"collection": ""}},
+        "women": {"type": "featured_collection", "settings": {"collection": ""}},
+        "kids": {"type": "featured_collection", "settings": {"collection": ""}}
+      },
+      "block_order": ["men","women","kids"],
+      "settings": {
+        "title": "Shop by Category",
+        "heading_size": "h2",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -235,9 +308,10 @@
     }
   },
   "order": [
-    "image_banner",
+    "slideshow",
     "rich_text",
     "featured_collection",
+    "shop_by_category",
     "collage",
     "video",
     "multicolumn",
