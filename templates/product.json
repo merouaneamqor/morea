@@ -52,6 +52,8 @@
           "settings": {
             "heading": "Materials",
             "icon": "leather",
+            "metafield_namespace": "custom",
+            "metafield_key": "materials",
             "content": "",
             "page": ""
           }
@@ -60,7 +62,9 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Shipping & Returns",
-            "icon": "truck",
+            "icon": "return",
+            "metafield_namespace": "custom",
+            "metafield_key": "shipping_returns",
             "content": "",
             "page": ""
           }
@@ -70,6 +74,8 @@
           "settings": {
             "heading": "Dimensions",
             "icon": "ruler",
+            "metafield_namespace": "custom",
+            "metafield_key": "dimensions",
             "content": "",
             "page": ""
           }
@@ -78,7 +84,9 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Care Instructions",
-            "icon": "heart",
+            "icon": "washing",
+            "metafield_namespace": "custom",
+            "metafield_key": "care_instructions",
             "content": "",
             "page": ""
           }
