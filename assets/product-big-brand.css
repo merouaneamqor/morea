@@ -25,7 +25,16 @@
 
 .product--big-brand .price .price-item--regular,
 .product--big-brand .price .price-item--sale {
-    font-size: clamp(2.2rem, 1.4rem + 1.6vw, 3.2rem);
+    font-size: clamp(1.8rem, 1.2rem + 1vw, 2.4rem);
+    opacity: 0.9;
+}
+
+.product--big-brand #price-\{ {
+    section.id \}
+}
+
+    {
+    order: 3;
 }
 
 .product--big-brand .product__info-container>*+* {
