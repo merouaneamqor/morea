@@ -175,8 +175,8 @@
           "type": "column",
           "settings": {
             "image": "shopify://shop_images/fabric-detail.png",
-            "title": "Free Shipping",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "title": "Fast, Free Shipping",
+            "text": "<p>Free shipping available. Trackable, reliable delivery to your door.<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -185,7 +185,7 @@
           "type": "column",
           "settings": {
             "title": "Hassle-Free Exchanges",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "<p>Not quite right? Exchange in a few clicks—simple, fast, and guided.<\/p>",
             "link_label": "",
             "link": ""
           }
