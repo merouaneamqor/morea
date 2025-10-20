@@ -47,6 +47,21 @@
           "type": "description",
           "settings": {}
         },
+        "icon-with-text-0": {
+          "type": "icon-with-text",
+          "settings": {
+            "layout": "horizontal",
+            "icon_1": "truck",
+            "image_1": null,
+            "heading_1": "Fast Shipping",
+            "icon_2": "return",
+            "image_2": null,
+            "heading_2": "Easy Returns",
+            "icon_3": "star",
+            "image_3": null,
+            "heading_3": "Built to Last"
+          }
+        },
         "collapsible-row-0": {
           "type": "collapsible_tab",
           "settings": {
@@ -129,21 +144,6 @@
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12
-      }
-    },
-    "icon-with-text-0": {
-      "type": "icon-with-text",
-      "settings": {
-        "layout": "horizontal",
-        "icon_1": "truck",
-        "image_1": null,
-        "heading_1": "Fast Shipping",
-        "icon_2": "return",
-        "image_2": null,
-        "heading_2": "Easy Returns",
-        "icon_3": "star",
-        "image_3": null,
-        "heading_3": "Built to Last"
       }
     },
     "category-meta": {
