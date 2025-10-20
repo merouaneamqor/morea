@@ -1,0 +1,108 @@
+/* Sport style layer for Thank You (Order status) page */
+
+/* Accent tokens (tweak as needed) */
+:root {
+    --sport-accent: #00B04F; /* energetic green */
+    --sport-accent-ink: #0b2416;
+}
+
+/* Typography emphasis */
+.os-header__title,
+.os-step__title,
+.os-order-number,
+.os-header__heading {
+    letter-spacing: -0.015em;
+}
+
+/* Buttons: firmer, athletic look */
+.btn,
+button.btn,
+.step__footer__continue-btn,
+.order-summary__section__content .btn {
+    min-height: 48px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    border-radius: 6px;
+}
+
+/* Primary button accent */
+.btn--primary,
+.step__footer__continue-btn,
+button.shopify-payment-button__button--unbranded {
+    background-color: var(--sport-accent) !important;
+    border-color: var(--sport-accent) !important;
+}
+
+.btn--primary:hover,
+.step__footer__continue-btn:hover,
+button.shopify-payment-button__button--unbranded:hover {
+    filter: brightness(0.95);
+}
+
+/* Links accent */
+a,
+.os-order-number a {
+    color: var(--sport-accent);
+}
+
+/* Cards/boxes: cleaner edges and subtle depth */
+.content-box,
+.order-summary__section,
+.order-summary__sections,
+.os-step__section {
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* Dividers lighter */
+.content-box__row ~ .content-box__row,
+.order-summary__section ~ .order-summary__section {
+    border-top-color: rgba(0, 0, 0, 0.06);
+}
+
+/* Timeline and statuses */
+.os-timeline,
+.os-timeline__list {
+    row-gap: 0.4rem;
+}
+
+.os-timeline__item .os-status-badge,
+.os-timeline__item .os-step__title {
+    font-weight: 700;
+}
+
+/* Summary totals emphasis */
+.total-recap__final-price,
+.payment-due__price {
+    font-weight: 800;
+    letter-spacing: 0.01em;
+}
+
+/* Inputs (if present on the status page for contact updates) */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    border-radius: 8px;
+}
+
+/* Badges row (optional utility: add via Additional scripts markup block) */
+.thankyou-trust-badges {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.thankyou-trust-badges__item {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: 13px;
+}
+
+
