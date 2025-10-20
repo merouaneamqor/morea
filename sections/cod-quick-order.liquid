@@ -1,0 +1,109 @@
+{%- comment -%}
+  COD Quick Order (Non-Plus)
+  Collects minimal info and attaches it as line item properties, then redirects to checkout.
+{%- endcomment -%}
+
+<section class="section section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
+  {{ 'section-cod-quick-order.css' | asset_url | stylesheet_tag }}
+
+  {%- style -%}
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    }
+
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+  {%- endstyle -%}
+
+  <div class="page-width cod-quick-order">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="cod-quick-order__title h2">{{ section.settings.heading | escape }}</h2>
+    {%- endif -%}
+    {%- if section.settings.subheading != blank -%}
+      <div class="cod-quick-order__subheading rte">{{ section.settings.subheading }}</div>
+    {%- endif -%}
+
+    <div class="cod-quick-order__card">
+      <form method="post" action="/cart/add" class="cod-quick-order__form" novalidate>
+        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" id="CODVariant-{{ section.id }}">
+        <input type="hidden" name="quantity" value="1">
+        <input type="hidden" name="properties[COD]" value="Yes">
+        <input type="hidden" name="properties[Product]" value="{{ product.title | escape }}">
+        <input type="hidden" name="return_to" value="/checkout">
+
+        <div class="cod-quick-order__fields">
+          <div class="field">
+            <label for="cod-name-{{ section.id }}" class="form__label">{{ 'templates.contact.form.name' | t | default: 'Full name' }}</label>
+            <input id="cod-name-{{ section.id }}" class="field__input" type="text" name="properties[Name]" placeholder="{{ section.settings.placeholder_name }}" required>
+          </div>
+          <div class="field">
+            <label for="cod-phone-{{ section.id }}" class="form__label">{{ 'templates.contact.form.phone' | t | default: 'Phone number' }}</label>
+            <input id="cod-phone-{{ section.id }}" class="field__input" type="tel" name="properties[Phone]" placeholder="{{ section.settings.placeholder_phone }}" required>
+          </div>
+          <div class="field field--full">
+            <label for="cod-address-{{ section.id }}" class="form__label">{{ 'customer.addresses.address1' | t | default: 'Delivery address' }}</label>
+            <textarea id="cod-address-{{ section.id }}" class="field__input" name="properties[Address]" rows="3" placeholder="{{ section.settings.placeholder_address }}" required></textarea>
+          </div>
+          {%- if section.settings.enable_note -%}
+          <div class="field field--full">
+            <label for="cod-note-{{ section.id }}" class="form__label">{{ 'customer.order.note' | t | default: 'Order note (optional)' }}</label>
+            <textarea id="cod-note-{{ section.id }}" class="field__input" name="properties[Note]" rows="2" placeholder="{{ section.settings.placeholder_note }}"></textarea>
+          </div>
+          {%- endif -%}
+        </div>
+
+        <div class="cod-quick-order__actions">
+          <button type="submit" class="button button--primary cod-quick-order__submit">{{ section.settings.button_label }}</button>
+          {%- if section.settings.disclaimer != blank -%}
+            <p class="cod-quick-order__disclaimer caption">{{ section.settings.disclaimer }}</p>
+          {%- endif -%}
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      var variantInput = document.getElementById('CODVariant-{{ section.id }}');
+      if (!variantInput) return;
+      var productVariantHidden = document.querySelector('.product-variant-id');
+      if (productVariantHidden) {
+        var sync = function() { variantInput.value = productVariantHidden.value; };
+        sync();
+        var observer = new MutationObserver(sync);
+        observer.observe(productVariantHidden, { attributes: true, attributeFilter: ['value'] });
+        productVariantHidden.addEventListener('change', sync);
+      }
+    })();
+  </script>
+</section>
+
+{% schema %}
+{
+  "name": "COD quick order",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Cash on Delivery — Quick order" },
+    { "type": "richtext", "id": "subheading", "label": "Subheading", "default": "<p>Place a COD order in seconds. We’ll confirm by phone.<\/p>" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Place COD order" },
+    { "type": "checkbox", "id": "enable_note", "label": "Enable note field", "default": true },
+    { "type": "text", "id": "placeholder_name", "label": "Name placeholder", "default": "Full name" },
+    { "type": "text", "id": "placeholder_phone", "label": "Phone placeholder", "default": "+212 6 12 34 56 78" },
+    { "type": "text", "id": "placeholder_address", "label": "Address placeholder", "default": "Street, building, city" },
+    { "type": "text", "id": "placeholder_note", "label": "Note placeholder", "default": "Gate code, delivery time, etc." },
+    { "type": "text", "id": "disclaimer", "label": "Disclaimer", "default": "You’ll still confirm details at checkout. COD available at delivery." },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
+    { "type": "range", "id": "padding_top", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Top padding", "default": 28 },
+    { "type": "range", "id": "padding_bottom", "min": 0, "max": 100, "step": 4, "unit": "px", "label": "Bottom padding", "default": 28 }
+  ],
+  "presets": [ { "name": "COD quick order", "category": "Product" } ]
+}
+{% endschema %}
+
+

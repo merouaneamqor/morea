@@ -1,5 +1,22 @@
 {
   "sections": {
+    "cod-quick-order": {
+      "type": "cod-quick-order",
+      "settings": {
+        "heading": "Cash on Delivery — Quick order",
+        "subheading": "<p>Place a COD order in seconds. We’ll confirm by phone.<\/p>",
+        "button_label": "Place COD order",
+        "enable_note": true,
+        "placeholder_name": "Full name",
+        "placeholder_phone": "+212 6 12 34 56 78",
+        "placeholder_address": "Street, building, city",
+        "placeholder_note": "Gate code, delivery time, etc.",
+        "disclaimer": "You’ll still confirm details at checkout. COD available at delivery.",
+        "color_scheme": "scheme-1",
+        "padding_top": 24,
+        "padding_bottom": 24
+      }
+    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -236,6 +253,7 @@
   },
   "order": [
     "main",
+    "cod-quick-order",
     "image-with-text",
     "multicolumn",
     "instagram-testimonials",
