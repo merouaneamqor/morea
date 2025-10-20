@@ -29,11 +29,8 @@
     opacity: 0.9;
 }
 
-.product--big-brand #price-\{ {
-    section.id \}
-}
-
-    {
+/* Fix malformed selector from earlier edits */
+.product--big-brand [id^="price-"] {
     order: 3;
 }
 

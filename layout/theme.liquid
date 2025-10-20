@@ -1,5 +1,9 @@
 <!doctype html>
-<html class="js" lang="{{ request.locale.iso_code }}" dir="{%- if request.locale.iso_code == 'ar' -%}rtl{%- else -%}ltr{%- endif -%}">
+<html
+  class="js"
+  lang="{{ request.locale.iso_code }}"
+  dir="{%- if request.locale.iso_code == 'ar' -%}rtl{%- else -%}ltr{%- endif -%}"
+>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,6 +18,13 @@
     {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
+    <!-- Brand Fonts: Inter (body) + Oswald (headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Oswald:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    >
 
     <title>
       {{ page_title }}
@@ -28,9 +39,9 @@
 
     {%- comment -%} Canonical hreflang for alternate languages {%- endcomment -%}
     {%- for locale in shop.enabled_locales -%}
-      <link rel="alternate" href="{{ canonical_url | within: locale }}" hreflang="{{ locale.iso_code }}" />
+      <link rel="alternate" href="{{ canonical_url | within: locale }}" hreflang="{{ locale.iso_code }}">
     {%- endfor -%}
-    <link rel="alternate" href="{{ canonical_url }}" hreflang="x-default" />
+    <link rel="alternate" href="{{ canonical_url }}" hreflang="x-default">
 
     {% render 'meta-tags' %}
 
@@ -106,14 +117,15 @@
       }
 
       :root {
-        --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
-        --font-body-style: {{ settings.type_body_font.style }};
-        --font-body-weight: {{ settings.type_body_font.weight }};
-        --font-body-weight-bold: {{ settings.type_body_font.weight | plus: 300 | at_most: 1000 }};
+        /* Override to sporty/dynamic fonts */
+        --font-body-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif;
+        --font-body-style: normal;
+        --font-body-weight: 400;
+        --font-body-weight-bold: 800;
 
-        --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
-        --font-heading-style: {{ settings.type_header_font.style }};
-        --font-heading-weight: {{ settings.type_header_font.weight }};
+        --font-heading-family: 'Oswald', 'Inter', system-ui, Arial, sans-serif;
+        --font-heading-style: normal;
+        --font-heading-weight: 700;
 
         --font-body-scale: {{ settings.body_scale | divided_by: 100.0 }};
         --font-heading-scale: {{ settings.heading_scale | times: 1.0 | divided_by: settings.body_scale }};
@@ -247,7 +259,7 @@
         min-height: 100%;
         margin: 0;
         font-size: 1.5rem;
-        letter-spacing: 0.06rem;
+        letter-spacing: 0.04rem;
         line-height: calc(1 + 0.8 / var(--font-body-scale));
         font-family: var(--font-body-family);
         font-style: var(--font-body-style);

@@ -2,7 +2,7 @@
 
 /* Typography */
 :root {
-    --brand-letter-spacing-wide: 0.08em;
+    --brand-letter-spacing-wide: 0.06em;
 }
 
 body,
@@ -19,9 +19,9 @@ body,
 h1,
 h2,
 h3 {
-    font-weight: var(--font-heading-weight);
-    line-height: 1.1;
-    letter-spacing: 0.02em;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: 0.01em;
     text-transform: none;
 }
 
@@ -32,7 +32,7 @@ input[type="submit"],
 .shopify-payment-button__button {
     border-radius: 6px;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     font-weight: 700;
 }
 
@@ -110,7 +110,7 @@ input[type="submit"],
 .banner__heading.h0,
 .banner__heading.h1 {
     font-weight: 900;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.01em;
 }
 
 .banner__buttons .button {
@@ -264,7 +264,7 @@ input[type="submit"],
 /* Announcement bar */
 .announcement-bar {
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
     font-weight: 800;
     padding-top: 0.6rem;
     padding-bottom: 0.6rem;
