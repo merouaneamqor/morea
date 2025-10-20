@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -21,10 +30,6 @@
             "text_style": "subtitle"
           }
         },
-        "price": {
-          "type": "price",
-          "settings": {}
-        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -34,6 +39,10 @@
         },
         "quantity_selector": {
           "type": "quantity_selector",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
           "settings": {}
         },
         "buy_buttons": {
@@ -47,29 +56,13 @@
           "type": "description",
           "settings": {}
         },
-        "icon-with-text-0": {
-          "type": "icon-with-text",
-          "settings": {
-            "layout": "horizontal",
-            "icon_1": "truck",
-            "image_1": null,
-            "heading_1": "Fast Shipping",
-            "icon_2": "return",
-            "image_2": null,
-            "heading_2": "Easy Returns",
-            "icon_3": "star",
-            "image_3": null,
-            "heading_3": "Built to Last"
-          }
-        },
-        
         "collapsible-row-0": {
           "type": "collapsible_tab",
           "settings": {
             "heading": "Materials",
+            "metafield_namespace": "{{ metaobjects[\"shopify--fabric\"][\"brushed-fleece\"].label.value }}﻿",
+            "metafield_key": "{{ metaobjects[\"shopify--fabric\"][\"brushed-fleece\"].label.value }}",
             "icon": "leather",
-            "metafield_namespace": "custom",
-            "metafield_key": "materials",
             "content": "",
             "page": ""
           }
@@ -77,11 +70,11 @@
         "collapsible-row-1": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "SHIPPING & RETURNS",
-            "icon": "return",
+            "heading": "Shipping & Returns",
             "metafield_namespace": "",
             "metafield_key": "",
-            "content": "<p>Items are in stock ready to ship next day, we are not Amazon but some people think so because of how fast we deliver.<\/p><p>Worldwide Shipping Time: 2-5 business days<\/p><p>Exchange or return your items within 14 days of receiving them at your doorstep.<\/p>",
+            "icon": "return",
+            "content": "",
             "page": ""
           }
         },
@@ -89,9 +82,9 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Dimensions",
+            "metafield_namespace": "",
+            "metafield_key": "",
             "icon": "ruler",
-            "metafield_namespace": "custom",
-            "metafield_key": "dimensions",
             "content": "",
             "page": ""
           }
@@ -100,9 +93,9 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Care Instructions",
+            "metafield_namespace": "",
+            "metafield_key": "",
             "icon": "washing",
-            "metafield_namespace": "custom",
-            "metafield_key": "care_instructions",
             "content": "",
             "page": ""
           }
@@ -122,9 +115,7 @@
         "quantity_selector",
         "price",
         "buy_buttons",
-        "category-meta",
         "description",
-        "icon-with-text-0",
         "collapsible-row-0",
         "collapsible-row-1",
         "collapsible-row-2",
@@ -145,43 +136,6 @@
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12
-      }
-    },
-    "category-meta": {
-      "type": "category_metafields",
-      "settings": {
-        "heading": "Category details",
-        "source_preference": "product_first",
-        "label1": "Outfit Sets in Clothing",
-        "ns1": "custom",
-        "key1": "outfit_sets_in_clothing",
-        "label2": "Color",
-        "ns2": "custom",
-        "key2": "color",
-        "label3": "Size",
-        "ns3": "custom",
-        "key3": "size",
-        "label4": "Fabric",
-        "ns4": "custom",
-        "key4": "fabric",
-        "label5": "Age group",
-        "ns5": "custom",
-        "key5": "age_group",
-        "label6": "Care instructions",
-        "ns6": "custom",
-        "key6": "care_instructions",
-        "label7": "Clothing features",
-        "ns7": "custom",
-        "key7": "clothing_features",
-        "label8": "Target gender",
-        "ns8": "custom",
-        "key8": "target_gender",
-        "label9": "Neckline",
-        "ns9": "custom",
-        "key9": "neckline",
-        "label10": "Top length type",
-        "ns10": "custom",
-        "key10": "top_length_type"
       }
     },
     "image-with-text": {
@@ -271,7 +225,7 @@
       "type": "instagram-testimonials",
       "settings": {
         "heading": "Loved by our community",
-        "subheading": "<p>Real conversations from Instagram customers.<\/p>",
+        "subheading": "<p>Real conversations from Instagram customers.</p>",
         "columns_desktop": "3",
         "color_scheme": "scheme-1",
         "padding_top": 28,
