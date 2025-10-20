@@ -139,8 +139,8 @@
         "b1": {
           "type": "column",
           "settings": {
-            "title": "Adaptive stretch",
-            "text": "Moves with you in training and transit.",
+            "title": "Fast Shipping",
+            "text": "",
             "link_label": "Shop Activewear",
             "link": "shopify://collections/activewear"
           }
@@ -148,8 +148,8 @@
         "b2": {
           "type": "column",
           "settings": {
-            "title": "Sweat-wicking",
-            "text": "Breathable comfort from warm-up to cooldown.",
+            "title": "Easy Returns",
+            "text": "",
             "link_label": "Shop Streetwear",
             "link": "shopify://collections/streetwear"
           }
@@ -157,14 +157,49 @@
         "b3": {
           "type": "column",
           "settings": {
-            "title": "Urban ready",
-            "text": "Minimal silhouettes, maximum versatility.",
+            "title": "Built to Last",
+            "text": "",
             "link_label": "Shop All",
             "link": "shopify://collections/all"
           }
         }
       },
       "block_order": ["b1", "b2", "b3"]
+    },
+    "shipping_returns": {
+      "type": "rich-text",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 24,
+        "padding_bottom": 24
+      },
+      "blocks": {
+        "rt_heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "SHIPPING & RETURNS",
+            "heading_size": "h2"
+          }
+        },
+        "rt_caption": {
+          "type": "caption",
+          "settings": {
+            "caption": "–",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "medium"
+          }
+        },
+        "rt_text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Items are in stock ready to ship next day, we are not Amazon but some people think so because of how fast we deliver.<\/p><p>Worldwide Shipping Time: 2-5 business days<\/p><p>Exchange or return your items within 14 days of receiving them at your doorstep.<\/p>"
+          }
+        }
+      },
+      "block_order": ["rt_heading", "rt_caption", "rt_text"]
     },
     "ugc": {
       "type": "instagram-testimonials",
@@ -230,6 +265,7 @@
     "shop_the_edit",
     "latest_drops",
     "benefits",
+    "shipping_returns",
     "ugc",
     "motion_video",
     "newsletter"
