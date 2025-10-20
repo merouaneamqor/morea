@@ -219,15 +219,14 @@
                     assign primary_obj = product.collections.first
                     assign fallback_obj = product
                   endif
-
-                  assign pairs = ''
                 -%}
                 {%- capture list_content -%}
+                  {% # theme-check-disable Liquid/UnknownObject %}
                   <ul class="product-category-metafields">
                     {%- for idx in (1..10) -%}
                       {%- assign ns = block.settings[('ns' | append: idx)] -%}
                       {%- assign key = block.settings[('key' | append: idx)] -%}
-                      {%- assign label = block.settings[('label' | append: idx)] -%}
+                      {%- assign label_text = block.settings[('label' | append: idx)] -%}
                       {%- if ns != blank and key != blank -%}
                         {%- assign mf = nil -%}
                         {%- if primary_obj and primary_obj.metafields[ns] and primary_obj.metafields[ns][key] -%}
@@ -237,7 +236,7 @@
                         {%- endif -%}
                         {%- if mf -%}
                           <li>
-                          {%- if label != blank -%}<strong>{{ label }}:</strong> {%- endif -%}
+                          {%- if label_text != blank -%}<strong>{{ label_text }}:</strong> {%- endif -%}
                             {%- if mf.type == 'rich_text_field' -%}
                               {{ mf | metafield_tag }}
                             {%- else -%}
@@ -248,6 +247,7 @@
                       {%- endif -%}
                     {%- endfor -%}
                   </ul>
+                  {% # theme-check-enable Liquid/UnknownObject %}
                 {%- endcapture -%}
                 {%- if list_content contains '<li>' -%}
                   <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
