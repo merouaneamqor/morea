@@ -1,0 +1,55 @@
+/* Enhanced Navbar Styling - minimal, sporty, and clean */
+
+.section-header.header-wrapper {
+    border-bottom: 1px solid rgba(var(--color-foreground), 0.06);
+}
+
+.header {
+    align-items: center;
+}
+
+@media screen and (min-width: 990px) {
+    .header {
+        gap: 2rem;
+    }
+}
+
+/* Menu typography: light, spaced, uppercase */
+.list-menu__item--link {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 300;
+}
+
+/* Hover/active states */
+.list-menu__item--link:hover,
+.list-menu__item--link:focus {
+    opacity: 0.8;
+}
+
+.header-wrapper--border-bottom {
+    border-bottom-width: 1px;
+}
+
+/* Search and icons alignment */
+.header__icons {
+    gap: 0.6rem;
+}
+
+.header__icons .svg-wrapper {
+    transition: opacity var(--duration-short) ease;
+}
+
+.header__icons a:hover .svg-wrapper {
+    opacity: 0.8;
+}
+
+/* Sticky header refinement */
+.shopify-section-header-sticky .header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.scrolled-past-header .header__heading-logo-wrapper {
+    transform: translateZ(0);
+}
