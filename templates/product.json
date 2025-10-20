@@ -60,10 +60,10 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Materials",
-            "metafield_namespace": "{{ metaobjects[\"shopify--fabric\"][\"brushed-fleece\"].label.value }}﻿",
-            "metafield_key": "{{ metaobjects[\"shopify--fabric\"][\"brushed-fleece\"].label.value }}",
+            "metafield_namespace": "",
+            "metafield_key": "",
             "icon": "leather",
-            "content": "",
+            "content": "<p>{{ metaobjects[\"shopify--fabric\"][\"brushed-fleece\"].label.value }}</p>",
             "page": ""
           }
         },
