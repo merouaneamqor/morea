@@ -176,7 +176,7 @@
           "settings": {
             "image": "shopify://shop_images/fabric-detail.png",
             "title": "Fast, Free Shipping",
-            "text": "<p>Free shipping available. Trackable, reliable delivery to your door.<\/p>",
+            "text": "<p>Free shipping available. Trackable, reliable delivery to your door.</p>",
             "link_label": "",
             "link": ""
           }
@@ -184,8 +184,9 @@
         "column-1": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/Google_AI_Studio_2025-10-02T11_11_22.835Z.png",
             "title": "Hassle-Free Exchanges",
-            "text": "<p>Not quite right? Exchange in a few clicks—simple, fast, and guided.<\/p>",
+            "text": "<p>Not quite right? Exchange in a few clicks—simple, fast, and guided.</p>",
             "link_label": "",
             "link": ""
           }
