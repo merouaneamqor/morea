@@ -1,0 +1,56 @@
+/* Instagram Testimonials grid styling */
+
+.instagram-testimonials__header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.instagram-testimonials__subheading {
+    max-width: 60ch;
+    margin: 0.8rem auto 0;
+    opacity: 0.8;
+}
+
+.instagram-testimonials__grid {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+}
+
+@media screen and (min-width: 750px) {
+    .instagram-testimonials__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.4rem;
+    }
+}
+
+@media screen and (min-width: 990px) {
+    .instagram-testimonials--cols-2 .instagram-testimonials__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .instagram-testimonials--cols-3 .instagram-testimonials__grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .instagram-testimonials--cols-4 .instagram-testimonials__grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+.instagram-testimonials__card {
+    background: rgb(var(--color-background));
+    border: 0.1rem solid rgba(var(--color-foreground), 0.06);
+    border-radius: var(--media-radius);
+    overflow: hidden;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+}
+
+.instagram-testimonials__card img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
