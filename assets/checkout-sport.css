@@ -1,0 +1,84 @@
+/* Sport style layer for Checkout (Extensibility theme settings may override). */
+
+/* Accent tokens (match thank-you for consistency) */
+:root {
+    --sport-accent: #00B04F;
+    --sport-accent-ink: #0b2416;
+}
+
+/* Headings tighten letter-spacing for a performance feel */
+.section__title,
+.content-box__title,
+.review-block__title,
+.sidebar__title {
+    letter-spacing: -0.015em;
+}
+
+/* Buttons: stronger, athletic baseline */
+.btn,
+button.btn,
+.shopify-payment-button__button--unbranded,
+.step__footer__continue-btn {
+    min-height: 48px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    border-radius: 6px;
+}
+
+/* Primary button accent */
+.btn--primary,
+.step__footer__continue-btn,
+button.shopify-payment-button__button--unbranded {
+    background-color: var(--sport-accent) !important;
+    border-color: var(--sport-accent) !important;
+}
+
+.btn--primary:hover,
+.step__footer__continue-btn:hover,
+button.shopify-payment-button__button--unbranded:hover {
+    filter: brightness(0.95);
+}
+
+/* Inputs radius */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    border-radius: 8px;
+}
+
+/* Order summary and boxes */
+.content-box,
+.order-summary__sections,
+.order-summary__section {
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+/* Totals emphasis */
+.payment-due__price,
+.total-recap__final-price {
+    font-weight: 800;
+    letter-spacing: 0.01em;
+}
+
+/* Utility: trust badges row under payment methods (if inserted by an extension) */
+.checkout-trust-badges {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.checkout-trust-badges__item {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: 13px;
+}
+
+
