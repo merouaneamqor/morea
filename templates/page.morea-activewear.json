@@ -9,15 +9,124 @@
  */
 {
   "sections": {
+    "1764078715f4ab3d6c": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_c13caba_KxHTEx": {
+          "type": "ai_gen_block_c13caba",
+          "settings": {
+            "layout": "image_left",
+            "max_width": 1200,
+            "padding_top": 60,
+            "padding_bottom": 60,
+            "image": "shopify://shop_images/Generated_Image_November_15_2025_-_5_38PM.png",
+            "image_border_radius": 40,
+            "title": "Waist Cover Soft Taupe",
+            "description": "<p>Coverage made easy. Whether you're at the gym or training outdoors, stay focused and covered without compromising your modest values with our Waist Cover.</p>",
+            "feature_1": "Modest fit",
+            "feature_2": "Lightweight & breathable",
+            "feature_3": "Quick Coverage. Confident Movement.",
+            "feature_4": "",
+            "material": "74% nylon 26% spandex",
+            "content_spacing": 24,
+            "background_color": "#ffffff",
+            "text_color": "#121212",
+            "icon_color": "#121212",
+            "title_size": 40,
+            "description_size": 16,
+            "feature_size": 15,
+            "material_size": 14
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_c13caba_KxHTEx"
+      ],
+      "settings": {}
+    },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "featured_product_iLKhkm": {
+      "type": "featured-product",
+      "blocks": {
+        "text_RpfFmX": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "title_c7gCN6": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "price_tFJN4w": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker_peGhQR": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector_ihBKba": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons_yzPjmg": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "share_qHQUyA": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "text_RpfFmX",
+        "title_c7gCN6",
+        "price_tFJN4w",
+        "variant_picker_peGhQR",
+        "quantity_selector_ihBKba",
+        "buy_buttons_yzPjmg",
+        "share_qHQUyA"
+      ],
+      "name": "t:sections.featured-product.presets.name",
+      "settings": {
+        "product": "الطقم-الرابع-مع-غطاء-خصر-وحجاب",
+        "color_scheme": "",
+        "secondary_background": false,
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
-    "main"
+    "1764078715f4ab3d6c",
+    "main",
+    "featured_product_iLKhkm"
   ]
 }
