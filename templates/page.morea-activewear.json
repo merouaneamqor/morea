@@ -1,140 +1,15 @@
 /*
- * Morea Activewear Landing Page Template
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
  *
- * Conversion-optimized landing page following best practices:
- * - Compelling hero section with clear value proposition
- * - Social proof and testimonials for trust
- * - Feature showcase highlighting benefits
- * - Product demonstration with existing AI block
- * - Clear call-to-actions throughout
- * - Email capture for lead nurturing
- *
- * Based on Shopify Liquid best practices and conversion optimization research.
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
  */
 {
   "sections": {
-    "hero_banner": {
-      "type": "hero_banner",
-      "settings": {
-        "background_image": "shopify://shop_images/hero-activewear-banner.jpg",
-        "overlay_color": "#000000",
-        "overlay_opacity": 40,
-        "min_height": 600,
-        "max_width": 1200,
-        "padding": 40,
-        "text_alignment": "center",
-        "text_color": "#ffffff",
-        "badge_text": "New Collection",
-        "title": "Move with Confidence & Coverage",
-        "subtitle": "Modest Activewear for Every Woman",
-        "description": "Discover our collection of premium activewear designed for comfort, coverage, and confidence during every workout. Made with your values in mind.",
-        "primary_button_text": "Shop Collection",
-        "primary_button_link": "#featured_product_iLKhkm",
-        "secondary_button_text": "Watch Story",
-        "secondary_button_link": "#interactive_fabric_demo",
-        "title_size": 48,
-        "subtitle_size": 24,
-        "description_size": 18,
-        "content_spacing": 24,
-        "button_spacing": 16,
-        "primary_button_bg": "#000000",
-        "primary_button_color": "#ffffff",
-        "secondary_button_bg": "transparent",
-        "secondary_button_color": "#ffffff",
-        "secondary_button_border": "#ffffff",
-        "badge_top": 20,
-        "badge_position": "right",
-        "badge_side": 20,
-        "badge_background": "#ff6b35"
-      }
-    },
-    "features_showcase": {
-      "type": "features_showcase",
-      "settings": {
-        "max_width": 1200,
-        "padding": 60,
-        "columns_desktop": 3,
-        "columns_mobile": 1,
-        "grid_gap": 24,
-        "background_color": "#ffffff",
-        "background_pattern": true,
-        "pattern_color": "#000000",
-        "title": "Why Choose Morea Activewear?",
-        "subtitle": "Designed with traditional values and modern performance in mind",
-        "title_color": "#111827",
-        "title_size": 32,
-        "title_weight": "600",
-        "subtitle_color": "#6b7280",
-        "subtitle_size": 16,
-        "card_background": "#ffffff",
-        "card_gradient_start": "#ffffff",
-        "card_gradient_end": "#f9fafb",
-        "card_hover_gradient": true,
-        "card_border_radius": 12,
-        "card_padding": 24,
-        "card_border_width": 1,
-        "card_border_color": "#e5e7eb",
-        "card_hover_lift": 8,
-        "icon_size": 64,
-        "icon_background": "#f3f4f6",
-        "icon_color": "#374151",
-        "icon_hover_background": "#e5e7eb",
-        "feature_title_size": 20,
-        "feature_title_weight": "600",
-        "feature_title_color": "#111827",
-        "feature_description_size": 14,
-        "feature_description_color": "#6b7280",
-        "stat_background": "#10b981",
-        "stat_color": "#ffffff",
-        "content_spacing": 16,
-        "section_spacing": 40
-      }
-    },
-    "interactive_fabric_demo": {
-      "type": "interactive_fabric_demo",
-      "settings": {
-        "max_width": 1200,
-        "padding": 60,
-        "title": "Experience Our Premium Fabrics",
-        "subtitle": "Click on any fabric to explore its unique properties, benefits, and care instructions",
-        "background_color": "#ffffff",
-        "title_color": "#111827",
-        "title_size": 32,
-        "title_weight": "600",
-        "subtitle_color": "#6b7280",
-        "subtitle_size": 16,
-        "swatch_height": 150,
-        "swatch_gap": 24,
-        "swatch_padding": 20,
-        "swatch_border_radius": 12,
-        "swatch_bg": "#ffffff",
-        "swatch_border": "#e5e7eb",
-        "swatch_hover_border": "#d1d5db",
-        "swatch_active_border": "#3b82f6",
-        "swatch_active_glow": "rgba(59, 130, 246, 0.3)",
-        "swatch_hover_lift": 8,
-        "fabric_primary": "#e5e7eb",
-        "fabric_secondary": "#d1d5db",
-        "swatch_title_size": 18,
-        "swatch_title_weight": "600",
-        "swatch_title_color": "#111827",
-        "swatch_description_size": 14,
-        "swatch_description_color": "#6b7280",
-        "details_bg": "#f9fafb",
-        "detail_icon_bg": "#ffffff",
-        "detail_icon_color": "#6b7280",
-        "detail_title_color": "#111827",
-        "detail_item_bg": "#ffffff",
-        "detail_accent": "#10b981",
-        "detail_item_title_color": "#111827",
-        "detail_item_text_color": "#6b7280",
-        "spinner_bg": "#e5e7eb",
-        "spinner_color": "#3b82f6",
-        "content_spacing": 16,
-        "section_spacing": 40
-      }
-    },
-    "product_showcase": {
+    "1764078715f4ab3d6c": {
       "type": "_blocks",
       "blocks": {
         "ai_gen_block_c13caba_KxHTEx": {
@@ -146,18 +21,18 @@
             "padding_bottom": 60,
             "image": "shopify://shop_images/Generated_Image_November_15_2025_-_5_38PM.png",
             "image_border_radius": 40,
-            "title": "Premium Waist Cover Collection",
-            "description": "<p>Our signature waist covers provide complete coverage while allowing full range of motion. Perfect for yoga, running, and all your favorite activities. Made from premium 74% nylon, 26% spandex fabric that's breathable, moisture-wicking, and built to last.</p><p><strong>Available in multiple colors and sizes to fit every body.</strong></p>",
-            "feature_1": "Full Modest Coverage",
-            "feature_2": "Moisture-Wicking Fabric",
-            "feature_3": "4-Way Stretch Technology",
-            "feature_4": "Machine Washable",
+            "title": "Waist Cover Soft Taupe",
+            "description": "<p>Coverage made easy. Whether you're at the gym or training outdoors, stay focused and covered without compromising your modest values with our Waist Cover.</p>",
+            "feature_1": "Modest fit",
+            "feature_2": "Lightweight & breathable",
+            "feature_3": "Quick Coverage. Confident Movement.",
+            "feature_4": "",
             "material": "74% nylon 26% spandex",
             "content_spacing": 24,
-            "background_color": "#f9fafb",
+            "background_color": "#ffffff",
             "text_color": "#121212",
             "icon_color": "#121212",
-            "title_size": 36,
+            "title_size": 40,
             "description_size": 16,
             "feature_size": 15,
             "material_size": 14
@@ -170,47 +45,12 @@
       ],
       "settings": {}
     },
-    "testimonials_grid": {
-      "type": "testimonials_grid",
+    "main": {
+      "type": "main-page",
+      "disabled": true,
       "settings": {
-        "max_width": 1200,
-        "padding": 60,
-        "columns_desktop": 3,
-        "columns_mobile": 1,
-        "grid_gap": 24,
-        "background_color": "#ffffff",
-        "title": "Trusted by Active Women Everywhere",
-        "subtitle": "Join thousands of women who have found their perfect activewear",
-        "title_color": "#111827",
-        "title_size": 32,
-        "title_weight": "600",
-        "subtitle_color": "#6b7280",
-        "subtitle_size": 16,
-        "card_background": "#ffffff",
-        "card_border_radius": 12,
-        "card_padding": 24,
-        "card_border_width": 1,
-        "card_border_color": "#e5e7eb",
-        "card_shadow": "0 2px 8px rgba(0,0,0,0.1)",
-        "card_hover_lift": 4,
-        "quote_size": 16,
-        "quote_color": "#374151",
-        "quote_mark_color": "#e5e7eb",
-        "star_color": "#fbbf24",
-        "avatar_size": 48,
-        "avatar_border_color": "#e5e7eb",
-        "avatar_placeholder_bg": "#f3f4f6",
-        "avatar_placeholder_color": "#6b7280",
-        "author_name_size": 16,
-        "author_name_weight": "600",
-        "author_name_color": "#111827",
-        "author_title_size": 14,
-        "author_title_color": "#6b7280",
-        "divider_color": "#e5e7eb",
-        "verified_bg": "#10b981",
-        "verified_color": "#ffffff",
-        "content_spacing": 16,
-        "section_spacing": 40
+        "padding_top": 28,
+        "padding_bottom": 28
       }
     },
     "featured_product_iLKhkm": {
@@ -267,68 +107,26 @@
         "buy_buttons_yzPjmg",
         "share_qHQUyA"
       ],
-      "name": "Featured Product - Purchase Section",
+      "name": "t:sections.featured-product.presets.name",
       "settings": {
         "product": "الطقم-الرابع-مع-غطاء-خصر-وحجاب",
-        "color_scheme": "background-1",
+        "color_scheme": "",
         "secondary_background": false,
-        "media_size": "large",
+        "media_size": "medium",
         "constrain_to_viewport": true,
         "media_fit": "contain",
-        "media_position": "center",
+        "media_position": "left",
         "image_zoom": "lightbox",
         "hide_variants": false,
         "enable_video_looping": false,
-        "padding_top": 60,
-        "padding_bottom": 60
-      }
-    },
-    "newsletter_signup": {
-      "type": "newsletter",
-      "settings": {
-        "color_scheme": "accent-1",
-        "full_width": true,
-        "padding_top": 60,
-        "padding_bottom": 60
-      },
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Stay Active, Stay Inspired",
-            "heading_size": "h2"
-          }
-        },
-        "paragraph": {
-          "type": "paragraph",
-          "settings": {
-            "text": "<p>Join our community of women who prioritize both faith and fitness. Get exclusive access to new collections, workout tips, styling guides, and inspiration for your active lifestyle.</p><p><strong>Be the first to know about:</strong></p><ul><li>New modest activewear arrivals</li><li>Exclusive member discounts</li><li>Workout tutorials and fitness tips</li><li>Care and styling advice</li></ul>"
-          }
-        },
-        "email-form": {
-          "type": "email_form",
-          "settings": {}
-        }
-      },
-      "block_order": ["heading", "paragraph", "email-form"]
-    },
-    "main": {
-      "type": "main-page",
-      "disabled": true,
-      "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
   "order": [
-    "hero_banner",
-    "features_showcase",
-    "interactive_fabric_demo",
-    "product_showcase",
-    "testimonials_grid",
-    "featured_product_iLKhkm",
-    "newsletter_signup",
-    "main"
+    "1764078715f4ab3d6c",
+    "main",
+    "featured_product_iLKhkm"
   ]
 }
