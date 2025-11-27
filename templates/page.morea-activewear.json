@@ -1,15 +1,292 @@
 /*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
+ * Morea Activewear Landing Page Template - Premium Version
  *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
+ * Complete conversion-optimized landing page with advanced sections:
+ * 🏷️ HERO SECTION - Compelling headline and dual CTAs
+ * 🧪 PRODUCT TECH SECTION - Material science explanation
+ * ⚡ VALUE PROPOSITION GRID - 4-column benefits showcase
+ * 🧕 COLLECTION SECTION - Product range presentation
+ * 🌍 SOCIAL PROOF - Customer testimonials and stats
+ * 🌱 SUSTAINABILITY SECTION - Environmental responsibility
+ * 📌 FOOTER CTA - Final conversion push
+ *
+ * Built following Shopify Liquid best practices and landing page conversion research.
  */
 {
   "sections": {
-    "1764078715f4ab3d6c": {
+    "hero_section": {
+      "type": "hero_section",
+      "settings": {
+        "background_image": "shopify://shop_images/hero-activewear-banner.jpg",
+        "bg_gradient_start": "#1e293b",
+        "bg_gradient_end": "#0f172a",
+        "min_height": 600,
+        "max_width": 1200,
+        "content_max_width": 800,
+        "padding": 40,
+        "text_alignment": "center",
+        "show_badge": true,
+        "badge_text": "New Collection",
+        "headline": "Empowering Motion. Engineered for Modesty. Designed for More.",
+        "subheadline": "High-performance activewear built for the fearless — where comfort meets coverage, and innovation fuels confidence.",
+        "primary_cta_text": "Shop the Drop →",
+        "primary_cta_link": "#featured_product_iLKhkm",
+        "secondary_cta_text": "Explore Tech Stack ↓",
+        "secondary_cta_link": "#tech_section",
+        "title_size": 56,
+        "subtitle_size": 20,
+        "description_size": 18,
+        "headline_color": "#ffffff",
+        "subheadline_color": "#e2e8f0",
+        "content_spacing": 32,
+        "button_spacing": 16,
+        "cta_alignment": "center",
+        "primary_cta_bg": "#ffffff",
+        "primary_cta_color": "#1e293b",
+        "secondary_cta_bg": "transparent",
+        "secondary_cta_color": "#ffffff",
+        "secondary_cta_border": "#ffffff",
+        "badge_top": 20,
+        "badge_position": "right",
+        "badge_side": 20,
+        "badge_bg": "#ff6b35"
+      }
+    },
+    "tech_section": {
+      "type": "tech_section",
+      "settings": {
+        "max_width": 1200,
+        "padding": 60,
+        "grid_gap": 40,
+        "text_padding": 40,
+        "background_color": "#f8fafc",
+        "background_pattern": true,
+        "pattern_color": "#1e293b",
+        "title": "Our Material Advantage",
+        "subtitle": "Polyamide, the backbone of modern performance fabric, is crafted through repeating amide bonds that form a resilient polymer network. While it exists naturally in fibers like wool and silk, its synthetic evolution — including premium nylon variants — unlocks superior tensile strength, impact endurance, and abrasion resistance.",
+        "material_title": "Polyamide: Nature's Strength, Engineered for Performance",
+        "material_content": "This high-efficiency material family (PA 6, PA 66, and others) delivers long-term durability without compromising softness, making it a strategic choice across textiles, automotive components, medical devices, and — ofc — next-level activewear.",
+        "material_highlight": "Morea Edge Breakdown:",
+        "text_bg": "#ffffff",
+        "text_border": "#e2e8f0",
+        "border_radius": 12,
+        "visual_bg": "#1e293b",
+        "visual_gradient_start": "#7c3aed",
+        "visual_gradient_end": "#06b6d4",
+        "visual_padding": 32,
+        "icon_size": 64,
+        "icon_color": "#ffffff",
+        "visual_text_size": 16,
+        "title_color": "#1e293b",
+        "subtitle_color": "#64748b",
+        "material_title_color": "#1e293b",
+        "material_content_color": "#475569",
+        "material_highlight_color": "#7c3aed",
+        "breakdown_bg": "#ffffff",
+        "breakdown_padding": 32,
+        "breakdown_title_color": "#1e293b",
+        "breakdown_item_bg": "#f8fafc",
+        "breakdown_accent": "#7c3aed",
+        "breakdown_item_title_color": "#1e293b",
+        "breakdown_item_text_color": "#64748b",
+        "content_spacing": 16,
+        "section_spacing": 40
+      }
+    },
+    "value_prop_grid": {
+      "type": "value_prop_grid",
+      "settings": {
+        "max_width": 1200,
+        "padding": 60,
+        "columns_desktop": 4,
+        "columns_mobile": 1,
+        "grid_gap": 24,
+        "background_color": "#ffffff",
+        "title": "Built for Women Who Don't Rewrite the Rules — They Redefine Them",
+        "subtitle": "Performance meets purpose in every stitch",
+        "title_color": "#1e293b",
+        "subtitle_color": "#64748b",
+        "card_background": "#ffffff",
+        "card_gradient_start": "#f8fafc",
+        "card_gradient_end": "#e2e8f0",
+        "card_hover_gradient": true,
+        "card_border_radius": 12,
+        "card_padding": 24,
+        "card_border_width": 1,
+        "card_border_color": "#e2e8f0",
+        "card_hover_lift": 8,
+        "icon_size": 64,
+        "icon_background": "#f1f5f9",
+        "icon_color": "#475569",
+        "icon_hover_background": "#e2e8f0",
+        "item_title_size": 20,
+        "item_title_weight": "600",
+        "item_title_color": "#1e293b",
+        "item_description_size": 14,
+        "item_description_color": "#64748b",
+        "accent_bg": "#10b981",
+        "accent_color": "#ffffff",
+        "content_spacing": 16,
+        "section_spacing": 40
+      }
+    },
+    "collection_section": {
+      "type": "collection_section",
+      "settings": {
+        "max_width": 1200,
+        "padding": 60,
+        "grid_gap": 40,
+        "text_padding": 40,
+        "background_color": "#f8fafc",
+        "background_pattern": true,
+        "pattern_color": "#1e293b",
+        "title": "The Modest Move Collection",
+        "subtitle": "Because performance shouldn't ask you to compromise.",
+        "description": "Our activewear is engineered for prayer, pace, power, hikes, gym days, and coffee runs — yes queen, all the contexts — with a product strategy centered on breathability, longevity, and style velocity.",
+        "text_bg": "#ffffff",
+        "visual_bg": "#1e293b",
+        "visual_gradient_start": "#7c3aed",
+        "visual_gradient_end": "#06b6d4",
+        "visual_padding": 32,
+        "icon_size": 64,
+        "icon_color": "#ffffff",
+        "visual_text_size": 16,
+        "border_radius": 12,
+        "feature_bg": "#ffffff",
+        "feature_padding": 20,
+        "feature_accent": "#10b981",
+        "feature_title_color": "#1e293b",
+        "feature_description_color": "#64748b",
+        "divider_color": "#e2e8f0",
+        "title_color": "#1e293b",
+        "subtitle_color": "#7c3aed",
+        "description_color": "#475569",
+        "content_spacing": 16,
+        "section_spacing": 40
+      }
+    },
+    "social_proof": {
+      "type": "social_proof",
+      "settings": {
+        "max_width": 1200,
+        "padding": 60,
+        "columns_desktop": 3,
+        "grid_gap": 24,
+        "background_color": "#ffffff",
+        "background_pattern": true,
+        "pattern_color": "#1e293b",
+        "title": "Morea Community Wins",
+        "subtitle": "Real women sharing their Morea journey",
+        "title_color": "#1e293b",
+        "subtitle_color": "#64748b",
+        "testimonial_bg": "#f8fafc",
+        "testimonial_border": "#e2e8f0",
+        "testimonial_hover_lift": 4,
+        "border_radius": 12,
+        "testimonial_padding": 24,
+        "quote_size": 16,
+        "quote_color": "#374151",
+        "quote_mark_color": "#e5e7eb",
+        "star_color": "#fbbf24",
+        "avatar_size": 48,
+        "avatar_bg": "#e2e8f0",
+        "avatar_color": "#475569",
+        "author_name_size": 16,
+        "author_name_weight": "600",
+        "author_name_color": "#1e293b",
+        "author_title_size": 14,
+        "author_title_color": "#6b7280",
+        "divider_color": "#e2e8f0",
+        "stats_title": "Join Our Growing Community",
+        "stats_bg": "#f8fafc",
+        "stats_padding": 32,
+        "stats_title_color": "#1e293b",
+        "stats_gap": 20,
+        "stat_bg": "#ffffff",
+        "stat_padding": 20,
+        "stat_border": "#e2e8f0",
+        "stat_number_size": 24,
+        "stat_number_weight": "700",
+        "stat_number_color": "#7c3aed",
+        "stat_label_size": 14,
+        "stat_label_color": "#64748b",
+        "content_spacing": 16,
+        "section_spacing": 40
+      }
+    },
+    "sustainability_section": {
+      "type": "sustainability_section",
+      "settings": {
+        "max_width": 1200,
+        "padding": 60,
+        "grid_gap": 40,
+        "text_padding": 40,
+        "background_color": "#f0f9ff",
+        "background_pattern": true,
+        "pattern_color": "#0ea5e9",
+        "title": "Performance Today. Responsibility Always.",
+        "subtitle": "Championing longevity-driven product development",
+        "description": "We champion longevity-driven product development — fewer replacements, less waste, more value. Durable polymers mean extended wear cycles, supporting a more sustainable consumption loop without sacrificing innovation.",
+        "title_color": "#0c4a6e",
+        "subtitle_color": "#0369a1",
+        "description_color": "#164e63",
+        "text_bg": "#ffffff",
+        "visual_bg": "#0c4a6e",
+        "visual_gradient_start": "#0369a1",
+        "visual_gradient_end": "#0284c7",
+        "visual_padding": 32,
+        "icon_size": 64,
+        "icon_color": "#ffffff",
+        "visual_text_size": 16,
+        "border_radius": 12,
+        "commitment_bg": "#f0f9ff",
+        "commitment_padding": 20,
+        "commitment_accent": "#0ea5e9",
+        "commitment_title_color": "#0c4a6e",
+        "commitment_description_color": "#475569",
+        "divider_color": "#e0f2fe",
+        "content_spacing": 16,
+        "section_spacing": 40
+      }
+    },
+    "footer_cta": {
+      "type": "footer_cta",
+      "settings": {
+        "background_image": "shopify://shop_images/footer-cta-bg.jpg",
+        "show_overlay": true,
+        "overlay_color": "#000000",
+        "overlay_opacity": 60,
+        "background_color": "#1e293b",
+        "max_width": 900,
+        "padding": 80,
+        "title": "Ready to Elevate Your Wardrobe Stack?",
+        "subtitle": "Join the future of modest performance wear. Innovate your movement, amplify your confidence, and wear the change.",
+        "benefits": "[\"Modest Coverage\", \"Premium Comfort\", \"Sustainable Design\", \"Lifetime Guarantee\"]",
+        "benefit_bg": "rgba(255, 255, 255, 0.1)",
+        "benefit_color": "#ffffff",
+        "benefit_border": "rgba(255, 255, 255, 0.2)",
+        "benefit_size": 14,
+        "benefits_gap": 12,
+        "button_text": "Scale Your Fit Journey →",
+        "button_link": "#featured_product_iLKhkm",
+        "button_padding_y": 16,
+        "button_padding_x": 32,
+        "button_border_radius": 8,
+        "button_font_size": 16,
+        "button_font_weight": "600",
+        "button_bg": "#ffffff",
+        "button_color": "#1e293b",
+        "button_border": "#ffffff",
+        "button_hover_bg": "#f1f5f9",
+        "button_hover_color": "#1e293b",
+        "button_hover_border": "#f1f5f9",
+        "title_color": "#ffffff",
+        "subtitle_color": "#e2e8f0",
+        "content_spacing": 16,
+        "section_spacing": 32
+      }
+    },
+    "product_showcase": {
       "type": "_blocks",
       "blocks": {
         "ai_gen_block_c13caba_KxHTEx": {
@@ -21,18 +298,18 @@
             "padding_bottom": 60,
             "image": "shopify://shop_images/Generated_Image_November_15_2025_-_5_38PM.png",
             "image_border_radius": 40,
-            "title": "Waist Cover Soft Taupe",
-            "description": "<p>Coverage made easy. Whether you're at the gym or training outdoors, stay focused and covered without compromising your modest values with our Waist Cover.</p>",
-            "feature_1": "Modest fit",
-            "feature_2": "Lightweight & breathable",
-            "feature_3": "Quick Coverage. Confident Movement.",
-            "feature_4": "",
-            "material": "70% nylon 30% spandex",
+            "title": "Premium Waist Cover Collection",
+            "description": "<p>Our signature waist covers provide complete coverage while allowing full range of motion. Perfect for yoga, running, and all your favorite activities. Made from premium 74% nylon, 26% spandex fabric that's breathable, moisture-wicking, and built to last.</p><p><strong>Available in multiple colors and sizes to fit every body.</strong></p>",
+            "feature_1": "Full Modest Coverage",
+            "feature_2": "Moisture-Wicking Fabric",
+            "feature_3": "4-Way Stretch Technology",
+            "feature_4": "Machine Washable",
+            "material": "74% nylon 26% spandex",
             "content_spacing": 24,
-            "background_color": "#ffffff",
+            "background_color": "#f9fafb",
             "text_color": "#121212",
             "icon_color": "#121212",
-            "title_size": 40,
+            "title_size": 36,
             "description_size": 16,
             "feature_size": 15,
             "material_size": 14
@@ -44,14 +321,6 @@
         "ai_gen_block_c13caba_KxHTEx"
       ],
       "settings": {}
-    },
-    "main": {
-      "type": "main-page",
-      "disabled": true,
-      "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
-      }
     },
     "featured_product_iLKhkm": {
       "type": "featured-product",
@@ -107,26 +376,41 @@
         "buy_buttons_yzPjmg",
         "share_qHQUyA"
       ],
-      "name": "t:sections.featured-product.presets.name",
+      "name": "Purchase Section - Complete Your Order",
       "settings": {
         "product": "الطقم-الرابع-مع-غطاء-خصر-وحجاب",
-        "color_scheme": "",
+        "color_scheme": "background-1",
         "secondary_background": false,
-        "media_size": "medium",
+        "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "contain",
-        "media_position": "left",
+        "media_position": "center",
         "image_zoom": "lightbox",
         "hide_variants": false,
         "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
       }
     }
   },
   "order": [
-    "1764078715f4ab3d6c",
-    "main",
-    "featured_product_iLKhkm"
+    "hero_section",
+    "tech_section",
+    "value_prop_grid",
+    "collection_section",
+    "social_proof",
+    "sustainability_section",
+    "footer_cta",
+    "product_showcase",
+    "featured_product_iLKhkm",
+    "main"
   ]
 }

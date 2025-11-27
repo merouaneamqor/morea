@@ -1,0 +1,776 @@
+{% doc %}
+  Social Proof Section Block
+
+  A testimonials section with customer quotes
+  and social proof elements for conversion.
+{% enddoc %}
+
+{% assign social_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .social-proof-{{ social_id }} {
+    background: {{ block.settings.background_color }};
+    padding: {{ block.settings.padding }}px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  {% if block.settings.background_pattern %}
+    .social-proof-{{ social_id }}::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: radial-gradient(circle at 25% 75%, {{ block.settings.pattern_color }} 1px, transparent 1px);
+      background-size: 25px 25px;
+      opacity: 0.03;
+      z-index: 1;
+    }
+  {% endif %}
+
+  .social-container-{{ social_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .social-header-{{ social_id }} {
+    text-align: center;
+    margin-bottom: {{ block.settings.section_spacing }}px;
+  }
+
+  .social-title-{{ social_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    font-weight: {{ block.settings.title_weight }};
+    color: {{ block.settings.title_color }};
+    margin: 0 0 {{ block.settings.content_spacing }}px 0;
+    line-height: 1.3;
+  }
+
+  .social-subtitle-{{ social_id }} {
+    font-size: {{ block.settings.subtitle_size }}px;
+    color: {{ block.settings.subtitle_color }};
+    margin: 0;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .social-testimonials-{{ social_id }} {
+    display: grid;
+    grid-template-columns: repeat({{ block.settings.columns_desktop }}, 1fr);
+    gap: {{ block.settings.grid_gap }}px;
+    margin-bottom: {{ block.settings.section_spacing }}px;
+  }
+
+  .social-testimonial-{{ social_id }} {
+    background: {{ block.settings.testimonial_bg }};
+    border-radius: {{ block.settings.border_radius }}px;
+    padding: {{ block.settings.testimonial_padding }}px;
+    border: 1px solid {{ block.settings.testimonial_border }};
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .social-testimonial-{{ social_id }}:hover {
+    transform: translateY(-{{ block.settings.testimonial_hover_lift }}px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  }
+
+  .testimonial-quote-{{ social_id }} {
+    font-size: {{ block.settings.quote_size }}px;
+    color: {{ block.settings.quote_color }};
+    line-height: 1.6;
+    margin: 0 0 {{ block.settings.content_spacing }}px 0;
+    font-style: italic;
+    position: relative;
+  }
+
+  .testimonial-quote-{{ social_id }}::before {
+    content: '"';
+    font-size: 2em;
+    color: {{ block.settings.quote_mark_color }};
+    position: absolute;
+    top: -5px;
+    left: -10px;
+    line-height: 1;
+  }
+
+  .testimonial-author-{{ social_id }} {
+    display: flex;
+    align-items: center;
+    gap: {{ block.settings.content_spacing }}px;
+    padding-top: {{ block.settings.content_spacing }}px;
+    border-top: 1px solid {{ block.settings.divider_color }};
+  }
+
+  .testimonial-avatar-{{ social_id }} {
+    width: {{ block.settings.avatar_size }}px;
+    height: {{ block.settings.avatar_size }}px;
+    border-radius: 50%;
+    background: {{ block.settings.avatar_bg }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: {{ block.settings.avatar_color }};
+    font-weight: 600;
+    font-size: {{ block.settings.avatar_size | times: 0.3 | round }}px;
+    flex-shrink: 0;
+  }
+
+  .testimonial-author-info-{{ social_id }} {
+    flex: 1;
+  }
+
+  .testimonial-author-name-{{ social_id }} {
+    font-size: {{ block.settings.author_name_size }}px;
+    font-weight: {{ block.settings.author_name_weight }};
+    color: {{ block.settings.author_name_color }};
+    margin: 0 0 2px 0;
+    line-height: 1.2;
+  }
+
+  .testimonial-author-title-{{ social_id }} {
+    font-size: {{ block.settings.author_title_size }}px;
+    color: {{ block.settings.author_title_color }};
+    margin: 0;
+    line-height: 1.2;
+    font-style: italic;
+  }
+
+  .social-stats-{{ social_id }} {
+    background: {{ block.settings.stats_bg }};
+    border-radius: {{ block.settings.border_radius }}px;
+    padding: {{ block.settings.stats_padding }}px;
+    text-align: center;
+  }
+
+  .social-stats-title-{{ social_id }} {
+    font-size: {{ block.settings.stats_title_size }}px;
+    font-weight: {{ block.settings.stats_title_weight }};
+    color: {{ block.settings.stats_title_color }};
+    margin: 0 0 {{ block.settings.content_spacing }}px 0;
+  }
+
+  .social-stats-grid-{{ social_id }} {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: {{ block.settings.stats_gap }}px;
+  }
+
+  .social-stat-item-{{ social_id }} {
+    background: {{ block.settings.stat_bg }};
+    padding: {{ block.settings.stat_padding }}px;
+    border-radius: 8px;
+    border: 1px solid {{ block.settings.stat_border }};
+  }
+
+  .stat-number-{{ social_id }} {
+    font-size: {{ block.settings.stat_number_size }}px;
+    font-weight: {{ block.settings.stat_number_weight }};
+    color: {{ block.settings.stat_number_color }};
+    margin: 0 0 4px 0;
+    line-height: 1.2;
+  }
+
+  .stat-label-{{ social_id }} {
+    font-size: {{ block.settings.stat_label_size }}px;
+    color: {{ block.settings.stat_label_color }};
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  @media screen and (max-width: 749px) {
+    .social-testimonials-{{ social_id }} {
+      grid-template-columns: 1fr;
+      gap: {{ block.settings.grid_gap | times: 0.5 }}px;
+    }
+
+    .social-proof-{{ social_id }} {
+      padding: {{ block.settings.padding | times: 0.8 }}px 20px;
+    }
+
+    .social-title-{{ social_id }} {
+      font-size: {{ block.settings.title_size | times: 0.9 }}px;
+    }
+
+    .testimonial-quote-{{ social_id }} {
+      font-size: {{ block.settings.quote_size | times: 0.9 }}px;
+    }
+
+    .social-stats-grid-{{ social_id }} {
+      grid-template-columns: repeat(2, 1fr);
+      gap: {{ block.settings.stats_gap | times: 0.5 }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="social-proof-{{ social_id }}" {{ block.shopify_attributes }}>
+  <div class="social-container-{{ social_id }}">
+    <div class="social-header-{{ social_id }}">
+      {% if block.settings.title != blank %}
+        <h2 class="social-title-{{ social_id }}">{{ block.settings.title }}</h2>
+      {% endif %}
+
+      {% if block.settings.subtitle != blank %}
+        <p class="social-subtitle-{{ social_id }}">{{ block.settings.subtitle }}</p>
+      {% endif %}
+    </div>
+
+    <div class="social-testimonials-{{ social_id }}">
+      {% for testimonial in block.settings.testimonials %}
+        <div class="social-testimonial-{{ social_id }}">
+          {% if testimonial.quote != blank %}
+            <blockquote class="testimonial-quote-{{ social_id }}">{{ testimonial.quote }}</blockquote>
+          {% endif %}
+
+          <div class="testimonial-author-{{ social_id }}">
+            <div class="testimonial-avatar-{{ social_id }}">
+              {% if testimonial.initials %}
+                {{ testimonial.initials }}
+              {% else %}
+                {{ testimonial.name | slice: 0, 1 | upcase }}
+              {% endif %}
+            </div>
+
+            <div class="testimonial-author-info-{{ social_id }}">
+              {% if testimonial.name != blank %}
+                <h4 class="testimonial-author-name-{{ social_id }}">{{ testimonial.name }}</h4>
+              {% endif %}
+
+              {% if testimonial.title != blank %}
+                <p class="testimonial-author-title-{{ social_id }}">{{ testimonial.title }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="social-stats-{{ social_id }}">
+      {% if block.settings.stats_title != blank %}
+        <h3 class="social-stats-title-{{ social_id }}">{{ block.settings.stats_title }}</h3>
+      {% endif %}
+
+      <div class="social-stats-grid-{{ social_id }}">
+        {% for stat in block.settings.stats %}
+          <div class="social-stat-item-{{ social_id }}">
+            {% if stat.number != blank %}
+              <div class="stat-number-{{ social_id }}">{{ stat.number }}</div>
+            {% endif %}
+
+            {% if stat.label != blank %}
+              <div class="stat-label-{{ social_id }}">{{ stat.label }}</div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Social Proof",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 800,
+      "max": 1400,
+      "step": 100,
+      "unit": "px",
+      "label": "Maximum Width",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "min": 20,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Section Padding",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "unit": "",
+      "label": "Testimonial Columns",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "min": 16,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "label": "Grid Gap",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "checkbox",
+      "id": "background_pattern",
+      "label": "Show Background Pattern",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "pattern_color",
+      "label": "Pattern Color",
+      "default": "#1e293b"
+    },
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Morea Community Wins"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Section Subtitle",
+      "default": "Real women sharing their Morea journey"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#1e293b"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 20,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Title Size",
+      "default": 32
+    },
+    {
+      "type": "select",
+      "id": "title_weight",
+      "label": "Title Weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#64748b"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle Size",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Testimonials"
+    },
+    {
+      "type": "color",
+      "id": "testimonial_bg",
+      "label": "Testimonial Background",
+      "default": "#f8fafc"
+    },
+    {
+      "type": "range",
+      "id": "testimonial_padding",
+      "min": 16,
+      "max": 32,
+      "step": 4,
+      "unit": "px",
+      "label": "Testimonial Padding",
+      "default": 24
+    },
+    {
+      "type": "color",
+      "id": "testimonial_border",
+      "label": "Testimonial Border",
+      "default": "#e2e8f0"
+    },
+    {
+      "type": "range",
+      "id": "testimonial_hover_lift",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "Testimonial Hover Lift",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Border Radius",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "quote_size",
+      "min": 14,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Quote Size",
+      "default": 16
+    },
+    {
+      "type": "color",
+      "id": "quote_color",
+      "label": "Quote Color",
+      "default": "#374151"
+    },
+    {
+      "type": "color",
+      "id": "quote_mark_color",
+      "label": "Quote Mark Color",
+      "default": "#e5e7eb"
+    },
+    {
+      "type": "range",
+      "id": "avatar_size",
+      "min": 32,
+      "max": 64,
+      "step": 4,
+      "unit": "px",
+      "label": "Avatar Size",
+      "default": 48
+    },
+    {
+      "type": "color",
+      "id": "avatar_bg",
+      "label": "Avatar Background",
+      "default": "#e2e8f0"
+    },
+    {
+      "type": "color",
+      "id": "avatar_color",
+      "label": "Avatar Text Color",
+      "default": "#475569"
+    },
+    {
+      "type": "range",
+      "id": "author_name_size",
+      "min": 14,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Author Name Size",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "author_name_weight",
+      "label": "Author Name Weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "color",
+      "id": "author_name_color",
+      "label": "Author Name Color",
+      "default": "#1e293b"
+    },
+    {
+      "type": "range",
+      "id": "author_title_size",
+      "min": 12,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Author Title Size",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "author_title_color",
+      "label": "Author Title Color",
+      "default": "#6b7280"
+    },
+    {
+      "type": "color",
+      "id": "divider_color",
+      "label": "Divider Color",
+      "default": "#e2e8f0"
+    },
+    {
+      "type": "header",
+      "content": "Stats"
+    },
+    {
+      "type": "text",
+      "id": "stats_title",
+      "label": "Stats Title",
+      "default": "Join Our Growing Community"
+    },
+    {
+      "type": "color",
+      "id": "stats_bg",
+      "label": "Stats Background",
+      "default": "#f8fafc"
+    },
+    {
+      "type": "range",
+      "id": "stats_padding",
+      "min": 24,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "label": "Stats Padding",
+      "default": 32
+    },
+    {
+      "type": "color",
+      "id": "stats_title_color",
+      "label": "Stats Title Color",
+      "default": "#1e293b"
+    },
+    {
+      "type": "range",
+      "id": "stats_title_size",
+      "min": 18,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Stats Title Size",
+      "default": 20
+    },
+    {
+      "type": "select",
+      "id": "stats_title_weight",
+      "label": "Stats Title Weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "range",
+      "id": "stats_gap",
+      "min": 16,
+      "max": 32,
+      "step": 4,
+      "unit": "px",
+      "label": "Stats Gap",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "stat_bg",
+      "label": "Stat Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "stat_padding",
+      "min": 16,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Stat Padding",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "stat_border",
+      "label": "Stat Border",
+      "default": "#e2e8f0"
+    },
+    {
+      "type": "range",
+      "id": "stat_number_size",
+      "min": 18,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Stat Number Size",
+      "default": 24
+    },
+    {
+      "type": "select",
+      "id": "stat_number_weight",
+      "label": "Stat Number Weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        },
+        {
+          "value": "800",
+          "label": "Extra Bold"
+        }
+      ],
+      "default": "700"
+    },
+    {
+      "type": "color",
+      "id": "stat_number_color",
+      "label": "Stat Number Color",
+      "default": "#7c3aed"
+    },
+    {
+      "type": "range",
+      "id": "stat_label_size",
+      "min": 12,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Stat Label Size",
+      "default": 14
+    },
+    {
+      "type": "color",
+      "id": "stat_label_color",
+      "label": "Stat Label Color",
+      "default": "#64748b"
+    },
+    {
+      "type": "header",
+      "content": "Testimonials Data"
+    },
+    {
+      "type": "textarea",
+      "id": "testimonials",
+      "label": "Testimonials (JSON format)",
+      "info": "Enter testimonial data in JSON format with name, title, quote, and initials",
+      "default": "[{\"name\":\"Sarah\",\"title\":\"Fitness Enthusiast\",\"quote\":\"Finally activewear that aligns with who I am — without holding me back.\",\"initials\":\"S\"},{\"name\":\"Amina\",\"title\":\"Yoga Instructor\",\"quote\":\"Coverage + comfort? That's operational excellence.\",\"initials\":\"A\"},{\"name\":\"Fatima\",\"title\":\"Mother of 3\",\"quote\":\"Training fit secured. Confidence unlocked.\",\"initials\":\"F\"}]"
+    },
+    {
+      "type": "header",
+      "content": "Stats Data"
+    },
+    {
+      "type": "textarea",
+      "id": "stats",
+      "label": "Stats (JSON format)",
+      "info": "Enter stats data in JSON format with number and label",
+      "default": "[{\"number\":\"10K+\",\"label\":\"Active Members\"},{\"number\":\"50+\",\"label\":\"Countries\"},{\"number\":\"4.9★\",\"label\":\"Avg Rating\"},{\"number\":\"24/7\",\"label\":\"Support\"}]"
+    },
+    {
+      "type": "range",
+      "id": "content_spacing",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Content Spacing",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "section_spacing",
+      "min": 20,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Section Spacing",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "Social Proof"
+    }
+  ]
+}
+{% endschema %}

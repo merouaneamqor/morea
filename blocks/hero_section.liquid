@@ -1,0 +1,748 @@
+{% doc %}
+  Hero Section Block - Modern Landing Page Hero
+
+  A powerful hero section with compelling headline, sub-headline,
+  and strategic CTAs designed for conversion optimization.
+{% enddoc %}
+
+{% assign hero_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .hero-section-{{ hero_id }} {
+    position: relative;
+    min-height: {{ block.settings.min_height }}px;
+    background: linear-gradient(135deg, {{ block.settings.bg_gradient_start }}, {{ block.settings.bg_gradient_end }});
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  {% if block.settings.background_image %}
+    .hero-section-{{ hero_id }} {
+      background-image: url('{{ block.settings.background_image | image_url: width: 2000 }}'), linear-gradient(135deg, {{ block.settings.bg_gradient_start }}, {{ block.settings.bg_gradient_end }});
+      background-size: cover;
+      background-position: center;
+      background-blend-mode: overlay;
+    }
+  {% endif %}
+
+  .hero-container-{{ hero_id }} {
+    max-width: {{ block.settings.max_width }}px;
+    margin: 0 auto;
+    padding: {{ block.settings.padding }}px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-content-{{ hero_id }} {
+    max-width: {{ block.settings.content_max_width }}px;
+    margin: 0 auto;
+    text-align: {{ block.settings.text_alignment }};
+  }
+
+  .hero-headline-{{ hero_id }} {
+    font-size: {{ block.settings.headline_size }}px;
+    font-weight: {{ block.settings.headline_weight }};
+    line-height: {{ block.settings.headline_line_height }};
+    color: {{ block.settings.headline_color }};
+    margin: 0 0 {{ block.settings.content_spacing }}px 0;
+    letter-spacing: {{ block.settings.headline_letter_spacing }}px;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.2s forwards;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .hero-subheadline-{{ hero_id }} {
+    font-size: {{ block.settings.subheadline_size }}px;
+    font-weight: {{ block.settings.subheadline_weight }};
+    line-height: {{ block.settings.subheadline_line_height }};
+    color: {{ block.settings.subheadline_color }};
+    margin: 0 0 {{ block.settings.content_spacing }}px 0;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.4s forwards;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+
+  .hero-ctas-{{ hero_id }} {
+    display: flex;
+    gap: {{ block.settings.cta_spacing }}px;
+    justify-content: {{ block.settings.cta_alignment }};
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.6s forwards;
+  }
+
+  .hero-cta-primary-{{ hero_id }} {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: {{ block.settings.cta_padding_y }}px {{ block.settings.cta_padding_x }}px;
+    background: {{ block.settings.primary_cta_bg }};
+    color: {{ block.settings.primary_cta_color }};
+    text-decoration: none;
+    border-radius: {{ block.settings.cta_border_radius }}px;
+    font-size: {{ block.settings.cta_font_size }}px;
+    font-weight: {{ block.settings.cta_font_weight }};
+    border: 2px solid {{ block.settings.primary_cta_border }};
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  .hero-cta-primary-{{ hero_id }}:hover {
+    background: {{ block.settings.primary_cta_hover_bg }};
+    color: {{ block.settings.primary_cta_hover_color }};
+    border-color: {{ block.settings.primary_cta_hover_border }};
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  }
+
+  .hero-cta-secondary-{{ hero_id }} {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: {{ block.settings.cta_padding_y }}px {{ block.settings.cta_padding_x }}px;
+    background: {{ block.settings.secondary_cta_bg }};
+    color: {{ block.settings.secondary_cta_color }};
+    text-decoration: none;
+    border-radius: {{ block.settings.cta_border_radius }}px;
+    font-size: {{ block.settings.cta_font_size }}px;
+    font-weight: {{ block.settings.cta_font_weight }};
+    border: 2px solid {{ block.settings.secondary_cta_border }};
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .hero-cta-secondary-{{ hero_id }}:hover {
+    background: {{ block.settings.secondary_cta_hover_bg }};
+    color: {{ block.settings.secondary_cta_hover_color }};
+    border-color: {{ block.settings.secondary_cta_hover_border }};
+    transform: translateY(-2px);
+  }
+
+  .hero-cta-icon-{{ hero_id }} {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+  }
+
+  .hero-cta-primary-{{ hero_id }}:hover .hero-cta-icon-{{ hero_id }} {
+    transform: translateX(4px);
+  }
+
+  .hero-cta-secondary-{{ hero_id }}:hover .hero-cta-icon-{{ hero_id }} {
+    transform: translateY(-4px);
+  }
+
+  .hero-badge-{{ hero_id }} {
+    position: absolute;
+    top: {{ block.settings.badge_top }}px;
+    {{ block.settings.badge_position }}: {{ block.settings.badge_side }}px;
+    background: {{ block.settings.badge_bg }};
+    color: {{ block.settings.badge_color }};
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 3;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    opacity: 0;
+    animation: fadeInScale 0.6s ease-out 0.1s forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .hero-section-{{ hero_id }} {
+      min-height: {{ block.settings.min_height | times: 0.8 | round }}px;
+    }
+
+    .hero-container-{{ hero_id }} {
+      padding: {{ block.settings.padding | times: 0.8 }}px;
+    }
+
+    .hero-headline-{{ hero_id }} {
+      font-size: {{ block.settings.headline_size | times: 0.8 }}px;
+    }
+
+    .hero-subheadline-{{ hero_id }} {
+      font-size: {{ block.settings.subheadline_size | times: 0.9 }}px;
+    }
+
+    .hero-ctas-{{ hero_id }} {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-badge-{{ hero_id }} {
+      position: relative;
+      top: auto;
+      {{ block.settings.badge_position }}: auto;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  }
+{% endstyle %}
+
+<div class="hero-section-{{ hero_id }}" {{ block.shopify_attributes }}>
+  {% if block.settings.show_badge %}
+    <div class="hero-badge-{{ hero_id }}">{{ block.settings.badge_text }}</div>
+  {% endif %}
+
+  <div class="hero-container-{{ hero_id }}">
+    <div class="hero-content-{{ hero_id }}">
+      {% if block.settings.headline != blank %}
+        <h1 class="hero-headline-{{ hero_id }}">{{ block.settings.headline }}</h1>
+      {% endif %}
+
+      {% if block.settings.subheadline != blank %}
+        <p class="hero-subheadline-{{ hero_id }}">{{ block.settings.subheadline }}</p>
+      {% endif %}
+
+      {% if block.settings.primary_cta_text != blank or block.settings.secondary_cta_text != blank %}
+        <div class="hero-ctas-{{ hero_id }}">
+          {% if block.settings.primary_cta_text != blank %}
+            <a href="{{ block.settings.primary_cta_link }}" class="hero-cta-primary-{{ hero_id }}">
+              {{ block.settings.primary_cta_text }}
+              <svg class="hero-cta-icon-{{ hero_id }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"/>
+                <path d="M12 5v14"/>
+              </svg>
+            </a>
+          {% endif %}
+
+          {% if block.settings.secondary_cta_text != blank %}
+            <a href="{{ block.settings.secondary_cta_link }}" class="hero-cta-secondary-{{ hero_id }}">
+              {{ block.settings.secondary_cta_text }}
+              <svg class="hero-cta-icon-{{ hero_id }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M7 13l3 3 7-7"/>
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+            </a>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Hero Section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "color",
+      "id": "bg_gradient_start",
+      "label": "Gradient Start Color",
+      "default": "#1e293b"
+    },
+    {
+      "type": "color",
+      "id": "bg_gradient_end",
+      "label": "Gradient End Color",
+      "default": "#0f172a"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "min_height",
+      "min": 400,
+      "max": 800,
+      "step": 50,
+      "unit": "px",
+      "label": "Minimum Height",
+      "default": 600
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 800,
+      "max": 1400,
+      "step": 100,
+      "unit": "px",
+      "label": "Maximum Content Width",
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "min": 600,
+      "max": 1000,
+      "step": 50,
+      "unit": "px",
+      "label": "Content Max Width",
+      "default": 800
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "min": 20,
+      "max": 100,
+      "step": 10,
+      "unit": "px",
+      "label": "Padding",
+      "default": 40
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_badge",
+      "label": "Show Badge",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "badge_text",
+      "label": "Badge Text",
+      "default": "New Collection"
+    },
+    {
+      "type": "textarea",
+      "id": "headline",
+      "label": "Headline",
+      "default": "Empowering Motion. Engineered for Modesty. Designed for More."
+    },
+    {
+      "type": "textarea",
+      "id": "subheadline",
+      "label": "Sub-headline",
+      "default": "High-performance activewear built for the fearless — where comfort meets coverage, and innovation fuels confidence."
+    },
+    {
+      "type": "color",
+      "id": "headline_color",
+      "label": "Headline Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "subheadline_color",
+      "label": "Sub-headline Color",
+      "default": "#e2e8f0"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "headline_size",
+      "min": 32,
+      "max": 72,
+      "step": 4,
+      "unit": "px",
+      "label": "Headline Size",
+      "default": 56
+    },
+    {
+      "type": "select",
+      "id": "headline_weight",
+      "label": "Headline Weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        },
+        {
+          "value": "800",
+          "label": "Extra Bold"
+        }
+      ],
+      "default": "700"
+    },
+    {
+      "type": "range",
+      "id": "headline_line_height",
+      "min": 1,
+      "max": 1.5,
+      "step": 0.1,
+      "unit": "",
+      "label": "Headline Line Height",
+      "default": 1.1
+    },
+    {
+      "type": "range",
+      "id": "headline_letter_spacing",
+      "min": -2,
+      "max": 5,
+      "step": 0.5,
+      "unit": "px",
+      "label": "Headline Letter Spacing",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "subheadline_size",
+      "min": 16,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Sub-headline Size",
+      "default": 20
+    },
+    {
+      "type": "select",
+      "id": "subheadline_weight",
+      "label": "Sub-headline Weight",
+      "options": [
+        {
+          "value": "300",
+          "label": "Light"
+        },
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold"
+        }
+      ],
+      "default": "400"
+    },
+    {
+      "type": "range",
+      "id": "subheadline_line_height",
+      "min": 1.2,
+      "max": 1.8,
+      "step": 0.1,
+      "unit": "",
+      "label": "Sub-headline Line Height",
+      "default": 1.6
+    },
+    {
+      "type": "range",
+      "id": "content_spacing",
+      "min": 16,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "label": "Content Spacing",
+      "default": 32
+    },
+    {
+      "type": "header",
+      "content": "CTA Buttons"
+    },
+    {
+      "type": "text",
+      "id": "primary_cta_text",
+      "label": "Primary CTA Text",
+      "default": "Shop the Drop"
+    },
+    {
+      "type": "url",
+      "id": "primary_cta_link",
+      "label": "Primary CTA Link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_cta_text",
+      "label": "Secondary CTA Text",
+      "default": "Explore Tech Stack"
+    },
+    {
+      "type": "url",
+      "id": "secondary_cta_link",
+      "label": "Secondary CTA Link"
+    },
+    {
+      "type": "select",
+      "id": "cta_alignment",
+      "label": "CTA Alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "cta_spacing",
+      "min": 8,
+      "max": 32,
+      "step": 4,
+      "unit": "px",
+      "label": "CTA Spacing",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "cta_padding_y",
+      "min": 12,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "CTA Vertical Padding",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "cta_padding_x",
+      "min": 20,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "label": "CTA Horizontal Padding",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "cta_border_radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "CTA Border Radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "cta_font_size",
+      "min": 14,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "CTA Font Size",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "cta_font_weight",
+      "label": "CTA Font Weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "color",
+      "id": "primary_cta_bg",
+      "label": "Primary CTA Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "primary_cta_color",
+      "label": "Primary CTA Text Color",
+      "default": "#1e293b"
+    },
+    {
+      "type": "color",
+      "id": "primary_cta_border",
+      "label": "Primary CTA Border",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "primary_cta_hover_bg",
+      "label": "Primary CTA Hover Background",
+      "default": "#f1f5f9"
+    },
+    {
+      "type": "color",
+      "id": "primary_cta_hover_color",
+      "label": "Primary CTA Hover Text Color",
+      "default": "#1e293b"
+    },
+    {
+      "type": "color",
+      "id": "primary_cta_hover_border",
+      "label": "Primary CTA Hover Border",
+      "default": "#f1f5f9"
+    },
+    {
+      "type": "color",
+      "id": "secondary_cta_bg",
+      "label": "Secondary CTA Background",
+      "default": "transparent"
+    },
+    {
+      "type": "color",
+      "id": "secondary_cta_color",
+      "label": "Secondary CTA Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "secondary_cta_border",
+      "label": "Secondary CTA Border",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "secondary_cta_hover_bg",
+      "label": "Secondary CTA Hover Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "secondary_cta_hover_color",
+      "label": "Secondary CTA Hover Text Color",
+      "default": "#1e293b"
+    },
+    {
+      "type": "color",
+      "id": "secondary_cta_hover_border",
+      "label": "Secondary CTA Hover Border",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Badge"
+    },
+    {
+      "type": "range",
+      "id": "badge_top",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Badge Top Position",
+      "default": 20
+    },
+    {
+      "type": "select",
+      "id": "badge_position",
+      "label": "Badge Horizontal Position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "right"
+    },
+    {
+      "type": "range",
+      "id": "badge_side",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Badge Side Position",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "badge_bg",
+      "label": "Badge Background",
+      "default": "#ff6b35"
+    },
+    {
+      "type": "color",
+      "id": "badge_color",
+      "label": "Badge Text Color",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Section"
+    }
+  ]
+}
+{% endschema %}
