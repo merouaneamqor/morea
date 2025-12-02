@@ -5,21 +5,21 @@
   and strategic CTAs designed for conversion optimization.
 {% enddoc %}
 
-{% assign hero_id = block.id | replace: '_', '' | downcase %}
+{% assign hero_id = section.id | replace: '_', '' | downcase %}
 
 {% style %}
   .hero-section-{{ hero_id }} {
     position: relative;
-    min-height: {{ block.settings.min_height }}px;
-    background: linear-gradient(135deg, {{ block.settings.bg_gradient_start }}, {{ block.settings.bg_gradient_end }});
+    min-height: {{ section.settings.min_height }}px;
+    background: linear-gradient(135deg, {{ section.settings.bg_gradient_start }}, {{ section.settings.bg_gradient_end }});
     overflow: hidden;
     display: flex;
     align-items: center;
   }
 
-  {% if block.settings.background_image %}
+  {% if section.settings.background_image %}
     .hero-section-{{ hero_id }} {
-      background-image: url('{{ block.settings.background_image | image_url: width: 2000 }}'), linear-gradient(135deg, {{ block.settings.bg_gradient_start }}, {{ block.settings.bg_gradient_end }});
+      background-image: url('{{ section.settings.background_image | image_url: width: 2000 }}'), linear-gradient(135deg, {{ section.settings.bg_gradient_start }}, {{ section.settings.bg_gradient_end }});
       background-size: cover;
       background-position: center;
       background-blend-mode: overlay;
@@ -27,38 +27,38 @@
   {% endif %}
 
   .hero-container-{{ hero_id }} {
-    max-width: {{ block.settings.max_width }}px;
+    max-width: {{ section.settings.max_width }}px;
     margin: 0 auto;
-    padding: {{ block.settings.padding }}px;
+    padding: {{ section.settings.padding }}px;
     width: 100%;
     position: relative;
     z-index: 2;
   }
 
   .hero-content-{{ hero_id }} {
-    max-width: {{ block.settings.content_max_width }}px;
+    max-width: {{ section.settings.content_max_width }}px;
     margin: 0 auto;
-    text-align: {{ block.settings.text_alignment }};
+    text-align: {{ section.settings.text_alignment }};
   }
 
   .hero-headline-{{ hero_id }} {
-    font-size: {{ block.settings.headline_size }}px;
-    font-weight: {{ block.settings.headline_weight }};
-    line-height: {{ block.settings.headline_line_height }};
-    color: {{ block.settings.headline_color }};
-    margin: 0 0 {{ block.settings.content_spacing }}px 0;
-    letter-spacing: {{ block.settings.headline_letter_spacing }}px;
+    font-size: {{ section.settings.headline_size }}px;
+    font-weight: {{ section.settings.headline_weight }};
+    line-height: {{ section.settings.headline_line_height }};
+    color: {{ section.settings.headline_color }};
+    margin: 0 0 {{ section.settings.content_spacing }}px 0;
+    letter-spacing: {{ section.settings.headline_letter_spacing }}px;
     opacity: 0;
     animation: fadeInUp 0.8s ease-out 0.2s forwards;
     text-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
 
   .hero-subheadline-{{ hero_id }} {
-    font-size: {{ block.settings.subheadline_size }}px;
-    font-weight: {{ block.settings.subheadline_weight }};
-    line-height: {{ block.settings.subheadline_line_height }};
-    color: {{ block.settings.subheadline_color }};
-    margin: 0 0 {{ block.settings.content_spacing }}px 0;
+    font-size: {{ section.settings.subheadline_size }}px;
+    font-weight: {{ section.settings.subheadline_weight }};
+    line-height: {{ section.settings.subheadline_line_height }};
+    color: {{ section.settings.subheadline_color }};
+    margin: 0 0 {{ section.settings.content_spacing }}px 0;
     opacity: 0;
     animation: fadeInUp 0.8s ease-out 0.4s forwards;
     text-shadow: 0 1px 2px rgba(0,0,0,0.1);
@@ -66,8 +66,8 @@
 
   .hero-ctas-{{ hero_id }} {
     display: flex;
-    gap: {{ block.settings.cta_spacing }}px;
-    justify-content: {{ block.settings.cta_alignment }};
+    gap: {{ section.settings.cta_spacing }}px;
+    justify-content: {{ section.settings.cta_alignment }};
     flex-wrap: wrap;
     opacity: 0;
     animation: fadeInUp 0.8s ease-out 0.6s forwards;
@@ -77,23 +77,23 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: {{ block.settings.cta_padding_y }}px {{ block.settings.cta_padding_x }}px;
-    background: {{ block.settings.primary_cta_bg }};
-    color: {{ block.settings.primary_cta_color }};
+    padding: {{ section.settings.cta_padding_y }}px {{ section.settings.cta_padding_x }}px;
+    background: {{ section.settings.primary_cta_bg }};
+    color: {{ section.settings.primary_cta_color }};
     text-decoration: none;
-    border-radius: {{ block.settings.cta_border_radius }}px;
-    font-size: {{ block.settings.cta_font_size }}px;
-    font-weight: {{ block.settings.cta_font_weight }};
-    border: 2px solid {{ block.settings.primary_cta_border }};
+    border-radius: {{ section.settings.cta_border_radius }}px;
+    font-size: {{ section.settings.cta_font_size }}px;
+    font-weight: {{ section.settings.cta_font_weight }};
+    border: 2px solid {{ section.settings.primary_cta_border }};
     transition: all 0.3s ease;
     cursor: pointer;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   }
 
   .hero-cta-primary-{{ hero_id }}:hover {
-    background: {{ block.settings.primary_cta_hover_bg }};
-    color: {{ block.settings.primary_cta_hover_color }};
-    border-color: {{ block.settings.primary_cta_hover_border }};
+    background: {{ section.settings.primary_cta_hover_bg }};
+    color: {{ section.settings.primary_cta_hover_color }};
+    border-color: {{ section.settings.primary_cta_hover_border }};
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(0,0,0,0.25);
   }
@@ -102,22 +102,22 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    padding: {{ block.settings.cta_padding_y }}px {{ block.settings.cta_padding_x }}px;
-    background: {{ block.settings.secondary_cta_bg }};
-    color: {{ block.settings.secondary_cta_color }};
+    padding: {{ section.settings.cta_padding_y }}px {{ section.settings.cta_padding_x }}px;
+    background: {{ section.settings.secondary_cta_bg }};
+    color: {{ section.settings.secondary_cta_color }};
     text-decoration: none;
-    border-radius: {{ block.settings.cta_border_radius }}px;
-    font-size: {{ block.settings.cta_font_size }}px;
-    font-weight: {{ block.settings.cta_font_weight }};
-    border: 2px solid {{ block.settings.secondary_cta_border }};
+    border-radius: {{ section.settings.cta_border_radius }}px;
+    font-size: {{ section.settings.cta_font_size }}px;
+    font-weight: {{ section.settings.cta_font_weight }};
+    border: 2px solid {{ section.settings.secondary_cta_border }};
     transition: all 0.3s ease;
     cursor: pointer;
   }
 
   .hero-cta-secondary-{{ hero_id }}:hover {
-    background: {{ block.settings.secondary_cta_hover_bg }};
-    color: {{ block.settings.secondary_cta_hover_color }};
-    border-color: {{ block.settings.secondary_cta_hover_border }};
+    background: {{ section.settings.secondary_cta_hover_bg }};
+    color: {{ section.settings.secondary_cta_hover_color }};
+    border-color: {{ section.settings.secondary_cta_hover_border }};
     transform: translateY(-2px);
   }
 
@@ -137,10 +137,10 @@
 
   .hero-badge-{{ hero_id }} {
     position: absolute;
-    top: {{ block.settings.badge_top }}px;
-    {{ block.settings.badge_position }}: {{ block.settings.badge_side }}px;
-    background: {{ block.settings.badge_bg }};
-    color: {{ block.settings.badge_color }};
+    top: {{ section.settings.badge_top }}px;
+    {{ section.settings.badge_position }}: {{ section.settings.badge_side }}px;
+    background: {{ section.settings.badge_bg }};
+    color: {{ section.settings.badge_color }};
     padding: 8px 16px;
     border-radius: 20px;
     font-size: 12px;
@@ -177,19 +177,19 @@
 
   @media screen and (max-width: 749px) {
     .hero-section-{{ hero_id }} {
-      min-height: {{ block.settings.min_height | times: 0.8 | round }}px;
+      min-height: {{ section.settings.min_height | times: 0.8 | round }}px;
     }
 
     .hero-container-{{ hero_id }} {
-      padding: {{ block.settings.padding | times: 0.8 }}px;
+      padding: {{ section.settings.padding | times: 0.8 }}px;
     }
 
     .hero-headline-{{ hero_id }} {
-      font-size: {{ block.settings.headline_size | times: 0.8 }}px;
+      font-size: {{ section.settings.headline_size | times: 0.8 }}px;
     }
 
     .hero-subheadline-{{ hero_id }} {
-      font-size: {{ block.settings.subheadline_size | times: 0.9 }}px;
+      font-size: {{ section.settings.subheadline_size | times: 0.9 }}px;
     }
 
     .hero-ctas-{{ hero_id }} {
@@ -200,33 +200,33 @@
     .hero-badge-{{ hero_id }} {
       position: relative;
       top: auto;
-      {{ block.settings.badge_position }}: auto;
+      {{ section.settings.badge_position }}: auto;
       margin-bottom: 20px;
       text-align: center;
     }
   }
 {% endstyle %}
 
-<div class="hero-section-{{ hero_id }}" {{ block.shopify_attributes }}>
-  {% if block.settings.show_badge %}
-    <div class="hero-badge-{{ hero_id }}">{{ block.settings.badge_text }}</div>
+<div class="hero-section-{{ hero_id }}" >
+  {% if section.settings.show_badge %}
+    <div class="hero-badge-{{ hero_id }}">{{ section.settings.badge_text }}</div>
   {% endif %}
 
   <div class="hero-container-{{ hero_id }}">
     <div class="hero-content-{{ hero_id }}">
-      {% if block.settings.headline != blank %}
-        <h1 class="hero-headline-{{ hero_id }}">{{ block.settings.headline }}</h1>
+      {% if section.settings.headline != blank %}
+        <h1 class="hero-headline-{{ hero_id }}">{{ section.settings.headline }}</h1>
       {% endif %}
 
-      {% if block.settings.subheadline != blank %}
-        <p class="hero-subheadline-{{ hero_id }}">{{ block.settings.subheadline }}</p>
+      {% if section.settings.subheadline != blank %}
+        <p class="hero-subheadline-{{ hero_id }}">{{ section.settings.subheadline }}</p>
       {% endif %}
 
-      {% if block.settings.primary_cta_text != blank or block.settings.secondary_cta_text != blank %}
+      {% if section.settings.primary_cta_text != blank or section.settings.secondary_cta_text != blank %}
         <div class="hero-ctas-{{ hero_id }}">
-          {% if block.settings.primary_cta_text != blank %}
-            <a href="{{ block.settings.primary_cta_link }}" class="hero-cta-primary-{{ hero_id }}">
-              {{ block.settings.primary_cta_text }}
+          {% if section.settings.primary_cta_text != blank %}
+            <a href="{{ section.settings.primary_cta_link }}" class="hero-cta-primary-{{ hero_id }}">
+              {{ section.settings.primary_cta_text }}
               <svg class="hero-cta-icon-{{ hero_id }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M5 12h14"/>
                 <path d="M12 5v14"/>
@@ -234,9 +234,9 @@
             </a>
           {% endif %}
 
-          {% if block.settings.secondary_cta_text != blank %}
-            <a href="{{ block.settings.secondary_cta_link }}" class="hero-cta-secondary-{{ hero_id }}">
-              {{ block.settings.secondary_cta_text }}
+          {% if section.settings.secondary_cta_text != blank %}
+            <a href="{{ section.settings.secondary_cta_link }}" class="hero-cta-secondary-{{ hero_id }}">
+              {{ section.settings.secondary_cta_text }}
               <svg class="hero-cta-icon-{{ hero_id }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M7 13l3 3 7-7"/>
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>

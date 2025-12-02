@@ -1,0 +1,511 @@
+{% doc %}
+  Footer CTA Section Block
+
+  A compelling call-to-action section at the end of the landing page
+  designed for final conversion push with benefits and CTA.
+{% enddoc %}
+
+{% assign cta_id = section.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .footer-cta-section-{{ cta_id }} {
+    background: {{ section.settings.background_color }};
+    padding: {{ section.settings.padding }}px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  {% if section.settings.background_image %}
+    .footer-cta-section-{{ cta_id }} {
+      background-image: url('{{ section.settings.background_image | image_url: width: 2000 }}');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+  {% endif %}
+
+  .footer-cta-overlay-{{ cta_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: {{ section.settings.overlay_color }};
+    opacity: {{ section.settings.overlay_opacity | times: 0.01 }};
+    z-index: 1;
+  }
+
+  .footer-cta-container-{{ cta_id }} {
+    max-width: {{ section.settings.max_width }}px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+
+  .footer-cta-header-{{ cta_id }} {
+    margin-bottom: {{ section.settings.section_spacing }}px;
+  }
+
+  .footer-cta-title-{{ cta_id }} {
+    font-size: {{ section.settings.title_size }}px;
+    font-weight: {{ section.settings.title_weight }};
+    color: {{ section.settings.title_color }};
+    margin: 0 0 {{ section.settings.content_spacing }}px 0;
+    line-height: 1.3;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .footer-cta-subtitle-{{ cta_id }} {
+    font-size: {{ section.settings.subtitle_size }}px;
+    color: {{ section.settings.subtitle_color }};
+    margin: 0;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+
+  .footer-cta-benefits-{{ cta_id }} {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: {{ section.settings.benefits_gap }}px;
+    margin-bottom: {{ section.settings.section_spacing }}px;
+  }
+
+  .footer-cta-benefit-{{ cta_id }} {
+    background: {{ section.settings.benefit_bg }};
+    color: {{ section.settings.benefit_color }};
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: {{ section.settings.benefit_size }}px;
+    font-weight: 500;
+    border: 1px solid {{ section.settings.benefit_border }};
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  .footer-cta-button-{{ cta_id }} {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: {{ section.settings.button_padding_y }}px {{ section.settings.button_padding_x }}px;
+    background: {{ section.settings.button_bg }};
+    color: {{ section.settings.button_color }};
+    text-decoration: none;
+    border-radius: {{ section.settings.button_border_radius }}px;
+    font-size: {{ section.settings.button_font_size }}px;
+    font-weight: {{ section.settings.button_font_weight }};
+    border: 2px solid {{ section.settings.button_border }};
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+
+  .footer-cta-button-{{ cta_id }}:hover {
+    background: {{ section.settings.button_hover_bg }};
+    color: {{ section.settings.button_hover_color }};
+    border-color: {{ section.settings.button_hover_border }};
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  }
+
+  .footer-cta-icon-{{ cta_id }} {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+  }
+
+  .footer-cta-button-{{ cta_id }}:hover .footer-cta-icon-{{ cta_id }} {
+    transform: translateX(4px);
+  }
+
+  @media screen and (max-width: 749px) {
+    .footer-cta-section-{{ cta_id }} {
+      padding: {{ section.settings.padding | times: 0.8 }}px 20px;
+    }
+
+    .footer-cta-title-{{ cta_id }} {
+      font-size: {{ section.settings.title_size | times: 0.9 }}px;
+    }
+
+    .footer-cta-subtitle-{{ cta_id }} {
+      font-size: {{ section.settings.subtitle_size | times: 0.9 }}px;
+    }
+
+    .footer-cta-benefits-{{ cta_id }} {
+      gap: {{ section.settings.benefits_gap | times: 0.5 }}px;
+    }
+
+    .footer-cta-benefit-{{ cta_id }} {
+      font-size: {{ section.settings.benefit_size | times: 0.9 }}px;
+      padding: 6px 12px;
+    }
+  }
+{% endstyle %}
+
+<div class="footer-cta-section-{{ cta_id }}" >
+  {% if section.settings.show_overlay %}
+    <div class="footer-cta-overlay-{{ cta_id }}"></div>
+  {% endif %}
+
+  <div class="footer-cta-container-{{ cta_id }}">
+    <div class="footer-cta-header-{{ cta_id }}">
+      {% if section.settings.title != blank %}
+        <h2 class="footer-cta-title-{{ cta_id }}">{{ section.settings.title }}</h2>
+      {% endif %}
+
+      {% if section.settings.subtitle != blank %}
+        <p class="footer-cta-subtitle-{{ cta_id }}">{{ section.settings.subtitle }}</p>
+      {% endif %}
+    </div>
+
+    {% if section.settings.benefits %}
+      <div class="footer-cta-benefits-{{ cta_id }}">
+        {% for benefit in section.settings.benefits %}
+          <span class="footer-cta-benefit-{{ cta_id }}">{{ benefit }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    {% if section.settings.button_text != blank %}
+      <a href="{{ section.settings.button_link }}" class="footer-cta-button-{{ cta_id }}">
+        {{ section.settings.button_text }}
+        <svg class="footer-cta-icon-{{ cta_id }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 12h14"/>
+          <path d="M12 5v14"/>
+        </svg>
+      </a>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Footer CTA",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_overlay",
+      "label": "Show Overlay",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay Color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Overlay Opacity",
+      "default": 60
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Fallback Background Color",
+      "default": "#1e293b"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 600,
+      "max": 1200,
+      "step": 100,
+      "unit": "px",
+      "label": "Maximum Width",
+      "default": 900
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "min": 40,
+      "max": 120,
+      "step": 10,
+      "unit": "px",
+      "label": "Section Padding",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Ready to Elevate Your Wardrobe Stack?"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Join the future of modest performance wear. Innovate your movement, amplify your confidence, and wear the change."
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 24,
+      "max": 48,
+      "step": 2,
+      "unit": "px",
+      "label": "Title Size",
+      "default": 36
+    },
+    {
+      "type": "select",
+      "id": "title_weight",
+      "label": "Title Weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#e2e8f0"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "min": 14,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle Size",
+      "default": 16
+    },
+    {
+      "type": "header",
+      "content": "Benefits"
+    },
+    {
+      "type": "textarea",
+      "id": "benefits",
+      "label": "Benefits (JSON array)",
+      "info": "Enter benefits as a JSON array, e.g. [\"Benefit 1\", \"Benefit 2\"]",
+      "default": "[\"Modest Coverage\", \"Premium Comfort\", \"Sustainable Design\", \"Lifetime Guarantee\"]"
+    },
+    {
+      "type": "color",
+      "id": "benefit_bg",
+      "label": "Benefit Background",
+      "default": "rgba(255, 255, 255, 0.1)"
+    },
+    {
+      "type": "color",
+      "id": "benefit_color",
+      "label": "Benefit Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "benefit_border",
+      "label": "Benefit Border Color",
+      "default": "rgba(255, 255, 255, 0.2)"
+    },
+    {
+      "type": "range",
+      "id": "benefit_size",
+      "min": 12,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Benefit Font Size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "benefits_gap",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Benefits Gap",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "CTA Button"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Scale Your Fit Journey →"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "range",
+      "id": "button_padding_y",
+      "min": 12,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Button Vertical Padding",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_padding_x",
+      "min": 20,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "label": "Button Horizontal Padding",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Button Border Radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "min": 14,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Button Font Size",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "button_font_weight",
+      "label": "Button Font Weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "color",
+      "id": "button_bg",
+      "label": "Button Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button Text Color",
+      "default": "#1e293b"
+    },
+    {
+      "type": "color",
+      "id": "button_border",
+      "label": "Button Border Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_bg",
+      "label": "Button Hover Background",
+      "default": "#f1f5f9"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_color",
+      "label": "Button Hover Text Color",
+      "default": "#1e293b"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_border",
+      "label": "Button Hover Border Color",
+      "default": "#f1f5f9"
+    },
+    {
+      "type": "range",
+      "id": "content_spacing",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Content Spacing",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "section_spacing",
+      "min": 20,
+      "max": 60,
+      "step": 4,
+      "unit": "px",
+      "label": "Section Spacing",
+      "default": 32
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer CTA"
+    }
+  ]
+}
+{% endschema %}

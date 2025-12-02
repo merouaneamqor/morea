@@ -4,7 +4,7 @@
       "type": "haya-hero",
       "settings": {
         "label": "Our Featured",
-        "heading": "performance<br>can too.",
+        "heading": "performance\ncan too.",
         "button_label": "Shop Activewear",
         "button_link": "shopify://collections/activewear",
         "background_color": "#e8e4df",

@@ -119,22 +119,30 @@
     {%- if section.settings.label != blank -%}
       <p class="haya-hero__label">{{ section.settings.label }}</p>
     {%- endif -%}
-    
+
     <h1 class="haya-hero__heading">
-      {{ section.settings.heading }}
+      {{ section.settings.heading | newline_to_br }}
     </h1>
-    
+
     {%- if section.settings.button_label != blank -%}
       <a href="{{ section.settings.button_link }}" class="haya-hero__button">
         {{ section.settings.button_label }}
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
           <line x1="5" y1="12" x2="19" y2="12"></line>
           <polyline points="12 5 19 12 12 19"></polyline>
         </svg>
       </a>
     {%- endif -%}
   </div>
-  
+
   <div class="haya-hero__media">
     {%- if section.settings.image != blank -%}
       {{
@@ -167,10 +175,10 @@
       "default": "Our Featured"
     },
     {
-      "type": "inline_richtext",
+      "type": "textarea",
       "id": "heading",
       "label": "Heading",
-      "default": "performance<br>can too."
+      "default": "performance can too."
     },
     {
       "type": "text",
@@ -224,4 +232,3 @@
   ]
 }
 {% endschema %}
-

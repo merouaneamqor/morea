@@ -5,35 +5,35 @@
   with icons, titles, and descriptions for conversion focus.
 {% enddoc %}
 
-{% assign grid_id = block.id | replace: '_', '' | downcase %}
+{% assign grid_id = section.id | replace: '_', '' | downcase %}
 
 {% style %}
   .value-prop-grid-{{ grid_id }} {
-    background: {{ block.settings.background_color }};
-    padding: {{ block.settings.padding }}px 20px;
+    background: {{ section.settings.background_color }};
+    padding: {{ section.settings.padding }}px 20px;
   }
 
   .value-prop-container-{{ grid_id }} {
-    max-width: {{ block.settings.max_width }}px;
+    max-width: {{ section.settings.max_width }}px;
     margin: 0 auto;
   }
 
   .value-prop-header-{{ grid_id }} {
     text-align: center;
-    margin-bottom: {{ block.settings.section_spacing }}px;
+    margin-bottom: {{ section.settings.section_spacing }}px;
   }
 
   .value-prop-title-{{ grid_id }} {
-    font-size: {{ block.settings.title_size }}px;
-    font-weight: {{ block.settings.title_weight }};
-    color: {{ block.settings.title_color }};
-    margin: 0 0 {{ block.settings.content_spacing }}px 0;
+    font-size: {{ section.settings.title_size }}px;
+    font-weight: {{ section.settings.title_weight }};
+    color: {{ section.settings.title_color }};
+    margin: 0 0 {{ section.settings.content_spacing }}px 0;
     line-height: 1.3;
   }
 
   .value-prop-subtitle-{{ grid_id }} {
-    font-size: {{ block.settings.subtitle_size }}px;
-    color: {{ block.settings.subtitle_color }};
+    font-size: {{ section.settings.subtitle_size }}px;
+    color: {{ section.settings.subtitle_color }};
     margin: 0;
     line-height: 1.6;
     max-width: 700px;
@@ -42,16 +42,16 @@
 
   .value-prop-grid-{{ grid_id }} {
     display: grid;
-    grid-template-columns: repeat({{ block.settings.columns_desktop }}, 1fr);
-    gap: {{ block.settings.grid_gap }}px;
-    margin-top: {{ block.settings.section_spacing }}px;
+    grid-template-columns: repeat({{ section.settings.columns_desktop }}, 1fr);
+    gap: {{ section.settings.grid_gap }}px;
+    margin-top: {{ section.settings.section_spacing }}px;
   }
 
   .value-prop-item-{{ grid_id }} {
-    background: {{ block.settings.card_background }};
-    border-radius: {{ block.settings.card_border_radius }}px;
-    padding: {{ block.settings.card_padding }}px;
-    border: {{ block.settings.card_border_width }}px solid {{ block.settings.card_border_color }};
+    background: {{ section.settings.card_background }};
+    border-radius: {{ section.settings.card_border_radius }}px;
+    padding: {{ section.settings.card_padding }}px;
+    border: {{ section.settings.card_border_width }}px solid {{ section.settings.card_border_color }};
     text-align: center;
     transition: all 0.3s ease;
     position: relative;
@@ -66,20 +66,20 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, {{ block.settings.card_gradient_start }}, {{ block.settings.card_gradient_end }});
+    background: linear-gradient(135deg, {{ section.settings.card_gradient_start }}, {{ section.settings.card_gradient_end }});
     opacity: 0;
     transition: opacity 0.3s ease;
     z-index: 1;
   }
 
-  {% if block.settings.card_hover_gradient %}
+  {% if section.settings.card_hover_gradient %}
     .value-prop-item-{{ grid_id }}:hover::before {
       opacity: 0.05;
     }
   {% endif %}
 
   .value-prop-item-{{ grid_id }}:hover {
-    transform: translateY(-{{ block.settings.card_hover_lift }}px);
+    transform: translateY(-{{ section.settings.card_hover_lift }}px);
     box-shadow: 0 12px 40px rgba(0,0,0,0.1);
   }
 
@@ -92,10 +92,10 @@
   }
 
   .value-prop-icon-container-{{ grid_id }} {
-    width: {{ block.settings.icon_size }}px;
-    height: {{ block.settings.icon_size }}px;
-    margin: 0 auto {{ block.settings.content_spacing }}px;
-    background: {{ block.settings.icon_background }};
+    width: {{ section.settings.icon_size }}px;
+    height: {{ section.settings.icon_size }}px;
+    margin: 0 auto {{ section.settings.content_spacing }}px;
+    background: {{ section.settings.icon_background }};
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -111,7 +111,7 @@
     left: 50%;
     width: 0;
     height: 0;
-    background: {{ block.settings.icon_hover_background }};
+    background: {{ section.settings.icon_hover_background }};
     border-radius: 50%;
     transition: all 0.4s ease;
     transform: translate(-50%, -50%);
@@ -119,14 +119,14 @@
   }
 
   .value-prop-item-{{ grid_id }}:hover .value-prop-icon-container-{{ grid_id }}::before {
-    width: {{ block.settings.icon_size | times: 2 }}px;
-    height: {{ block.settings.icon_size | times: 2 }}px;
+    width: {{ section.settings.icon_size | times: 2 }}px;
+    height: {{ section.settings.icon_size | times: 2 }}px;
   }
 
   .value-prop-icon-{{ grid_id }} {
-    width: {{ block.settings.icon_size | times: 0.5 }}px;
-    height: {{ block.settings.icon_size | times: 0.5 }}px;
-    color: {{ block.settings.icon_color }};
+    width: {{ section.settings.icon_size | times: 0.5 }}px;
+    height: {{ section.settings.icon_size | times: 0.5 }}px;
+    color: {{ section.settings.icon_color }};
     transition: all 0.3s ease;
     z-index: 2;
     position: relative;
@@ -134,29 +134,29 @@
 
   .value-prop-item-{{ grid_id }}:hover .value-prop-icon-{{ grid_id }} {
     transform: scale(1.1);
-    {% if block.settings.icon_hover_color != blank %}
-      color: {{ block.settings.icon_hover_color }};
+    {% if section.settings.icon_hover_color != blank %}
+      color: {{ section.settings.icon_hover_color }};
     {% endif %}
   }
 
   .value-prop-item-title-{{ grid_id }} {
-    font-size: {{ block.settings.item_title_size }}px;
-    font-weight: {{ block.settings.item_title_weight }};
-    color: {{ block.settings.item_title_color }};
-    margin: 0 0 {{ block.settings.content_spacing | times: 0.5 }}px 0;
+    font-size: {{ section.settings.item_title_size }}px;
+    font-weight: {{ section.settings.item_title_weight }};
+    color: {{ section.settings.item_title_color }};
+    margin: 0 0 {{ section.settings.content_spacing | times: 0.5 }}px 0;
     line-height: 1.3;
     transition: color 0.3s ease;
   }
 
   .value-prop-item-{{ grid_id }}:hover .value-prop-item-title-{{ grid_id }} {
-    {% if block.settings.item_title_hover_color != blank %}
-      color: {{ block.settings.item_title_hover_color }};
+    {% if section.settings.item_title_hover_color != blank %}
+      color: {{ section.settings.item_title_hover_color }};
     {% endif %}
   }
 
   .value-prop-item-description-{{ grid_id }} {
-    font-size: {{ block.settings.item_description_size }}px;
-    color: {{ block.settings.item_description_color }};
+    font-size: {{ section.settings.item_description_size }}px;
+    color: {{ section.settings.item_description_color }};
     line-height: 1.6;
     margin: 0;
     flex: 1;
@@ -164,8 +164,8 @@
   }
 
   .value-prop-item-{{ grid_id }}:hover .value-prop-item-description-{{ grid_id }} {
-    {% if block.settings.item_description_hover_color != blank %}
-      color: {{ block.settings.item_description_hover_color }};
+    {% if section.settings.item_description_hover_color != blank %}
+      color: {{ section.settings.item_description_hover_color }};
     {% endif %}
   }
 
@@ -173,8 +173,8 @@
     position: absolute;
     top: 12px;
     right: 12px;
-    background: {{ block.settings.accent_bg }};
-    color: {{ block.settings.accent_color }};
+    background: {{ section.settings.accent_bg }};
+    color: {{ section.settings.accent_color }};
     padding: 4px 8px;
     border-radius: 12px;
     font-size: 11px;
@@ -185,42 +185,42 @@
 
   @media screen and (max-width: 749px) {
     .value-prop-grid-{{ grid_id }} {
-      grid-template-columns: repeat({{ block.settings.columns_mobile }}, 1fr);
-      gap: {{ block.settings.grid_gap | times: 0.5 }}px;
+      grid-template-columns: repeat({{ section.settings.columns_mobile }}, 1fr);
+      gap: {{ section.settings.grid_gap | times: 0.5 }}px;
     }
 
     .value-prop-grid-{{ grid_id }} {
-      padding: {{ block.settings.padding | times: 0.8 }}px 20px;
+      padding: {{ section.settings.padding | times: 0.8 }}px 20px;
     }
 
     .value-prop-item-{{ grid_id }} {
-      padding: {{ block.settings.card_padding | times: 0.8 }}px;
+      padding: {{ section.settings.card_padding | times: 0.8 }}px;
     }
 
     .value-prop-title-{{ grid_id }} {
-      font-size: {{ block.settings.title_size | times: 0.9 }}px;
+      font-size: {{ section.settings.title_size | times: 0.9 }}px;
     }
 
     .value-prop-item-title-{{ grid_id }} {
-      font-size: {{ block.settings.item_title_size | times: 0.9 }}px;
+      font-size: {{ section.settings.item_title_size | times: 0.9 }}px;
     }
   }
 {% endstyle %}
 
-<div class="value-prop-grid-{{ grid_id }}" {{ block.shopify_attributes }}>
+<div class="value-prop-grid-{{ grid_id }}" >
   <div class="value-prop-container-{{ grid_id }}">
     <div class="value-prop-header-{{ grid_id }}">
-      {% if block.settings.title != blank %}
-        <h2 class="value-prop-title-{{ grid_id }}">{{ block.settings.title }}</h2>
+      {% if section.settings.title != blank %}
+        <h2 class="value-prop-title-{{ grid_id }}">{{ section.settings.title }}</h2>
       {% endif %}
 
-      {% if block.settings.subtitle != blank %}
-        <p class="value-prop-subtitle-{{ grid_id }}">{{ block.settings.subtitle }}</p>
+      {% if section.settings.subtitle != blank %}
+        <p class="value-prop-subtitle-{{ grid_id }}">{{ section.settings.subtitle }}</p>
       {% endif %}
     </div>
 
     <div class="value-prop-grid-{{ grid_id }}">
-      {% for prop in block.settings.propositions %}
+      {% for prop in section.settings.propositions %}
         <div class="value-prop-item-{{ grid_id }}">
           {% if prop.accent != blank %}
             <div class="value-prop-accent-{{ grid_id }}">{{ prop.accent }}</div>
@@ -268,7 +268,7 @@
                       {% endcase %}
                   </svg>
                 {% else %}
-                  <div class="value-prop-icon-{{ grid_id }}" style="width: 24px; height: 24px; background: {{ block.settings.icon_color }}; border-radius: 2px;"></div>
+                  <div class="value-prop-icon-{{ grid_id }}" style="width: 24px; height: 24px; background: {{ section.settings.icon_color }}; border-radius: 2px;"></div>
               {% endcase %}
             </div>
 
