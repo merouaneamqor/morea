@@ -289,7 +289,7 @@ input[type="submit"],
 }
 
 /* HAYA-style section spacing */
-.section + .section {
+.section+.section {
     margin-top: 0;
 }
 
@@ -448,18 +448,294 @@ select {
     0% {
         background-position: -1000px 0;
     }
+
     100% {
         background-position: 1000px 0;
     }
 }
 
 .media--loading-shimmer {
-    background: linear-gradient(
-        90deg,
-        #f0f0f0 0%,
-        #f8f8f8 50%,
-        #f0f0f0 100%
-    );
+    background: linear-gradient(90deg,
+            #f0f0f0 0%,
+            #f8f8f8 50%,
+            #f0f0f0 100%);
     background-size: 1000px 100%;
     animation: shimmer 2s infinite;
+}
+
+/* ================================================
+   HAYA-STYLE COLLECTION PAGE
+   ================================================ */
+
+/* Collection page title */
+.collection__title .title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    margin-bottom: 2rem;
+}
+
+/* Product grid container */
+.collection .product-grid {
+    gap: 2rem;
+}
+
+@media screen and (min-width: 990px) {
+    .collection .product-grid {
+        gap: 2.5rem;
+    }
+}
+
+/* Product cards - HAYA style */
+.collection .card-wrapper,
+.product-grid .card-wrapper {
+    background: #f5f5f5;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.collection .card,
+.product-grid .card {
+    background: transparent;
+}
+
+.collection .card--standard .card__inner,
+.product-grid .card--standard .card__inner {
+    border: none;
+    border-radius: 16px;
+    background: #f5f5f5;
+}
+
+.collection .card--standard .card__inner::after,
+.product-grid .card--standard .card__inner::after {
+    display: none;
+}
+
+/* Image container */
+.collection .card__media,
+.product-grid .card__media {
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.collection .card .media,
+.product-grid .card .media {
+    border-radius: 16px;
+}
+
+.collection .card .media img,
+.product-grid .card .media img {
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+/* Card content area */
+.collection .card__content,
+.product-grid .card__content {
+    padding: 1rem 0.5rem 0.5rem;
+    background: transparent;
+}
+
+.collection .card__information,
+.product-grid .card__information {
+    padding: 0;
+}
+
+/* Product title */
+.collection .card__heading,
+.product-grid .card__heading {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0;
+    margin-bottom: 0.5rem;
+}
+
+.collection .card__heading a,
+.product-grid .card__heading a {
+    color: #1a1a1a;
+}
+
+/* Price */
+.collection .price,
+.product-grid .price {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #1a1a1a;
+}
+
+.collection .price-item,
+.product-grid .price-item {
+    font-weight: 500;
+}
+
+/* Remove card hover lift for cleaner look */
+.collection .card-wrapper:hover .card__inner,
+.product-grid .card-wrapper:hover .card__inner {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Keep subtle image zoom on hover */
+.collection .card-wrapper:hover .media img,
+.product-grid .card-wrapper:hover .media img {
+    transform: scale(1.03);
+}
+
+/* Facets/Filters styling */
+.facets-wrapper {
+    padding-bottom: 2rem;
+    margin-bottom: 1rem;
+}
+
+.facets__summary {
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: 0;
+    padding: 0.8rem 1.2rem;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    background: white;
+}
+
+.facets__summary:hover {
+    border-color: #1a1a1a;
+}
+
+.facets__label {
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: 0;
+    color: #666;
+    margin-right: 0.5rem;
+}
+
+.facet-filters__label {
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: 0;
+    color: #666;
+}
+
+/* Sort dropdown */
+.facet-filters .select {
+    border-radius: 8px;
+    border: 1px solid #e5e5e5;
+}
+
+.facet-filters .select:hover {
+    border-color: #1a1a1a;
+}
+
+.facet-filters__sort {
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: 0;
+    padding: 0.8rem 3rem 0.8rem 1.2rem;
+}
+
+/* Product count */
+.product-count__text {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #666;
+}
+
+/* Filter button spacing */
+.facets__disclosure {
+    margin-right: 0.75rem;
+}
+
+/* Badge styling */
+.collection .badge,
+.product-grid .badge {
+    background: #1a1a1a;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+}
+
+/* Mobile collection styling */
+@media screen and (max-width: 749px) {
+    .collection .product-grid {
+        gap: 1rem;
+    }
+
+    .collection .card-wrapper {
+        border-radius: 12px;
+    }
+
+    .collection .card__media,
+    .collection .card .media,
+    .collection .card .media img,
+    .collection .card--standard .card__inner {
+        border-radius: 12px;
+    }
+
+    .collection .card__heading {
+        font-size: 1.2rem;
+    }
+
+    .collection .price,
+    .collection .price-item {
+        font-size: 1.2rem;
+    }
+
+    .collection .card__content {
+        padding: 0.75rem 0.25rem 0.25rem;
+    }
+
+    /* Mobile filter bar */
+    .mobile-facets__wrapper {
+        padding: 1rem;
+    }
+
+    .mobile-facets__open {
+        font-size: 1.3rem;
+        font-weight: 500;
+    }
+}
+
+/* Collection page header/banner */
+.main-collection-banner {
+    padding-bottom: 2rem;
+}
+
+.collection-hero__title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+}
+
+/* Pagination styling */
+.pagination {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e5e5e5;
+}
+
+.pagination__list {
+    gap: 0.5rem;
+}
+
+.pagination__item {
+    min-width: 4rem;
+    height: 4rem;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.pagination__item--current {
+    background: #1a1a1a;
+    color: white;
+    border-color: #1a1a1a;
+}
+
+.pagination__item:hover:not(.pagination__item--current) {
+    border-color: #1a1a1a;
 }
