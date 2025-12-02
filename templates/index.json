@@ -16,7 +16,7 @@
         "heading": "performance\ncan too.",
         "button_label": "Shop Activewear",
         "button_link": "shopify://collections/الطقم-الرياضي-المحتشم",
-        "image": "shopify://shop_images/Gemini_Generated_Image_wjylg6wjylg6wjyl.jpg",
+        "image": "shopify://shop_images/Studio_Product_Photo_-_Muted_Dusty_Rose_Pink.jpg",
         "background_color": "#1a1a1a",
         "text_color": "#ffffff",
         "button_background": "#ffffff",
@@ -56,7 +56,9 @@
         "background_color": "#f5f5f5",
         "text_color": "#1a1a1a",
         "button_background": "#1a1a1a",
-        "button_text_color": "#ffffff"
+        "button_text_color": "#ffffff",
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
     "mission": {
@@ -114,7 +116,9 @@
         "background_color": "#e8e4df",
         "text_color": "#1a1a1a",
         "button_background": "#1a1a1a",
-        "button_text_color": "#ffffff"
+        "button_text_color": "#ffffff",
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
     "faq": {
