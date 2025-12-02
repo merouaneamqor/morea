@@ -137,22 +137,22 @@
         "faq_2": {
           "type": "question",
           "settings": {
-            "question": "What is the Fabric like?",
-            "answer": "<p>All of our images can be zoomed in on desktop which can help you get a better understanding of the texture. You can also scroll down and see the fabric icon which describes the key characteristics of the fabric for the particular item you're viewing.</p>"
+            "question": "Comment est le tissu?",
+            "answer": "<p>Toutes nos images peuvent être agrandies sur ordinateur pour mieux voir la texture. Vous pouvez également faire défiler vers le bas pour voir l'icône de tissu qui décrit les caractéristiques clés du tissu pour chaque article.</p>"
           }
         },
         "faq_3": {
           "type": "question",
           "settings": {
-            "question": "What if it's not the right fit for me?",
-            "answer": "<p><strong>It's recommended to size up for a baggier & longer fit.</strong></p><p>If you're still unsure on which size to get after looking at the size chart, feel free to message us on socials or email <strong>support@morea.com</strong> and we can help.</p><p>In any case, Exchanges for UK Orders are free (excluding items on sale). For International orders you will be responsible for the cost of shipping the item back.</p>"
+            "question": "Et si la taille ne me convient pas?",
+            "answer": "<p><strong>Il est recommandé de prendre une taille au-dessus pour un fit plus ample.</strong></p><p>Si vous n'êtes pas sûr de votre taille après avoir consulté le guide des tailles, n'hésitez pas à nous contacter sur les réseaux sociaux ou par email à <strong>support@morea.ma</strong>.</p><p>Les échanges sont gratuits partout au Maroc!</p>"
           }
         },
         "faq_4": {
           "type": "question",
           "settings": {
-            "question": "What is your return policy?",
-            "answer": "<p>We offer a 14-day return policy. Items must be unworn, unwashed, and in original condition with tags attached.</p><p>For exchanges, we'll cover the shipping cost for UK orders.</p>"
+            "question": "Quelle est votre politique de retour?",
+            "answer": "<p>Nous offrons une politique de retour de 14 jours. Les articles doivent être non portés, non lavés et dans leur état d'origine avec les étiquettes.</p><p>Les échanges sont gratuits partout au Maroc!</p>"
           }
         }
       },

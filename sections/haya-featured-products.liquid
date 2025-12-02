@@ -141,60 +141,66 @@
 
   .haya-product-card__title {
     font-family: var(--font-heading-family);
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin: 0 0 0.5rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0 0 0.75rem;
     color: {{ section.settings.text_color }};
-    line-height: 1.3;
+    line-height: 1.25;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   .haya-product-card__price {
     display: flex;
-    align-items: center;
-    gap: 0.75rem;
+    align-items: baseline;
+    gap: 0.5rem;
     margin-bottom: 1rem;
+    flex-wrap: wrap;
   }
 
   .haya-product-card__price-current {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 600;
     color: {{ section.settings.text_color }};
   }
 
   .haya-product-card__price-compare {
-    font-size: 1.3rem;
-    color: {{ section.settings.text_color }};
-    opacity: 0.5;
+    font-size: 1.4rem;
+    color: #999;
     text-decoration: line-through;
   }
 
   .haya-product-card__swatches {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 6px;
     margin-bottom: 1.25rem;
     flex-wrap: wrap;
   }
 
   .haya-product-card__swatch {
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
-    border: 2px solid transparent;
-    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.15), inset 0 0 0 1px rgba(0,0,0,0.08);
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
   .haya-product-card__swatch:hover {
-    transform: scale(1.15);
+    transform: scale(1.2);
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.3), inset 0 0 0 1px rgba(0,0,0,0.08);
   }
 
   .haya-product-card__colors-count {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    font-weight: 500;
     color: {{ section.settings.text_color }};
-    opacity: 0.6;
-    margin-left: 0.25rem;
+    opacity: 0.7;
+    margin-left: 4px;
   }
 
   .haya-product-card__button {
@@ -301,8 +307,8 @@
                 {%- endif -%}
               </div>
               
-              {%- assign color_option = product.options_by_name['Color'] | default: product.options_by_name['Colour'] -%}
-              {%- if color_option.values.size > 0 -%}
+              {%- assign color_option = product.options_by_name['Color'] | default: product.options_by_name['Colour'] | default: product.options_by_name['Couleur'] | default: product.options_by_name['couleur'] -%}
+              {%- if color_option and color_option.values.size > 0 -%}
                 <div class="haya-product-card__swatches">
                   {%- for color in color_option.values limit: 6 -%}
                     {%- assign color_handle = color | handleize -%}
@@ -341,21 +347,49 @@
                         {%- assign swatch_color = '#008080' -%}
                       {%- when 'burgundy', 'maroon' -%}
                         {%- assign swatch_color = '#800020' -%}
+                      {%- when 'camel', 'tan', 'taupe' -%}
+                        {%- assign swatch_color = '#c19a6b' -%}
+                      {%- when 'rose', 'dusty-rose', 'blush' -%}
+                        {%- assign swatch_color = '#d4a5a5' -%}
+                      {%- when 'coral' -%}
+                        {%- assign swatch_color = '#ff7f50' -%}
+                      {%- when 'mint' -%}
+                        {%- assign swatch_color = '#98ff98' -%}
+                      {%- when 'lavender' -%}
+                        {%- assign swatch_color = '#e6e6fa' -%}
+                      {%- when 'noir' -%}
+                        {%- assign swatch_color = '#1a1a1a' -%}
+                      {%- when 'blanc' -%}
+                        {%- assign swatch_color = '#ffffff' -%}
+                      {%- when 'gris' -%}
+                        {%- assign swatch_color = '#808080' -%}
+                      {%- when 'bleu' -%}
+                        {%- assign swatch_color = '#4169e1' -%}
+                      {%- when 'rouge' -%}
+                        {%- assign swatch_color = '#dc143c' -%}
+                      {%- when 'vert' -%}
+                        {%- assign swatch_color = '#228b22' -%}
+                      {%- when 'rose' -%}
+                        {%- assign swatch_color = '#ffc0cb' -%}
+                      {%- when 'marron' -%}
+                        {%- assign swatch_color = '#8b4513' -%}
+                      {%- when 'bordeaux' -%}
+                        {%- assign swatch_color = '#800020' -%}
                       {%- else -%}
                         {%- assign swatch_color = '#cccccc' -%}
                     {%- endcase -%}
                     <span class="haya-product-card__swatch" style="background: {{ swatch_color }};" title="{{ color }}"></span>
                   {%- endfor -%}
                   {%- if color_option.values.size > 6 -%}
-                    <span class="haya-product-card__colors-count">{{ color_option.values.size }}+ colors</span>
+                    <span class="haya-product-card__colors-count">{{ color_option.values.size }}+ couleurs</span>
                   {%- elsif color_option.values.size > 1 -%}
-                    <span class="haya-product-card__colors-count">{{ color_option.values.size }} colors</span>
+                    <span class="haya-product-card__colors-count">{{ color_option.values.size }} couleurs</span>
                   {%- endif -%}
                 </div>
               {%- endif -%}
               
               <a href="{{ product.url }}" class="haya-product-card__button">
-                Shop Now
+                Acheter
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
@@ -369,7 +403,7 @@
       {%- if section.settings.show_view_all -%}
         <div class="haya-products__view-all">
           <a href="{{ section.settings.collection.url }}" class="haya-products__view-all-btn">
-            View All Products
+            Voir Tous les Produits
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
@@ -396,7 +430,7 @@
                 <span class="haya-product-card__colors-count">3 colors</span>
               </div>
               <a href="#" class="haya-product-card__button">
-                Shop Now
+                Acheter
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <line x1="5" y1="12" x2="19" y2="12"></line>
                   <polyline points="12 5 19 12 12 19"></polyline>
