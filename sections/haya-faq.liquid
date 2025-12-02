@@ -1,0 +1,291 @@
+{{ 'component-accordion.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .haya-faq {
+    padding: {{ section.settings.padding_top | times: 0.75 }}px 0 {{ section.settings.padding_bottom | times: 0.75 }}px;
+    background: {{ section.settings.background_color }};
+  }
+
+  @media screen and (min-width: 750px) {
+    .haya-faq {
+      padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .haya-faq__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .haya-faq__title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: {{ section.settings.text_color }};
+    margin: 0 0 0.75rem;
+  }
+
+  .haya-faq__subtitle {
+    font-size: 1.4rem;
+    color: {{ section.settings.text_color }};
+    opacity: 0.7;
+    margin: 0;
+  }
+
+  .haya-faq__container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .haya-faq__item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .haya-faq__item:first-child {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .haya-faq__item details {
+    margin: 0;
+  }
+
+  .haya-faq__item summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+    cursor: pointer;
+    list-style: none;
+    gap: 1rem;
+  }
+
+  .haya-faq__item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .haya-faq__item summary::marker {
+    display: none;
+  }
+
+  .haya-faq__question {
+    font-family: var(--font-heading-family);
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: {{ section.settings.text_color }};
+    margin: 0;
+    text-align: left;
+  }
+
+  .haya-faq__icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    position: relative;
+    color: {{ section.settings.text_color }};
+  }
+
+  .haya-faq__icon::before,
+  .haya-faq__icon::after {
+    content: '';
+    position: absolute;
+    background: currentColor;
+    transition: transform 0.3s ease;
+  }
+
+  .haya-faq__icon::before {
+    width: 100%;
+    height: 2px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  .haya-faq__icon::after {
+    width: 2px;
+    height: 100%;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+  }
+
+  .haya-faq__item details[open] .haya-faq__icon::after {
+    transform: translateX(-50%) rotate(90deg);
+    opacity: 0;
+  }
+
+  .haya-faq__answer {
+    padding: 0 0 1.5rem;
+    font-size: 1.4rem;
+    line-height: 1.7;
+    color: {{ section.settings.text_color }};
+    opacity: 0.8;
+  }
+
+  .haya-faq__answer p {
+    margin: 0 0 1rem;
+  }
+
+  .haya-faq__answer p:last-child {
+    margin-bottom: 0;
+  }
+
+  .haya-faq__answer strong {
+    font-weight: 700;
+  }
+{%- endstyle -%}
+
+<section class="haya-faq{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="page-width">
+    <div class="haya-faq__header">
+      {%- if section.settings.title != blank -%}
+        <h2 class="haya-faq__title">{{ section.settings.title }}</h2>
+      {%- endif -%}
+      {%- if section.settings.subtitle != blank -%}
+        <p class="haya-faq__subtitle">{{ section.settings.subtitle }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="haya-faq__container">
+      {%- for block in section.blocks -%}
+        <div class="haya-faq__item" {{ block.shopify_attributes }}>
+          <details{% if forloop.first and section.settings.open_first %} open{% endif %}>
+            <summary>
+              <h3 class="haya-faq__question">{{ block.settings.question }}</h3>
+              <span class="haya-faq__icon"></span>
+            </summary>
+            <div class="haya-faq__answer rte">
+              {{ block.settings.answer }}
+            </div>
+          </details>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "HAYA FAQ",
+  "tag": "section",
+  "class": "section-haya-faq",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Got Questions?"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "We've got answers."
+    },
+    {
+      "type": "checkbox",
+      "id": "open_first",
+      "label": "Open first question by default",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "How long does shipping take?"
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>🇬🇧 UK: 2 - 4 Working Days</p><p>🇪🇺 EU: 5 - 15 Working Days</p><p>🇺🇸 USA: 4 - 8 Working Days</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "HAYA FAQ",
+      "blocks": [
+        {
+          "type": "question",
+          "settings": {
+            "question": "How long does shipping take?",
+            "answer": "<p>🇬🇧 UK: 2 - 4 Working Days</p><p>🇪🇺 EU: 5 - 15 Working Days</p><p>🇺🇸 USA: 4 - 8 Working Days</p><p>🇨🇦 CA: 5 - 15 Working Days</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "What is the Fabric like?",
+            "answer": "<p>All of our images can be zoomed in on desktop which can help you get a better understanding of the texture. You can also scroll down and see the fabric icon which describes the key characteristics of the fabric for the particular item you're viewing.</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "What if it's not the right fit for me?",
+            "answer": "<p><strong>It's recommended to size up for a baggier & longer fit.</strong></p><p>If you're still unsure on which size to get after looking at the size chart, feel free to message us on socials or email <strong>support@morea.com</strong> and we can help.</p><p>In any case, Exchanges for UK Orders are free (excluding items on sale).</p>"
+          }
+        },
+        {
+          "type": "question",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "<p>We offer a 14-day return policy. Items must be unworn, unwashed, and in original condition with tags attached.</p><p>For exchanges, we'll cover the shipping cost for UK orders.</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

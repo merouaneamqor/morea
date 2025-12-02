@@ -1,292 +1,148 @@
 {
   "sections": {
-    "hero": {
-      "type": "slideshow",
+    "haya_hero": {
+      "type": "haya-hero",
       "settings": {
-        "layout": "full_bleed",
-        "slide_height": "large",
-        "slider_visual": "dots",
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "image_behavior": "ambient",
-        "show_text_below": false,
-        "accessibility_info": "Home hero showcasing sport activewear and streetwear"
-      },
-      "blocks": {
-        "slide_1": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/2P2A0043.webp",
-            "image_overlay_opacity": 30,
-            "heading": "Own Your Training.",
-            "heading_size": "h0",
-            "subheading": "Sport activewear engineered to move.",
-            "button_label": "Shop Activewear",
-            "link": "shopify://collections/activewear",
-            "button_style_secondary": false,
-            "show_text_box": true,
-            "box_align": "bottom-center",
-            "text_alignment": "center",
-            "text_alignment_mobile": "center",
-            "color_scheme": "scheme-3"
-          }
-        },
-        "slide_2": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/1988_2700_2xs-xl_19.jpg",
-            "image_overlay_opacity": 30,
-            "heading": "Street. Studio. Anywhere.",
-            "heading_size": "h0",
-            "subheading": "Streetwear with performance DNA.",
-            "button_label": "Shop Streetwear",
-            "link": "shopify://collections/streetwear",
-            "button_style_secondary": true,
-            "show_text_box": true,
-            "box_align": "bottom-center",
-            "text_alignment": "center",
-            "text_alignment_mobile": "center",
-            "color_scheme": "scheme-3"
-          }
-        }
-      },
-      "block_order": [
-        "slide_1",
-        "slide_2"
-      ]
+        "label": "Our Featured",
+        "heading": "performance<br>can too.",
+        "button_label": "Shop Activewear",
+        "button_link": "shopify://collections/activewear",
+        "background_color": "#e8e4df",
+        "text_color": "#1a1a1a",
+        "button_background": "#1a1a1a",
+        "button_text_color": "#ffffff"
+      }
     },
-    "shop_the_edit": {
-      "type": "collection-list",
+    "featured_products": {
+      "type": "haya-featured-products",
       "settings": {
-        "title": "Men / Women / Accessories",
-        "heading_size": "h1",
-        "image_ratio": "portrait",
-        "columns_desktop": 3,
-        "color_scheme": "scheme-1",
-        "show_view_all": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 28,
-        "padding_bottom": 28
-      },
-      "blocks": {
-        "col_activewear": {
-          "type": "featured_collection",
-          "settings": { "collection": "activewear" }
-        },
-        "col_streetwear": {
-          "type": "featured_collection",
-          "settings": { "collection": "streetwear" }
-        },
-        "col_modest": {
-          "type": "featured_collection",
-          "settings": { "collection": "الطقم-الرياضي-المحتشم" }
-        }
-      },
-      "block_order": [
-        "col_activewear",
-        "col_streetwear",
-        "col_modest"
-      ]
-    },
-    "latest_drops": {
-      "type": "featured-collection",
-      "settings": {
+        "title": "Best Seller",
+        "subtitle": "",
         "collection": "all",
-        "products_to_show": 8,
-        "title": "Featured Products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
+        "products_to_show": 4,
         "columns_desktop": 4,
-        "enable_desktop_slider": true,
-        "full_width": false,
         "show_view_all": true,
-        "view_all_style": "solid",
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "standard",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 28,
-        "padding_bottom": 36
+        "background_color": "#ffffff",
+        "text_color": "#1a1a1a",
+        "button_background": "#1a1a1a",
+        "button_text_color": "#ffffff",
+        "button_hover_background": "#333333",
+        "badge_background": "#dc143c",
+        "badge_text_color": "#ffffff",
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
     "brand_story": {
-      "type": "rich-text",
+      "type": "haya-brand-story",
       "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-1",
-        "full_width": false,
-        "padding_top": 24,
-        "padding_bottom": 24
+        "heading": "No more makeshift activewear.",
+        "text": "<p>Finally, we made apparel with all your needs in mind <em>(someone had to)</em>.</p><p>From functionality & fabric selection, to balancing performance with style.</p><p>No more compromise.</p>",
+        "button_label": "Shop Activewear",
+        "button_link": "shopify://collections/activewear",
+        "image_position": "last",
+        "text_alignment": "left",
+        "background_color": "#f5f5f5",
+        "text_color": "#1a1a1a",
+        "button_background": "#1a1a1a",
+        "button_text_color": "#ffffff"
+      }
+    },
+    "mission": {
+      "type": "haya-mission",
+      "settings": {
+        "title": "The Morea Mission",
+        "background_color": "#ffffff",
+        "text_color": "#1a1a1a",
+        "icon_background": "#fce4ec",
+        "icon_color": "#1a1a1a",
+        "padding_top": 60,
+        "padding_bottom": 60
       },
       "blocks": {
-        "story_heading": {
-          "type": "heading",
+        "mission_1": {
+          "type": "column",
           "settings": {
-            "heading": "Performance starts with mindset.",
-            "heading_size": "h2"
+            "icon": "checkmark",
+            "title": "Premium Quality",
+            "text": "We exist to serve and inspire individuals through fitness. We actually care."
           }
         },
-        "story_text": {
-          "type": "text",
+        "mission_2": {
+          "type": "column",
           "settings": {
-            "text": "<p>Designed to move with you — every step, every rep.<\/p>"
+            "icon": "heart",
+            "title": "Made For You",
+            "text": "Our pieces are designed with our community. This brand is made specifically for you!"
+          }
+        },
+        "mission_3": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "title": "Free Shipping",
+            "text": "Spend over £59 (or €100 if you're in the EU) and the shipping is on us!"
           }
         }
       },
-      "block_order": ["story_heading", "story_text"]
+      "block_order": ["mission_1", "mission_2", "mission_3"]
     },
-    "best_sellers": {
-      "type": "featured-collection",
+    "community": {
+      "type": "haya-community",
       "settings": {
-        "collection": "all",
-        "products_to_show": 6,
-        "title": "Best Sellers",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 3,
-        "enable_desktop_slider": true,
-        "full_width": false,
-        "show_view_all": false,
-        "view_all_style": "solid",
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "standard",
-        "columns_mobile": "2",
-        "swipe_on_mobile": true,
-        "padding_top": 24,
-        "padding_bottom": 28
-      }
-    },
-    "benefits": {
-      "type": "multicolumn",
-      "settings": {
-        "title": "Built For Motion",
-        "heading_size": "h2",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "button_label": "",
+        "title": "Morea Athletes",
+        "text": "<p>A community of athletes with strong values. Here to support & inspire each other through fitness.</p><p>Everyday we show the world you don't need to compromise your values to achieve your goals.</p>",
+        "button_label": "Join The Community",
         "button_link": "",
-        "columns_desktop": 3,
-        "column_alignment": "left",
-        "background_style": "primary",
-        "color_scheme": "scheme-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 24,
-        "padding_bottom": 24
-      },
-      "blocks": {
-        "b1": {
-          "type": "column",
-          "settings": {
-            "title": "Fast Shipping",
-            "text": "",
-            "link_label": "Shop Activewear",
-            "link": "shopify://collections/activewear"
-          }
-        },
-        "b2": {
-          "type": "column",
-          "settings": {
-            "title": "Easy Returns",
-            "text": "",
-            "link_label": "Shop Streetwear",
-            "link": "shopify://collections/streetwear"
-          }
-        },
-        "b3": {
-          "type": "column",
-          "settings": {
-            "title": "Built to Last",
-            "text": "",
-            "link_label": "Shop All",
-            "link": "shopify://collections/all"
-          }
-        }
-      },
-      "block_order": ["b1", "b2", "b3"]
-    },
-    "shipping_returns": {
-      "type": "rich-text",
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 24,
-        "padding_bottom": 24
-      },
-      "blocks": {
-        "rt_heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "SHIPPING & RETURNS",
-            "heading_size": "h2"
-          }
-        },
-        "rt_caption": {
-          "type": "caption",
-          "settings": {
-            "caption": "–",
-            "text_style": "caption-with-letter-spacing",
-            "text_size": "medium"
-          }
-        },
-        "rt_text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Items are in stock ready to ship next day, we are not Amazon but some people think so because of how fast we deliver.<\/p><p>Worldwide Shipping Time: 2-5 business days<\/p><p>Exchange or return your items within 14 days of receiving them at your doorstep.<\/p>"
-          }
-        }
-      },
-      "block_order": ["rt_heading", "rt_caption", "rt_text"]
-    },
-    "ugc": {
-      "type": "instagram-testimonials",
-      "settings": {
-        "heading": "What They’re Saying",
-        "subheading": "Real conversations from the Morea community.",
-        "columns_desktop": "3",
-        "color_scheme": "scheme-1",
-        "padding_top": 24,
-        "padding_bottom": 24
-      },
-      "blocks": {
-        "shot1": { "type": "screenshot", "settings": { } },
-        "shot2": { "type": "screenshot", "settings": { } },
-        "shot3": { "type": "screenshot", "settings": { } }
-      },
-      "block_order": ["shot1", "shot2", "shot3"]
-    },
-    "motion_video": {
-      "type": "video",
-      "settings": {
-        "heading": "In Motion",
-        "heading_size": "h1",
-        "enable_video_looping": false,
-        "video": "shopify://files/videos/70f9ef1227524fadae6850fc1180f1b1.HD-1080p-7.2Mbps-49293321.mp4",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "scheme-1",
-        "padding_top": 24,
-        "padding_bottom": 24
+        "image_position": "1",
+        "background_color": "#e8e4df",
+        "text_color": "#1a1a1a",
+        "button_background": "#1a1a1a",
+        "button_text_color": "#ffffff"
       }
+    },
+    "faq": {
+      "type": "haya-faq",
+      "settings": {
+        "title": "Got Questions?",
+        "subtitle": "We've got answers.",
+        "open_first": false,
+        "background_color": "#ffffff",
+        "text_color": "#1a1a1a",
+        "padding_top": 60,
+        "padding_bottom": 60
+      },
+      "blocks": {
+        "faq_1": {
+          "type": "question",
+          "settings": {
+            "question": "How long does shipping take?",
+            "answer": "<p>🇬🇧 UK: 2 - 4 Working Days</p><p>🇪🇺 EU: 5 - 15 Working Days</p><p>🇺🇸 USA: 4 - 8 Working Days</p><p>🇨🇦 CA: 5 - 15 Working Days</p>"
+          }
+        },
+        "faq_2": {
+          "type": "question",
+          "settings": {
+            "question": "What is the Fabric like?",
+            "answer": "<p>All of our images can be zoomed in on desktop which can help you get a better understanding of the texture. You can also scroll down and see the fabric icon which describes the key characteristics of the fabric for the particular item you're viewing.</p>"
+          }
+        },
+        "faq_3": {
+          "type": "question",
+          "settings": {
+            "question": "What if it's not the right fit for me?",
+            "answer": "<p><strong>It's recommended to size up for a baggier & longer fit.</strong></p><p>If you're still unsure on which size to get after looking at the size chart, feel free to message us on socials or email <strong>support@morea.com</strong> and we can help.</p><p>In any case, Exchanges for UK Orders are free (excluding items on sale). For International orders you will be responsible for the cost of shipping the item back.</p>"
+          }
+        },
+        "faq_4": {
+          "type": "question",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "<p>We offer a 14-day return policy. Items must be unworn, unwashed, and in original condition with tags attached.</p><p>For exchanges, we'll cover the shipping cost for UK orders.</p>"
+          }
+        }
+      },
+      "block_order": ["faq_1", "faq_2", "faq_3", "faq_4"]
     },
     "newsletter": {
       "type": "newsletter",
@@ -307,7 +163,7 @@
         "nl_copy": {
           "type": "paragraph",
           "settings": {
-            "text": "<p>New drops, limited runs, and training edits—straight to your inbox.<\/p>"
+            "text": "<p>New drops, limited runs, and training edits—straight to your inbox.</p>"
           }
         },
         "nl_form": { "type": "email_form" }
@@ -316,13 +172,12 @@
     }
   },
   "order": [
-    "hero",
-    "shop_the_edit",
-    "latest_drops",
+    "haya_hero",
+    "featured_products",
     "brand_story",
-    "motion_video",
-    "best_sellers",
-    "ugc",
+    "mission",
+    "community",
+    "faq",
     "newsletter"
   ]
 }

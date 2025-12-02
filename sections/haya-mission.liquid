@@ -1,0 +1,323 @@
+{%- style -%}
+  .haya-mission {
+    padding: {{ section.settings.padding_top | times: 0.75 }}px 0 {{ section.settings.padding_bottom | times: 0.75 }}px;
+    background: {{ section.settings.background_color }};
+  }
+
+  @media screen and (min-width: 750px) {
+    .haya-mission {
+      padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .haya-mission__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .haya-mission__header {
+      margin-bottom: 4rem;
+    }
+  }
+
+  .haya-mission__title {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: {{ section.settings.text_color }};
+    margin: 0;
+  }
+
+  .haya-mission__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .haya-mission__grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+    }
+  }
+
+  .haya-mission__item {
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .haya-mission__icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: {{ section.settings.icon_background }};
+    border-radius: 50%;
+  }
+
+  .haya-mission__icon svg {
+    width: 32px;
+    height: 32px;
+    color: {{ section.settings.icon_color }};
+  }
+
+  .haya-mission__icon img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+
+  .haya-mission__item-title {
+    font-family: var(--font-heading-family);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: {{ section.settings.text_color }};
+    margin: 0 0 0.75rem;
+  }
+
+  .haya-mission__item-text {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: {{ section.settings.text_color }};
+    opacity: 0.7;
+    margin: 0;
+  }
+{%- endstyle -%}
+
+<section class="haya-mission{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="page-width">
+    {%- if section.settings.title != blank -%}
+      <div class="haya-mission__header">
+        <h2 class="haya-mission__title">{{ section.settings.title }}</h2>
+      </div>
+    {%- endif -%}
+
+    <div class="haya-mission__grid">
+      {%- for block in section.blocks -%}
+        <div class="haya-mission__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          {{ block.shopify_attributes }}
+          {% if settings.animations_reveal_on_scroll %}
+            style="--animation-order: {{ forloop.index }};"
+          {% endif %}
+        >
+          <div class="haya-mission__icon">
+            {%- if block.settings.image != blank -%}
+              {{ block.settings.image | image_url: width: 80 | image_tag }}
+            {%- else -%}
+              {%- case block.settings.icon -%}
+                {%- when 'checkmark' -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+                {%- when 'heart' -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                  </svg>
+                {%- when 'truck' -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="1" y="3" width="15" height="13"></rect>
+                    <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                    <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                    <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                  </svg>
+                {%- when 'star' -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                  </svg>
+                {%- when 'users' -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="9" cy="7" r="4"></circle>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                  </svg>
+                {%- when 'shield' -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    <polyline points="9 12 11 14 15 10"></polyline>
+                  </svg>
+                {%- else -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                  </svg>
+              {%- endcase -%}
+            {%- endif -%}
+          </div>
+          
+          {%- if block.settings.title != blank -%}
+            <h3 class="haya-mission__item-title">{{ block.settings.title }}</h3>
+          {%- endif -%}
+          
+          {%- if block.settings.text != blank -%}
+            <p class="haya-mission__item-text">{{ block.settings.text }}</p>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "HAYA Mission",
+  "tag": "section",
+  "class": "section-haya-mission",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "The Morea Mission"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "icon_background",
+      "label": "Icon background",
+      "default": "#fce4ec"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Column",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "options": [
+            {
+              "value": "checkmark",
+              "label": "Checkmark"
+            },
+            {
+              "value": "heart",
+              "label": "Heart"
+            },
+            {
+              "value": "truck",
+              "label": "Truck"
+            },
+            {
+              "value": "star",
+              "label": "Star"
+            },
+            {
+              "value": "users",
+              "label": "Users"
+            },
+            {
+              "value": "shield",
+              "label": "Shield"
+            }
+          ],
+          "default": "checkmark"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Custom icon image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Feature Title"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Description of this feature or benefit."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "HAYA Mission",
+      "blocks": [
+        {
+          "type": "column",
+          "settings": {
+            "icon": "checkmark",
+            "title": "Premium Quality",
+            "text": "We actually care about quality and performance."
+          }
+        },
+        {
+          "type": "column",
+          "settings": {
+            "icon": "heart",
+            "title": "Made For You",
+            "text": "Designed with our community. This brand is made specifically for you!"
+          }
+        },
+        {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "title": "Free Shipping",
+            "text": "Spend over £59 and the shipping is on us!"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

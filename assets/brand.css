@@ -1,17 +1,23 @@
-/* Brand layer: modern streetwear-inspired overrides for Dawn */
+/* Brand layer: HAYA-inspired modern activewear aesthetic for Dawn */
 
 /* Typography */
 :root {
-    --brand-letter-spacing-wide: 0.06em;
+    --brand-letter-spacing-wide: 0.04em;
+    --haya-beige: #e8e4df;
+    --haya-dark: #1a1a1a;
+    --haya-light-gray: #f5f5f5;
+    --haya-pink-accent: #fce4ec;
 }
 
 body,
 .rte,
 .rte p {
     letter-spacing: var(--brand-letter-spacing-wide);
+    font-size: 1.5rem;
+    line-height: 1.7;
 }
 
-/* Headings: bold, tighter line-height */
+/* Headings: clean, modern, lowercase-friendly */
 .h0,
 .h1,
 .h2,
@@ -19,9 +25,9 @@ body,
 h1,
 h2,
 h3 {
-    font-weight: 800;
-    line-height: 1.05;
-    letter-spacing: 0.01em;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
     text-transform: none;
 }
 
@@ -286,4 +292,180 @@ input[type="submit"],
 .pagination__list .pagination__item--current,
 .pagination__list .pagination__item:hover {
     border-color: rgb(var(--color-foreground));
+}
+
+/* HAYA-style section spacing */
+.section + .section {
+    margin-top: 0;
+}
+
+/* Newsletter section HAYA styling */
+.newsletter {
+    background: var(--haya-beige, #e8e4df);
+}
+
+.newsletter .newsletter__heading {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.newsletter-form__field-wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.newsletter-form__field-wrapper .field__input {
+    border-radius: 50px;
+    padding: 1.2rem 1.5rem;
+    font-size: 1.4rem;
+}
+
+.newsletter-form__button {
+    border-radius: 50px;
+    padding: 1.2rem 2rem;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0.02em;
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Better focus states */
+:focus-visible {
+    outline: 2px solid var(--haya-dark, #1a1a1a);
+    outline-offset: 3px;
+}
+
+/* Image hover effects - subtle zoom */
+.card__media img,
+.media img {
+    transition: transform 0.4s ease;
+}
+
+.card-wrapper:hover .card__media img {
+    transform: scale(1.03);
+}
+
+/* Rounded buttons throughout */
+.button {
+    border-radius: 50px;
+    padding: 1.2rem 2.4rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    transition: all 0.2s ease;
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.button--secondary {
+    border-radius: 50px;
+    border-width: 2px;
+}
+
+/* Collection page cards - cleaner look */
+.card--standard .card__content {
+    padding: 1.25rem 0;
+}
+
+.card__heading {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* Price styling */
+.price-item {
+    font-weight: 600;
+}
+
+.price--on-sale .price-item--regular {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+/* Sale badge */
+.badge {
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* Form inputs - rounded */
+.field__input,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+    border-radius: 8px;
+    font-size: 1.4rem;
+}
+
+/* Quantity selector styling */
+.quantity__button {
+    border-radius: 50%;
+}
+
+/* Quick add overlay */
+.quick-add-modal__content-info {
+    border-radius: 16px;
+}
+
+/* Cart drawer refinements */
+.cart-drawer {
+    border-radius: 0;
+}
+
+.cart-drawer__overlay {
+    backdrop-filter: blur(4px);
+}
+
+/* Footer styling */
+.footer {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+}
+
+.footer__content-top {
+    padding-bottom: 3rem;
+}
+
+/* Social icons - subtle */
+.footer__list-social .list-social__link {
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}
+
+.footer__list-social .list-social__link:hover {
+    opacity: 1;
+}
+
+/* Loading shimmer effect for lazy images */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.media--loading-shimmer {
+    background: linear-gradient(
+        90deg,
+        #f0f0f0 0%,
+        #f8f8f8 50%,
+        #f0f0f0 100%
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
 }

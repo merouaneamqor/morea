@@ -1,0 +1,245 @@
+{%- style -%}
+  .haya-brand-story {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    background: {{ section.settings.background_color }};
+  }
+
+  @media screen and (min-width: 750px) {
+    .haya-brand-story {
+      grid-template-columns: 1fr 1fr;
+    }
+    
+    .haya-brand-story--image-first .haya-brand-story__content {
+      order: 2;
+    }
+    
+    .haya-brand-story--image-first .haya-brand-story__media {
+      order: 1;
+    }
+  }
+
+  .haya-brand-story__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 2rem;
+    text-align: {{ section.settings.text_alignment }};
+  }
+
+  @media screen and (min-width: 750px) {
+    .haya-brand-story__content {
+      padding: 5rem 4rem;
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .haya-brand-story__content {
+      padding: 6rem 5rem;
+    }
+  }
+
+  .haya-brand-story__heading {
+    font-family: var(--font-heading-family);
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: {{ section.settings.text_color }};
+    margin: 0 0 1.5rem;
+  }
+
+  .haya-brand-story__text {
+    font-size: 1.5rem;
+    line-height: 1.7;
+    color: {{ section.settings.text_color }};
+    opacity: 0.8;
+    margin: 0 0 2rem;
+  }
+
+  .haya-brand-story__text em {
+    font-style: italic;
+    opacity: 0.7;
+  }
+
+  .haya-brand-story__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: {{ section.settings.button_background }};
+    color: {{ section.settings.button_text_color }};
+    padding: 1.2rem 2.4rem;
+    border-radius: 50px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: fit-content;
+    {%- if section.settings.text_alignment == 'center' -%}
+    margin: 0 auto;
+    {%- endif -%}
+  }
+
+  .haya-brand-story__button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .haya-brand-story__media {
+    position: relative;
+    min-height: 400px;
+    overflow: hidden;
+  }
+
+  @media screen and (min-width: 750px) {
+    .haya-brand-story__media {
+      min-height: 500px;
+    }
+  }
+
+  .haya-brand-story__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+{%- endstyle -%}
+
+<section class="haya-brand-story{% if section.settings.image_position == 'first' %} haya-brand-story--image-first{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+  <div class="haya-brand-story__content">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="haya-brand-story__heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+    
+    {%- if section.settings.text != blank -%}
+      <div class="haya-brand-story__text rte">{{ section.settings.text }}</div>
+    {%- endif -%}
+    
+    {%- if section.settings.button_label != blank -%}
+      <a href="{{ section.settings.button_link }}" class="haya-brand-story__button">
+        {{ section.settings.button_label }}
+      </a>
+    {%- endif -%}
+  </div>
+  
+  <div class="haya-brand-story__media">
+    {%- if section.settings.image != blank -%}
+      {{
+        section.settings.image
+        | image_url: width: 1200
+        | image_tag:
+          sizes: '(min-width: 750px) 50vw, 100vw',
+          widths: '375, 550, 750, 1000, 1200'
+      }}
+    {%- else -%}
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "HAYA Brand Story",
+  "tag": "section",
+  "class": "section-haya-brand-story",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "No more makeshift activewear."
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>Finally, we made apparel with all your needs in mind <em>(someone had to)</em>.</p><p>From functionality & fabric selection, to balancing performance with style.</p><p>No more compromise.</p>"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "Shop Activewear"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "options": [
+        {
+          "value": "first",
+          "label": "Left"
+        },
+        {
+          "value": "last",
+          "label": "Right"
+        }
+      ],
+      "default": "last"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Button background",
+      "default": "#1a1a1a"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "HAYA Brand Story"
+    }
+  ]
+}
+{% endschema %}
+
