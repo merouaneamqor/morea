@@ -93,12 +93,6 @@ input[type="submit"],
     background: rgb(var(--color-foreground));
 }
 
-/* Header icons */
-.header__icons .svg-wrapper {
-    width: 22px;
-    height: 22px;
-}
-
 #cart-icon-bubble .cart-count-bubble {
     background: rgb(var(--color-foreground));
     color: rgb(var(--color-background));
