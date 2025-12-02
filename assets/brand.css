@@ -476,110 +476,143 @@ select {
 }
 
 /* Product grid container */
-.collection .product-grid {
-    gap: 2rem;
+.collection .product-grid,
+#product-grid.product-grid {
+    gap: 1.5rem !important;
 }
 
 @media screen and (min-width: 990px) {
-    .collection .product-grid {
-        gap: 2.5rem;
+
+    .collection .product-grid,
+    #product-grid.product-grid {
+        gap: 2rem !important;
     }
 }
 
-/* Product cards - HAYA style */
-.collection .card-wrapper,
-.product-grid .card-wrapper {
-    background: #f5f5f5;
-    border-radius: 16px;
-    overflow: hidden;
+/* Product cards - HAYA style with stronger selectors */
+.product-grid .grid__item .card-wrapper,
+.collection .grid__item .card-wrapper,
+#product-grid .card-wrapper {
+    background: #f0f0f0 !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
 }
 
+.product-grid .card,
 .collection .card,
-.product-grid .card {
-    background: transparent;
+#product-grid .card {
+    background: transparent !important;
 }
 
+.product-grid .card--standard .card__inner,
 .collection .card--standard .card__inner,
-.product-grid .card--standard .card__inner {
-    border: none;
-    border-radius: 16px;
-    background: #f5f5f5;
+#product-grid .card--standard .card__inner,
+.product-grid .card--card,
+.collection .card--card,
+#product-grid .card--card {
+    border: none !important;
+    border-radius: 16px !important;
+    background: #f0f0f0 !important;
+    box-shadow: none !important;
 }
 
-.collection .card--standard .card__inner::after,
-.product-grid .card--standard .card__inner::after {
-    display: none;
+.product-grid .card__inner::after,
+.collection .card__inner::after,
+#product-grid .card__inner::after {
+    display: none !important;
 }
 
-/* Image container */
+/* Image container - rounded corners */
+.product-grid .card__media,
 .collection .card__media,
-.product-grid .card__media {
-    border-radius: 16px;
-    overflow: hidden;
+#product-grid .card__media {
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    margin: 0 !important;
 }
 
+.product-grid .card .media,
 .collection .card .media,
-.product-grid .card .media {
-    border-radius: 16px;
+#product-grid .card .media {
+    border-radius: 16px !important;
 }
 
+.product-grid .card .media img,
 .collection .card .media img,
-.product-grid .card .media img {
-    border-radius: 16px;
-    object-fit: cover;
+#product-grid .card .media img {
+    border-radius: 16px !important;
+    object-fit: cover !important;
 }
 
-/* Card content area */
+/* Card content area - centered text like HAYA */
+.product-grid .card__content,
 .collection .card__content,
-.product-grid .card__content {
-    padding: 1rem 0.5rem 0.5rem;
-    background: transparent;
+#product-grid .card__content {
+    padding: 1.2rem 0.75rem 0.75rem !important;
+    background: transparent !important;
+    text-align: center !important;
 }
 
+.product-grid .card__information,
 .collection .card__information,
-.product-grid .card__information {
-    padding: 0;
+#product-grid .card__information {
+    padding: 0 !important;
+    text-align: center !important;
 }
 
-/* Product title */
+.product-grid .card-information,
+.collection .card-information,
+#product-grid .card-information {
+    text-align: center !important;
+}
+
+/* Product title - centered */
+.product-grid .card__heading,
 .collection .card__heading,
-.product-grid .card__heading {
-    font-size: 1.4rem;
-    font-weight: 500;
-    line-height: 1.4;
-    letter-spacing: 0;
-    margin-bottom: 0.5rem;
+#product-grid .card__heading {
+    font-size: 1.4rem !important;
+    font-weight: 500 !important;
+    line-height: 1.4 !important;
+    letter-spacing: 0 !important;
+    margin-bottom: 0.5rem !important;
+    text-align: center !important;
 }
 
+.product-grid .card__heading a,
 .collection .card__heading a,
-.product-grid .card__heading a {
-    color: #1a1a1a;
+#product-grid .card__heading a {
+    color: #1a1a1a !important;
 }
 
-/* Price */
+/* Price - centered */
+.product-grid .price,
 .collection .price,
-.product-grid .price {
-    font-size: 1.4rem;
-    font-weight: 500;
-    color: #1a1a1a;
+#product-grid .price {
+    font-size: 1.4rem !important;
+    font-weight: 500 !important;
+    color: #1a1a1a !important;
+    justify-content: center !important;
 }
 
+.product-grid .price-item,
 .collection .price-item,
-.product-grid .price-item {
-    font-weight: 500;
+#product-grid .price-item {
+    font-weight: 500 !important;
 }
 
 /* Remove card hover lift for cleaner look */
+.product-grid .card-wrapper:hover .card__inner,
 .collection .card-wrapper:hover .card__inner,
-.product-grid .card-wrapper:hover .card__inner {
-    transform: none;
-    box-shadow: none;
+#product-grid .card-wrapper:hover .card__inner {
+    transform: none !important;
+    box-shadow: none !important;
 }
 
 /* Keep subtle image zoom on hover */
+.product-grid .card-wrapper:hover .media img,
 .collection .card-wrapper:hover .media img,
-.product-grid .card-wrapper:hover .media img {
-    transform: scale(1.03);
+#product-grid .card-wrapper:hover .media img {
+    transform: scale(1.03) !important;
 }
 
 /* Facets/Filters styling */
@@ -648,46 +681,68 @@ select {
     margin-right: 0.75rem;
 }
 
-/* Badge styling */
+/* Badge styling - teal like HAYA "NEW" badge */
+.product-grid .badge,
 .collection .badge,
-.product-grid .badge {
-    background: #1a1a1a;
-    color: white;
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    padding: 0.4rem 0.8rem;
-    border-radius: 4px;
+#product-grid .badge {
+    background: #0d9488 !important;
+    color: white !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.05em !important;
+    padding: 0.4rem 0.8rem !important;
+    border-radius: 4px !important;
+    text-transform: uppercase !important;
 }
 
 /* Mobile collection styling */
 @media screen and (max-width: 749px) {
-    .collection .product-grid {
-        gap: 1rem;
+
+    .collection .product-grid,
+    #product-grid.product-grid {
+        gap: 1rem !important;
     }
 
-    .collection .card-wrapper {
-        border-radius: 12px;
+    .product-grid .grid__item .card-wrapper,
+    .collection .grid__item .card-wrapper,
+    #product-grid .card-wrapper {
+        border-radius: 12px !important;
     }
 
+    .product-grid .card__media,
     .collection .card__media,
+    #product-grid .card__media,
+    .product-grid .card .media,
     .collection .card .media,
+    #product-grid .card .media,
+    .product-grid .card .media img,
     .collection .card .media img,
-    .collection .card--standard .card__inner {
-        border-radius: 12px;
+    #product-grid .card .media img,
+    .product-grid .card--standard .card__inner,
+    .collection .card--standard .card__inner,
+    #product-grid .card--standard .card__inner {
+        border-radius: 12px !important;
     }
 
-    .collection .card__heading {
-        font-size: 1.2rem;
+    .product-grid .card__heading,
+    .collection .card__heading,
+    #product-grid .card__heading {
+        font-size: 1.2rem !important;
     }
 
+    .product-grid .price,
     .collection .price,
-    .collection .price-item {
-        font-size: 1.2rem;
+    #product-grid .price,
+    .product-grid .price-item,
+    .collection .price-item,
+    #product-grid .price-item {
+        font-size: 1.2rem !important;
     }
 
-    .collection .card__content {
-        padding: 0.75rem 0.25rem 0.25rem;
+    .product-grid .card__content,
+    .collection .card__content,
+    #product-grid .card__content {
+        padding: 0.75rem 0.25rem 0.25rem !important;
     }
 
     /* Mobile filter bar */
