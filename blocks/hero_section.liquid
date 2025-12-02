@@ -26,17 +26,6 @@
     }
   {% endif %}
 
-  {% if block.settings.background_image_mobile %}
-    @media screen and (max-width: 749px) {
-      .hero-section-{{ hero_id }} {
-        background-image: url('{{ block.settings.background_image_mobile | image_url: width: 800 }}'), linear-gradient(135deg, {{ block.settings.bg_gradient_start }}, {{ block.settings.bg_gradient_end }});
-        background-size: cover;
-        background-position: center;
-        background-blend-mode: overlay;
-      }
-    }
-  {% endif %}
-
   .hero-container-{{ hero_id }} {
     max-width: {{ block.settings.max_width }}px;
     margin: 0 auto;
@@ -306,12 +295,7 @@
     {
       "type": "image_picker",
       "id": "background_image",
-      "label": "Background Image (Desktop)"
-    },
-    {
-      "type": "image_picker",
-      "id": "background_image_mobile",
-      "label": "Background Image (Mobile)"
+      "label": "Background Image"
     },
     {
       "type": "color",
