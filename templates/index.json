@@ -80,8 +80,8 @@
           "type": "column",
           "settings": {
             "icon": "truck",
-            "title": "Free Shipping + COD",
-            "text": "Free shipping all over Morocco! Pay cash on delivery - no online payment needed."
+            "title": "Livraison Gratuite + COD",
+            "text": "Livraison gratuite partout au Maroc! Paiement à la livraison disponible."
           }
         }
       },
@@ -117,14 +117,14 @@
           "type": "question",
           "settings": {
             "question": "How long does shipping take?",
-            "answer": "<p>🇲🇦 <strong>Morocco: 2 - 5 Working Days (FREE SHIPPING!)</strong></p><p>We offer <strong>Cash on Delivery (COD)</strong> - pay when you receive your order!</p><p>🇬🇧 UK: 2 - 4 Working Days</p><p>🇪🇺 EU: 5 - 15 Working Days</p><p>🇺🇸 USA: 4 - 8 Working Days</p>"
+            "answer": "<p>🇲🇦 <strong>Livraison gratuite partout au Maroc!</strong></p><p>📦 Délai de livraison: 2 - 5 jours ouvrables</p><p>💵 Paiement à la livraison (COD) disponible!</p>"
           }
         },
         "faq_cod": {
           "type": "question",
           "settings": {
-            "question": "How does Cash on Delivery (COD) work?",
-            "answer": "<p><strong>It's simple!</strong></p><p>1. Place your order online</p><p>2. We ship your items</p><p>3. Pay cash when the delivery arrives at your door</p><p>No credit card or online payment needed! 💵</p>"
+            "question": "Comment fonctionne le paiement à la livraison (COD)?",
+            "answer": "<p><strong>C'est simple!</strong></p><p>1. Passez votre commande en ligne</p><p>2. Nous expédions vos articles</p><p>3. Payez en espèces à la réception</p><p>Pas besoin de carte bancaire! 💵</p>"
           }
         },
         "faq_2": {
