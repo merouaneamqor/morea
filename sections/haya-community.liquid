@@ -1,29 +1,50 @@
 {%- style -%}
   .haya-community {
-    display: grid;
-    grid-template-columns: 1fr;
+    padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
     background: {{ section.settings.background_color }};
-    min-height: 500px;
   }
 
-  @media screen and (min-width: 750px) {
-    .haya-community {
+  .haya-community__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  @media screen and (min-width: 990px) {
+    .haya-community__container {
       grid-template-columns: 1fr 1fr;
-      min-height: 600px;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .haya-community--image-first .haya-community__content {
+      order: 2;
+    }
+
+    .haya-community--image-first .haya-community__media {
+      order: 1;
     }
   }
 
   .haya-community__media {
     position: relative;
-    min-height: 350px;
+    border-radius: 16px;
     overflow: hidden;
-    order: 1;
+    aspect-ratio: 4/5;
   }
 
   @media screen and (min-width: 750px) {
     .haya-community__media {
-      min-height: 100%;
-      order: {{ section.settings.image_position }};
+      aspect-ratio: 3/4;
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .haya-community__media {
+      aspect-ratio: 1/1;
     }
   }
 
@@ -36,39 +57,38 @@
   .haya-community__content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 4rem 2rem;
-    order: 2;
-  }
-
-  @media screen and (min-width: 750px) {
-    .haya-community__content {
-      padding: 5rem 4rem;
-      order: {{ section.settings.content_position }};
-    }
   }
 
   @media screen and (min-width: 990px) {
     .haya-community__content {
-      padding: 6rem 5rem;
+      padding: 2rem 0;
     }
   }
 
   .haya-community__title {
     font-family: var(--font-heading-family);
-    font-size: clamp(2.4rem, 5vw, 3.5rem);
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
     font-weight: 700;
-    line-height: 1.1;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
     color: {{ section.settings.text_color }};
     margin: 0 0 1.5rem;
   }
 
   .haya-community__text {
     font-size: 1.5rem;
-    line-height: 1.7;
+    line-height: 1.8;
     color: {{ section.settings.text_color }};
-    opacity: 0.8;
+    opacity: 0.75;
     margin: 0 0 2rem;
+  }
+
+  .haya-community__text p {
+    margin: 0 0 1rem;
+  }
+
+  .haya-community__text p:last-child {
+    margin-bottom: 0;
   }
 
   .haya-community__button {
@@ -84,43 +104,66 @@
     text-decoration: none;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     width: fit-content;
+    margin-top: 0.5rem;
   }
 
   .haya-community__button:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   }
+
+  .haya-community__button svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.2s ease;
+  }
+
+  .haya-community__button:hover svg {
+    transform: translateX(4px);
+  }
 {%- endstyle -%}
 
 <section class="haya-community{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-  <div class="haya-community__media">
-    {%- if section.settings.image != blank -%}
-      {{
-        section.settings.image
-        | image_url: width: 1200
-        | image_tag:
-          sizes: '(min-width: 750px) 50vw, 100vw',
-          widths: '375, 550, 750, 1000, 1200'
-      }}
-    {%- else -%}
-      {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
-    {%- endif -%}
-  </div>
-  
-  <div class="haya-community__content">
-    {%- if section.settings.title != blank -%}
-      <h2 class="haya-community__title">{{ section.settings.title }}</h2>
-    {%- endif -%}
-    
-    {%- if section.settings.text != blank -%}
-      <div class="haya-community__text rte">{{ section.settings.text }}</div>
-    {%- endif -%}
-    
-    {%- if section.settings.button_label != blank -%}
-      <a href="{{ section.settings.button_link }}" class="haya-community__button">
-        {{ section.settings.button_label }}
-      </a>
-    {%- endif -%}
+  <div class="haya-community__container{% if section.settings.image_position == 'first' %} haya-community--image-first{% endif %}">
+    <div class="haya-community__media">
+      {%- if section.settings.image != blank -%}
+        {{
+          section.settings.image
+          | image_url: width: 1200
+          | image_tag: sizes: '(min-width: 990px) 50vw, 100vw', widths: '375, 550, 750, 1000, 1200'
+        }}
+      {%- else -%}
+        {{ 'collection-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      {%- endif -%}
+    </div>
+
+    <div class="haya-community__content">
+      {%- if section.settings.title != blank -%}
+        <h2 class="haya-community__title">{{ section.settings.title }}</h2>
+      {%- endif -%}
+
+      {%- if section.settings.text != blank -%}
+        <div class="haya-community__text rte">{{ section.settings.text }}</div>
+      {%- endif -%}
+
+      {%- if section.settings.button_label != blank -%}
+        <a href="{{ section.settings.button_link }}" class="haya-community__button">
+          {{ section.settings.button_label }}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      {%- endif -%}
+    </div>
   </div>
 </section>
 
@@ -167,15 +210,15 @@
       "label": "Image position (desktop)",
       "options": [
         {
-          "value": "1",
+          "value": "first",
           "label": "Left"
         },
         {
-          "value": "2",
+          "value": "last",
           "label": "Right"
         }
       ],
-      "default": "1"
+      "default": "first"
     },
     {
       "type": "header",
@@ -185,7 +228,7 @@
       "type": "color",
       "id": "background_color",
       "label": "Background color",
-      "default": "#e8e4df"
+      "default": "#f5f5f5"
     },
     {
       "type": "color",
@@ -204,6 +247,30 @@
       "id": "button_text_color",
       "label": "Button text color",
       "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 60
     }
   ],
   "presets": [
@@ -213,4 +280,3 @@
   ]
 }
 {% endschema %}
-
