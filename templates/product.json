@@ -74,7 +74,7 @@
             "metafield_namespace": "",
             "metafield_key": "",
             "icon": "return",
-            "content": "{% if shop.shipping_policy.body != blank %}{{ shop.shipping_policy.body }}{% endif %}{% if shop.refund_policy.body != blank %}<hr><h3>Returns<\/h3>{{ shop.refund_policy.body }}{% endif %}{% if shop.shipping_policy.body == blank and shop.refund_policy.body == blank %}<p>Items are in stock ready to ship next day, we are not Amazon but some people think so because of how fast we deliver.<\/p><p>Worldwide Shipping Time: 2-5 business days<\/p><p>Exchange or return your items within 14 days of receiving them at your doorstep.<\/p>{% endif %}<p>Morocco Shipping Time: 2-5 business days<\/p>",
+            "content": "<p>Items are in stock ready to ship next day, we are not Amazon but some people think so because of how fast we deliver.<\/p><p>Worldwide Shipping Time: 2-5 business days<\/p><p>Morocco Shipping Time: 2-5 business days<\/p><hr><h4>Returns<\/h4><p>Exchange or return your items within 14 days of receiving them at your doorstep.<\/p>",
             "page": ""
           }
         },
