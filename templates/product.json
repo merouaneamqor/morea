@@ -60,8 +60,6 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Materials",
-            "metafield_namespace": "",
-            "metafield_key": "",
             "icon": "leather",
             "content": "<p>{{ metaobjects[\"shopify--fabric\"][\"brushed-fleece\"].label.value }}</p>",
             "page": ""
@@ -71,10 +69,8 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "SHIPPING & RETURNS",
-            "metafield_namespace": "",
-            "metafield_key": "",
             "icon": "return",
-            "content": "<p><strong>🇲🇦 LIVRAISON GRATUITE PARTOUT AU MAROC!</strong><\/p><p>✅ Paiement à la livraison (COD) - payez quand vous recevez votre commande!<\/p><p>📦 Délai de livraison: 2-5 jours ouvrables<\/p><h4>Retours<\/h4><p>Échange ou retour dans les 14 jours suivant la réception.<\/p>",
+            "content": "<p><strong>🇲🇦 LIVRAISON GRATUITE PARTOUT AU MAROC!</strong></p><p>✅ Paiement à la livraison (COD) - payez quand vous recevez votre commande!</p><p>📦 Délai de livraison: 2-5 jours ouvrables</p><h4>Retours</h4><p>Échange ou retour dans les 14 jours suivant la réception.</p>",
             "page": ""
           }
         },
@@ -82,8 +78,6 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Dimensions",
-            "metafield_namespace": "",
-            "metafield_key": "",
             "icon": "ruler",
             "content": "",
             "page": ""
@@ -93,8 +87,6 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Care Instructions",
-            "metafield_namespace": "",
-            "metafield_key": "",
             "icon": "washing",
             "content": "",
             "page": ""

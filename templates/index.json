@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "haya_hero": {
@@ -7,6 +16,7 @@
         "heading": "performance\ncan too.",
         "button_label": "Shop Activewear",
         "button_link": "shopify://collections/activewear",
+        "image": "shopify://shop_images/Gemini_Generated_Image_wjylg6wjylg6wjyl.jpg",
         "background_color": "#e8e4df",
         "text_color": "#1a1a1a",
         "button_background": "#1a1a1a",
@@ -40,6 +50,7 @@
         "text": "<p>Finally, we made apparel with all your needs in mind <em>(someone had to)</em>.</p><p>From functionality & fabric selection, to balancing performance with style.</p><p>No more compromise.</p>",
         "button_label": "Shop Activewear",
         "button_link": "shopify://collections/activewear",
+        "image": "shopify://shop_images/Image_1.jpg",
         "image_position": "last",
         "text_alignment": "left",
         "background_color": "#f5f5f5",
@@ -50,15 +61,6 @@
     },
     "mission": {
       "type": "haya-mission",
-      "settings": {
-        "title": "The Morea Mission",
-        "background_color": "#ffffff",
-        "text_color": "#1a1a1a",
-        "icon_background": "#fce4ec",
-        "icon_color": "#1a1a1a",
-        "padding_top": 60,
-        "padding_bottom": 60
-      },
       "blocks": {
         "mission_1": {
           "type": "column",
@@ -85,7 +87,20 @@
           }
         }
       },
-      "block_order": ["mission_1", "mission_2", "mission_3"]
+      "block_order": [
+        "mission_1",
+        "mission_2",
+        "mission_3"
+      ],
+      "settings": {
+        "title": "The Morea Mission",
+        "background_color": "#ffffff",
+        "text_color": "#1a1a1a",
+        "icon_background": "#fce4ec",
+        "icon_color": "#1a1a1a",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
     },
     "community": {
       "type": "haya-community",
@@ -94,6 +109,7 @@
         "text": "<p>A community of athletes with strong values. Here to support & inspire each other through fitness.</p><p>Everyday we show the world you don't need to compromise your values to achieve your goals.</p>",
         "button_label": "Join The Community",
         "button_link": "",
+        "image": "shopify://shop_images/freepik__prompt-a-moroccan-woman-stretching-in-a-gym-wearin__36153.png",
         "image_position": "1",
         "background_color": "#e8e4df",
         "text_color": "#1a1a1a",
@@ -103,15 +119,6 @@
     },
     "faq": {
       "type": "haya-faq",
-      "settings": {
-        "title": "Got Questions?",
-        "subtitle": "We've got answers.",
-        "open_first": false,
-        "background_color": "#ffffff",
-        "text_color": "#1a1a1a",
-        "padding_top": 60,
-        "padding_bottom": 60
-      },
       "blocks": {
         "faq_1": {
           "type": "question",
@@ -149,16 +156,25 @@
           }
         }
       },
-      "block_order": ["faq_1", "faq_cod", "faq_2", "faq_3", "faq_4"]
+      "block_order": [
+        "faq_1",
+        "faq_cod",
+        "faq_2",
+        "faq_3",
+        "faq_4"
+      ],
+      "settings": {
+        "title": "Got Questions?",
+        "subtitle": "We've got answers.",
+        "open_first": false,
+        "background_color": "#ffffff",
+        "text_color": "#1a1a1a",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
     },
     "newsletter": {
       "type": "newsletter",
-      "settings": {
-        "color_scheme": "scheme-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
-      },
       "blocks": {
         "nl_heading": {
           "type": "heading",
@@ -173,9 +189,22 @@
             "text": "<p>New drops, limited runs, and training edits—straight to your inbox.</p>"
           }
         },
-        "nl_form": { "type": "email_form" }
+        "nl_form": {
+          "type": "email_form",
+          "settings": {}
+        }
       },
-      "block_order": ["nl_heading", "nl_copy", "nl_form"]
+      "block_order": [
+        "nl_heading",
+        "nl_copy",
+        "nl_form"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
