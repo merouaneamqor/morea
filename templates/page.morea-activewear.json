@@ -98,8 +98,8 @@
       "settings": {
         "max_width": 1200,
         "padding": 60,
-        "columns_desktop": 4,
-        "columns_mobile": 1,
+        "columns_desktop": "4",
+        "columns_mobile": "1",
         "grid_gap": 24,
         "background_color": "#ffffff",
         "title": "Built for Women Who Don't Rewrite the Rules — They Redefine Them",
@@ -170,7 +170,7 @@
       "settings": {
         "max_width": 1200,
         "padding": 60,
-        "columns_desktop": 3,
+        "columns_desktop": "3",
         "grid_gap": 24,
         "background_color": "#ffffff",
         "background_pattern": true,
