@@ -141,6 +141,11 @@
         "type": "shopify://apps/releasit-cod-form/blocks/app-embed/72faf214-4174-4fec-886b-0d0e8d3af9a2",
         "disabled": false,
         "settings": {}
+      },
+      "1343067074321463367": {
+        "type": "shopify://apps/madgic-cod-form/blocks/orichi_cod/f60a6e43-d658-4a23-8ef0-3b9b3d89ab53",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
