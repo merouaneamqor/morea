@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "landing_ensemble": {
+      "type": "landing-ensemble-4pieces",
+      "settings": {
+        "title": "Ensemble d'Entraînement 4 Pièces",
+        "intro_text": "Découvrez un set complet pensé pour les femmes qui veulent s'entraîner avec confort, style et modestie. Tissu premium, coupe fluide, respirabilité maximale — tout ce dont vous avez besoin pour performer avec confiance.",
+        "product_url": "shopify://products/الطقم-الرابع-مع-غطاء-خصر-وحجاب"
+      }
+    }
+  },
+  "order": [
+    "landing_ensemble"
+  ]
+}
+

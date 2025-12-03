@@ -1,0 +1,1038 @@
+{%- style -%}
+  /* ==============================================
+     MOREA LANDING PAGE - Ensemble 4 Pièces
+     Clean, Modest, Conversion-Focused
+     ============================================== */
+
+  .lp-ensemble {
+    --lp-pink: #d4a5a5;
+    --lp-dark: #2d2d2d;
+    --lp-light: #faf9f7;
+    --lp-white: #ffffff;
+    --lp-gray: #6b6b6b;
+    --lp-border: #e8e8e8;
+  }
+
+  /* ========== HERO SECTION ========== */
+  .lp-hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 4rem 0;
+    background: var(--lp-light);
+  }
+
+  @media screen and (min-width: 990px) {
+    .lp-hero {
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      padding: 6rem 0;
+      align-items: center;
+    }
+  }
+
+  .lp-hero__media {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+  }
+
+  .lp-hero__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .lp-hero__badge {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    background: var(--lp-pink);
+    color: var(--lp-white);
+    padding: 0.6rem 1.2rem;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .lp-hero__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .lp-hero__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--lp-pink);
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+
+  .lp-hero__eyebrow i {
+    font-size: 1.8rem;
+  }
+
+  .lp-hero__title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 7vw, 5rem);
+    font-weight: 400;
+    line-height: 1;
+    color: var(--lp-dark);
+    margin: 0;
+  }
+
+  .lp-hero__tagline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .lp-hero__tag {
+    background: var(--lp-white);
+    color: var(--lp-dark);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    border: 1px solid var(--lp-border);
+  }
+
+  .lp-hero__intro {
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: var(--lp-gray);
+    max-width: 500px;
+  }
+
+  .lp-hero__highlight {
+    background: linear-gradient(135deg, var(--lp-pink) 0%, #e8c4c4 100%);
+    color: var(--lp-white);
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .lp-hero__highlight i {
+    font-size: 2rem;
+  }
+
+  .lp-hero__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--lp-dark);
+    color: var(--lp-white);
+    padding: 1.6rem 3rem;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    transition: all 0.3s ease;
+    width: fit-content;
+  }
+
+  .lp-hero__cta:hover {
+    background: var(--lp-pink);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(212, 165, 165, 0.4);
+  }
+
+  .lp-hero__cta i {
+    transition: transform 0.3s ease;
+  }
+
+  .lp-hero__cta:hover i {
+    transform: translateX(5px);
+  }
+
+  /* ========== BENEFITS SECTION ========== */
+  .lp-benefits {
+    padding: 5rem 0;
+    background: var(--lp-white);
+  }
+
+  .lp-benefits__header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .lp-benefits__title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--lp-dark);
+    margin: 0 0 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .lp-benefits__title i {
+    color: var(--lp-pink);
+  }
+
+  .lp-benefits__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .lp-benefits__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .lp-benefit {
+    background: var(--lp-light);
+    border-radius: 16px;
+    padding: 2.5rem;
+    display: flex;
+    gap: 1.5rem;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+  }
+
+  .lp-benefit:hover {
+    border-color: var(--lp-pink);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  }
+
+  .lp-benefit__icon {
+    width: 50px;
+    height: 50px;
+    background: var(--lp-pink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .lp-benefit__icon i {
+    color: var(--lp-white);
+    font-size: 2rem;
+  }
+
+  .lp-benefit__content h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: var(--lp-dark);
+    margin: 0 0 0.5rem;
+  }
+
+  .lp-benefit__content p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: var(--lp-gray);
+    margin: 0;
+  }
+
+  /* ========== INCLUDES SECTION ========== */
+  .lp-includes {
+    padding: 5rem 0;
+    background: linear-gradient(135deg, var(--lp-light) 0%, #f5e6e6 100%);
+  }
+
+  .lp-includes__header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .lp-includes__title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--lp-dark);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .lp-includes__title i {
+    color: var(--lp-pink);
+  }
+
+  .lp-includes__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .lp-includes__grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  .lp-includes__item {
+    background: var(--lp-white);
+    border-radius: 16px;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .lp-includes__item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .lp-includes__item-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .lp-includes__item h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    color: var(--lp-dark);
+    margin: 0;
+  }
+
+  /* ========== COLORS SECTION ========== */
+  .lp-colors {
+    padding: 5rem 0;
+    background: var(--lp-white);
+  }
+
+  .lp-colors__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .lp-colors__title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--lp-dark);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .lp-colors__title i {
+    color: var(--lp-pink);
+  }
+
+  .lp-colors__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .lp-color-swatch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .lp-color-swatch:hover {
+    transform: scale(1.1);
+  }
+
+  .lp-color-swatch__circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid var(--lp-border);
+    transition: all 0.3s ease;
+  }
+
+  .lp-color-swatch:hover .lp-color-swatch__circle {
+    border-color: var(--lp-pink);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .lp-color-swatch__name {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--lp-dark);
+  }
+
+  /* ========== SIZE GUIDE SECTION ========== */
+  .lp-sizes {
+    padding: 5rem 0;
+    background: var(--lp-light);
+  }
+
+  .lp-sizes__header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .lp-sizes__title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--lp-dark);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .lp-sizes__title i {
+    color: var(--lp-pink);
+  }
+
+  .lp-sizes__tables {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  @media screen and (min-width: 990px) {
+    .lp-sizes__tables {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .lp-size-table {
+    background: var(--lp-white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .lp-size-table__header {
+    background: var(--lp-dark);
+    color: var(--lp-white);
+    padding: 1.5rem 2rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .lp-size-table__header i {
+    color: var(--lp-pink);
+  }
+
+  .lp-size-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .lp-size-table th,
+  .lp-size-table td {
+    padding: 1.2rem 1.5rem;
+    text-align: center;
+    font-size: 1.3rem;
+  }
+
+  .lp-size-table th {
+    background: var(--lp-light);
+    color: var(--lp-dark);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 1.1rem;
+  }
+
+  .lp-size-table td {
+    color: var(--lp-gray);
+    border-bottom: 1px solid var(--lp-border);
+  }
+
+  .lp-size-table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .lp-size-table td:first-child {
+    font-weight: 600;
+    color: var(--lp-dark);
+  }
+
+  /* ========== TRUST SECTION ========== */
+  .lp-trust {
+    padding: 5rem 0;
+    background: var(--lp-white);
+  }
+
+  .lp-trust__header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .lp-trust__title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--lp-dark);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .lp-trust__title i {
+    color: var(--lp-pink);
+  }
+
+  .lp-trust__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  @media screen and (min-width: 750px) {
+    .lp-trust__grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .lp-trust__item {
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+
+  .lp-trust__item-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--lp-pink) 0%, #e8c4c4 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+  }
+
+  .lp-trust__item-icon i {
+    color: var(--lp-white);
+    font-size: 2.2rem;
+  }
+
+  .lp-trust__item h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    color: var(--lp-dark);
+    margin: 0 0 0.5rem;
+  }
+
+  .lp-trust__item p {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: var(--lp-gray);
+    margin: 0;
+  }
+
+  /* ========== FINAL CTA SECTION ========== */
+  .lp-final-cta {
+    padding: 6rem 0;
+    background: linear-gradient(135deg, var(--lp-dark) 0%, #1a1a1a 100%);
+    text-align: center;
+  }
+
+  .lp-final-cta__content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .lp-final-cta__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: var(--lp-pink);
+    color: var(--lp-white);
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+  }
+
+  .lp-final-cta__title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3rem, 7vw, 5rem);
+    color: var(--lp-white);
+    margin: 0 0 1.5rem;
+    line-height: 1.1;
+  }
+
+  .lp-final-cta__subtitle {
+    font-size: 1.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 3rem;
+    line-height: 1.6;
+  }
+
+  .lp-final-cta__tagline {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .lp-final-cta__tagline span {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--lp-pink);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .lp-final-cta__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--lp-white);
+    color: var(--lp-dark);
+    padding: 1.8rem 4rem;
+    border-radius: 8px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+  }
+
+  .lp-final-cta__button:hover {
+    background: var(--lp-pink);
+    color: var(--lp-white);
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(212, 165, 165, 0.4);
+  }
+
+  .lp-final-cta__button i {
+    transition: transform 0.3s ease;
+  }
+
+  .lp-final-cta__button:hover i {
+    transform: translateX(5px);
+  }
+
+  .lp-final-cta__payment {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.3rem;
+  }
+
+  .lp-final-cta__payment i {
+    color: var(--lp-pink);
+  }
+{%- endstyle -%}
+
+<div class="lp-ensemble">
+  <!-- HERO SECTION -->
+  <section class="lp-hero page-width">
+    <div class="lp-hero__media">
+      {%- if section.settings.hero_image != blank -%}
+        {{ section.settings.hero_image | image_url: width: 1000 | image_tag: loading: 'eager' }}
+      {%- else -%}
+        {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      {%- endif -%}
+      <span class="lp-hero__badge">Best-Seller</span>
+    </div>
+
+    <div class="lp-hero__content">
+      <div class="lp-hero__eyebrow">
+        <i class="fa-solid fa-star"></i>
+        <span>Morea Activewear</span>
+      </div>
+
+      <h1 class="lp-hero__title">{{ section.settings.title | default: "Ensemble d'Entraînement 4 Pièces" }}</h1>
+
+      <div class="lp-hero__tagline">
+        <span class="lp-hero__tag">Modest</span>
+        <span class="lp-hero__tag">Confort</span>
+        <span class="lp-hero__tag">Performance</span>
+      </div>
+
+      <p class="lp-hero__intro">
+        {{
+          section.settings.intro_text
+          | default: "Découvrez un set complet pensé pour les femmes qui veulent s'entraîner avec confort, style et modestie."
+        }}
+      </p>
+
+      <div class="lp-hero__highlight">
+        <i class="fa-solid fa-person-dress"></i>
+        <span>L'ensemble qui redéfinit le modest activewear</span>
+      </div>
+
+      <a href="{{ section.settings.product_url }}" class="lp-hero__cta">
+        <span>Commander Maintenant</span>
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </section>
+
+  <!-- BENEFITS SECTION -->
+  <section class="lp-benefits">
+    <div class="page-width">
+      <div class="lp-benefits__header">
+        <h2 class="lp-benefits__title">
+          <i class="fa-solid fa-gem"></i>
+          Pourquoi vous allez l'adorer
+        </h2>
+      </div>
+
+      <div class="lp-benefits__grid">
+        <div class="lp-benefit">
+          <div class="lp-benefit__icon">
+            <i class="fa-solid fa-wind"></i>
+          </div>
+          <div class="lp-benefit__content">
+            <h3>Tissu premium, léger et respirant</h3>
+            <p>Restez fraîche et confortable, même durant les entraînements les plus intenses.</p>
+          </div>
+        </div>
+
+        <div class="lp-benefit">
+          <div class="lp-benefit__icon">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+          <div class="lp-benefit__content">
+            <h3>Modestie sans compromis</h3>
+            <p>
+              Coupe qui couvre la taille, haut long, hijab sportif inclus — vous êtes libre de bouger tout en restant à
+              l'aise.
+            </p>
+          </div>
+        </div>
+
+        <div class="lp-benefit">
+          <div class="lp-benefit__icon">
+            <i class="fa-solid fa-person-running"></i>
+          </div>
+          <div class="lp-benefit__content">
+            <h3>Liberté totale de mouvement</h3>
+            <p>Coupes fluides et élasticité intelligente pour suivre chacun de vos mouvements.</p>
+          </div>
+        </div>
+
+        <div class="lp-benefit">
+          <div class="lp-benefit__icon">
+            <i class="fa-solid fa-infinity"></i>
+          </div>
+          <div class="lp-benefit__content">
+            <h3>Polyvalent</h3>
+            <p>Sport, marche, salle, sorties décontractées — un essentiel pour votre quotidien.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INCLUDES SECTION -->
+  <section class="lp-includes">
+    <div class="page-width">
+      <div class="lp-includes__header">
+        <h2 class="lp-includes__title">
+          <i class="fa-solid fa-bag-shopping"></i>
+          Ce que comprend l'ensemble
+        </h2>
+      </div>
+
+      <div class="lp-includes__grid">
+        <div class="lp-includes__item">
+          <div class="lp-includes__item-icon">🩳</div>
+          <h4>Pantalon large & fluide</h4>
+        </div>
+
+        <div class="lp-includes__item">
+          <div class="lp-includes__item-icon">👚</div>
+          <h4>Haut sportif long</h4>
+        </div>
+
+        <div class="lp-includes__item">
+          <div class="lp-includes__item-icon">🧥</div>
+          <h4>Couverture de taille</h4>
+        </div>
+
+        <div class="lp-includes__item">
+          <div class="lp-includes__item-icon">🧕</div>
+          <h4>Hijab de sport respirant</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLORS SECTION -->
+  <section class="lp-colors">
+    <div class="page-width">
+      <div class="lp-colors__header">
+        <h2 class="lp-colors__title">
+          <i class="fa-solid fa-palette"></i>
+          Couleurs disponibles
+        </h2>
+      </div>
+
+      <div class="lp-colors__grid">
+        <div class="lp-color-swatch">
+          <div class="lp-color-swatch__circle" style="background: #8B6914;"></div>
+          <span class="lp-color-swatch__name">Brown</span>
+        </div>
+        <div class="lp-color-swatch">
+          <div class="lp-color-swatch__circle" style="background: #1a1a1a;"></div>
+          <span class="lp-color-swatch__name">Noir</span>
+        </div>
+        <div class="lp-color-swatch">
+          <div class="lp-color-swatch__circle" style="background: #9ca3af;"></div>
+          <span class="lp-color-swatch__name">Gris</span>
+        </div>
+        <div class="lp-color-swatch">
+          <div class="lp-color-swatch__circle" style="background: #d4a5a5;"></div>
+          <span class="lp-color-swatch__name">Rose</span>
+        </div>
+        <div class="lp-color-swatch">
+          <div class="lp-color-swatch__circle" style="background: #708090;"></div>
+          <span class="lp-color-swatch__name">Bleu ardoise</span>
+        </div>
+        <div class="lp-color-swatch">
+          <div class="lp-color-swatch__circle" style="background: #4a4a4a;"></div>
+          <span class="lp-color-swatch__name">Gris foncé</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIZE GUIDE SECTION -->
+  <section class="lp-sizes">
+    <div class="page-width">
+      <div class="lp-sizes__header">
+        <h2 class="lp-sizes__title">
+          <i class="fa-solid fa-ruler"></i>
+          Guide des tailles
+        </h2>
+      </div>
+
+      <div class="lp-sizes__tables">
+        <div class="lp-size-table">
+          <div class="lp-size-table__header">
+            <i class="fa-solid fa-shirt"></i>
+            Haut
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Taille</th>
+                <th>Poitrine (cm)</th>
+                <th>Longueur (cm)</th>
+                <th>Manche (cm)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>S</td>
+                <td>54</td>
+                <td>83</td>
+                <td>61</td>
+              </tr>
+              <tr>
+                <td>M</td>
+                <td>56</td>
+                <td>84</td>
+                <td>62</td>
+              </tr>
+              <tr>
+                <td>L</td>
+                <td>58</td>
+                <td>85</td>
+                <td>63</td>
+              </tr>
+              <tr>
+                <td>XL</td>
+                <td>60</td>
+                <td>86</td>
+                <td>64</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="lp-size-table">
+          <div class="lp-size-table__header">
+            <i class="fa-solid fa-socks"></i>
+            Pantalon
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Taille</th>
+                <th>Taille (cm)</th>
+                <th>Hanches (cm)</th>
+                <th>Longueur (cm)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>S</td>
+                <td>30</td>
+                <td>55</td>
+                <td>107</td>
+              </tr>
+              <tr>
+                <td>M</td>
+                <td>32</td>
+                <td>57</td>
+                <td>108</td>
+              </tr>
+              <tr>
+                <td>L</td>
+                <td>34</td>
+                <td>59</td>
+                <td>109</td>
+              </tr>
+              <tr>
+                <td>XL</td>
+                <td>36</td>
+                <td>61</td>
+                <td>110</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST SECTION -->
+  <section class="lp-trust">
+    <div class="page-width">
+      <div class="lp-trust__header">
+        <h2 class="lp-trust__title">
+          <i class="fa-solid fa-sparkles"></i>
+          Les avantages Morea
+        </h2>
+      </div>
+
+      <div class="lp-trust__grid">
+        <div class="lp-trust__item">
+          <div class="lp-trust__item-icon">
+            <i class="fa-solid fa-truck-fast"></i>
+          </div>
+          <h4>Livraison rapide & gratuite</h4>
+          <p>Service fiable avec suivi à domicile.</p>
+        </div>
+
+        <div class="lp-trust__item">
+          <div class="lp-trust__item-icon">
+            <i class="fa-solid fa-arrows-rotate"></i>
+          </div>
+          <h4>Échanges simples</h4>
+          <p>Pas satisfaite ? Échange guidé en quelques clics.</p>
+        </div>
+
+        <div class="lp-trust__item">
+          <div class="lp-trust__item-icon">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+          <h4>Approuvé par la communauté</h4>
+          <p>Des milliers de femmes nous font confiance.</p>
+        </div>
+
+        <div class="lp-trust__item">
+          <div class="lp-trust__item-icon">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <h4>Entretien facile</h4>
+          <p>Lavable à la machine, couleurs durables.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA SECTION -->
+  <section class="lp-final-cta">
+    <div class="page-width">
+      <div class="lp-final-cta__content">
+        <div class="lp-final-cta__badge">
+          <i class="fa-solid fa-fire"></i>
+          <span>Améliorez votre quotidien</span>
+        </div>
+
+        <h2 class="lp-final-cta__title">Commandez maintenant</h2>
+
+        <p class="lp-final-cta__subtitle">
+          Un essentiel minimaliste conçu pour durer, aimer, et porter tous les jours.
+        </p>
+
+        <div class="lp-final-cta__tagline">
+          <span>Confort</span>
+          <span>Confiance</span>
+          <span>Performance</span>
+        </div>
+
+        <a href="{{ section.settings.product_url }}" class="lp-final-cta__button">
+          <span>Passer commande</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <div class="lp-final-cta__payment">
+          <i class="fa-solid fa-money-bill-wave"></i>
+          <span>Paiement à la livraison disponible</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% schema %}
+{
+  "name": "LP Ensemble 4 Pièces",
+  "tag": "section",
+  "class": "section-lp-ensemble",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Titre",
+      "default": "Ensemble d'Entraînement 4 Pièces"
+    },
+    {
+      "type": "textarea",
+      "id": "intro_text",
+      "label": "Texte d'introduction",
+      "default": "Découvrez un set complet pensé pour les femmes qui veulent s'entraîner avec confort, style et modestie."
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Image Hero"
+    },
+    {
+      "type": "url",
+      "id": "product_url",
+      "label": "Lien vers le produit"
+    }
+  ],
+  "presets": [
+    {
+      "name": "LP Ensemble 4 Pièces"
+    }
+  ]
+}
+{% endschema %}
