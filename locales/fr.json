@@ -557,5 +557,14 @@
         "bank_account_label": "Compte bancaire"
       }
     }
+  },
+  "customer_accounts": {
+    "payment_methods": {
+      "pay_pal": {
+        "errors": {
+          "generic": "Un problème est survenu avec PayPal. Veuillez réessayer ou utiliser un autre moyen de paiement."
+        }
+      }
+    }
   }
 }
