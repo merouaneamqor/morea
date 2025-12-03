@@ -1,0 +1,500 @@
+/* ==============================================
+   NIKE SPORT STYLE THEME
+   High-contrast black/white athletic aesthetic
+   ============================================== */
+
+:root {
+    /* Core Sport Palette */
+    --sport-black: #000000;
+    --sport-white: #ffffff;
+    --sport-accent: #ff0000;
+    --sport-accent-hover: #cc0000;
+    --sport-gray-dark: #111111;
+    --sport-gray-mid: #333333;
+    --sport-gray-light: #f5f5f5;
+    
+    /* Typography overrides */
+    --font-heading-family: 'Bebas Neue', 'Impact', 'Arial Black', sans-serif;
+    --font-heading-weight: 400;
+    --sport-letter-spacing: 0.05em;
+}
+
+/* ==============================================
+   GLOBAL TYPOGRAPHY - SPORT STYLE
+   ============================================== */
+
+h1, h2, h3, .h0, .h1, .h2, .h3 {
+    font-family: var(--font-heading-family) !important;
+    text-transform: uppercase !important;
+    letter-spacing: var(--sport-letter-spacing) !important;
+    font-weight: 400 !important;
+    line-height: 0.95 !important;
+}
+
+/* ==============================================
+   BUTTONS - SHARP SPORT STYLE
+   ============================================== */
+
+.button,
+button:not(.unstyled-button),
+input[type="submit"],
+.shopify-payment-button__button {
+    border-radius: 0 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    font-weight: 600 !important;
+    font-family: var(--font-body-family) !important;
+    padding: 1.4rem 2.8rem !important;
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+.button:hover,
+button:not(.unstyled-button):hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Primary Button - Black */
+.button--primary,
+.shopify-payment-button__button--unbranded {
+    background: var(--sport-black) !important;
+    color: var(--sport-white) !important;
+    border: 2px solid var(--sport-black) !important;
+}
+
+.button--primary:hover,
+.shopify-payment-button__button--unbranded:hover {
+    background: var(--sport-white) !important;
+    color: var(--sport-black) !important;
+}
+
+/* Secondary Button - Outline */
+.button--secondary {
+    background: transparent !important;
+    color: var(--sport-black) !important;
+    border: 2px solid var(--sport-black) !important;
+    border-radius: 0 !important;
+}
+
+.button--secondary:hover {
+    background: var(--sport-black) !important;
+    color: var(--sport-white) !important;
+}
+
+/* Accent Button - Red */
+.button--accent {
+    background: var(--sport-accent) !important;
+    color: var(--sport-white) !important;
+    border: 2px solid var(--sport-accent) !important;
+}
+
+.button--accent:hover {
+    background: var(--sport-accent-hover) !important;
+    border-color: var(--sport-accent-hover) !important;
+}
+
+/* ==============================================
+   HEADER - NIKE STYLE NAVIGATION
+   ============================================== */
+
+.section-header {
+    background: var(--sport-black) !important;
+}
+
+.header-wrapper {
+    background: var(--sport-black) !important;
+    border-bottom: none !important;
+}
+
+.header {
+    background: var(--sport-black) !important;
+}
+
+/* Logo/Brand - White on black */
+.header__heading-link {
+    color: var(--sport-white) !important;
+}
+
+.header__heading-link .h2 {
+    color: var(--sport-white) !important;
+    font-family: var(--font-heading-family) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+}
+
+/* Navigation Links */
+.header__inline-menu .list-menu__item,
+.header__menu-item,
+.list-menu__item--link {
+    color: var(--sport-white) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    font-weight: 500 !important;
+    font-size: 1.3rem !important;
+    padding: 0.8rem 1.2rem !important;
+    position: relative !important;
+}
+
+.header__inline-menu .list-menu__item::after,
+.list-menu__item--link::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 50% !important;
+    width: 0 !important;
+    height: 2px !important;
+    background: var(--sport-white) !important;
+    transition: all 0.3s ease !important;
+    transform: translateX(-50%) !important;
+}
+
+.header__inline-menu .list-menu__item:hover::after,
+.list-menu__item--link:hover::after {
+    width: 100% !important;
+}
+
+/* Header Icons */
+.header__icon,
+.header__icon svg,
+.header__icons .svg-wrapper {
+    color: var(--sport-white) !important;
+    fill: var(--sport-white) !important;
+}
+
+.header__icon:hover {
+    opacity: 0.8 !important;
+}
+
+/* Cart bubble */
+#cart-icon-bubble .cart-count-bubble {
+    background: var(--sport-accent) !important;
+    color: var(--sport-white) !important;
+    font-weight: 700 !important;
+}
+
+/* Search icon */
+.header__search .modal__toggle-open svg,
+.header__icon--search svg {
+    color: var(--sport-white) !important;
+}
+
+/* Sticky header */
+.shopify-section-header-sticky .header,
+.scrolled-past-header .header {
+    background: var(--sport-black) !important;
+    backdrop-filter: none !important;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ==============================================
+   MEGA MENU - NIKE STYLE
+   ============================================== */
+
+.mega-menu__content {
+    background: var(--sport-black) !important;
+    border: none !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 3rem 0 !important;
+    animation: slideDown 0.3s ease !important;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.mega-menu__list {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+    gap: 2rem !important;
+}
+
+.mega-menu__link {
+    color: var(--sport-white) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    font-weight: 500 !important;
+    font-size: 1.2rem !important;
+    padding: 0.6rem 0 !important;
+    transition: color 0.2s ease !important;
+}
+
+.mega-menu__link:hover {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.mega-menu__link--level-2 {
+    font-size: 1.4rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 1rem !important;
+    color: var(--sport-white) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    padding-bottom: 1rem !important;
+}
+
+/* Category tiles in mega menu */
+.mega-menu__category-tile {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1;
+    background: var(--sport-gray-dark);
+}
+
+.mega-menu__category-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.mega-menu__category-tile:hover img {
+    transform: scale(1.05);
+}
+
+.mega-menu__category-tile-label {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    color: var(--sport-white);
+    font-family: var(--font-heading-family);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* ==============================================
+   MOBILE DRAWER - SPORT STYLE
+   ============================================== */
+
+.menu-drawer {
+    background: var(--sport-black) !important;
+}
+
+.menu-drawer__navigation .list-menu__item,
+.menu-drawer__menu-item {
+    color: var(--sport-white) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    font-weight: 500 !important;
+    font-size: 1.6rem !important;
+    padding: 1.5rem 2rem !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.menu-drawer__menu-item:hover {
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.menu-drawer__close-button {
+    color: var(--sport-white) !important;
+}
+
+.menu-drawer svg {
+    color: var(--sport-white) !important;
+    fill: var(--sport-white) !important;
+}
+
+/* Hamburger icon */
+.header__icon--menu svg {
+    color: var(--sport-white) !important;
+}
+
+/* ==============================================
+   ANNOUNCEMENT BAR
+   ============================================== */
+
+.announcement-bar {
+    background: var(--sport-accent) !important;
+    color: var(--sport-white) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.15em !important;
+    font-weight: 600 !important;
+    font-size: 1.2rem !important;
+}
+
+.announcement-bar a {
+    color: var(--sport-white) !important;
+}
+
+/* ==============================================
+   BADGES - SPORT STYLE
+   ============================================== */
+
+.badge {
+    border-radius: 0 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    font-weight: 700 !important;
+    font-size: 1rem !important;
+    padding: 0.5rem 1rem !important;
+}
+
+.badge--sale {
+    background: var(--sport-accent) !important;
+    color: var(--sport-white) !important;
+}
+
+/* ==============================================
+   PRODUCT CARDS - SPORT STYLE
+   ============================================== */
+
+.card-wrapper,
+.card,
+.card__inner {
+    border-radius: 0 !important;
+}
+
+.card__heading {
+    font-family: var(--font-heading-family) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.03em !important;
+    font-size: 1.6rem !important;
+}
+
+.card__media,
+.card .media,
+.card .media img {
+    border-radius: 0 !important;
+}
+
+/* Quick add button */
+.quick-add__submit {
+    border-radius: 0 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    font-weight: 600 !important;
+    background: var(--sport-black) !important;
+    color: var(--sport-white) !important;
+}
+
+.quick-add__submit:hover {
+    background: var(--sport-gray-mid) !important;
+}
+
+/* ==============================================
+   FORMS - SPORT STYLE
+   ============================================== */
+
+.field__input,
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+    border-radius: 0 !important;
+    border: 2px solid var(--sport-black) !important;
+}
+
+.field__input:focus,
+input:focus {
+    border-color: var(--sport-accent) !important;
+    box-shadow: none !important;
+}
+
+/* Newsletter */
+.newsletter-form__field-wrapper .field__input {
+    border-radius: 0 !important;
+}
+
+.newsletter-form__button {
+    border-radius: 0 !important;
+    background: var(--sport-black) !important;
+    color: var(--sport-white) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+}
+
+/* ==============================================
+   FOOTER - SPORT STYLE
+   ============================================== */
+
+.footer {
+    background: var(--sport-black) !important;
+    color: var(--sport-white) !important;
+    border-top: none !important;
+}
+
+.footer a,
+.footer .link {
+    color: var(--sport-white) !important;
+}
+
+.footer__block-heading,
+.footer-block__heading {
+    font-family: var(--font-heading-family) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    color: var(--sport-white) !important;
+}
+
+.footer .list-social__link svg {
+    fill: var(--sport-white) !important;
+}
+
+/* ==============================================
+   COLLECTION PAGE - SPORT STYLE
+   ============================================== */
+
+.collection-hero__title {
+    font-family: var(--font-heading-family) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    font-size: clamp(3rem, 8vw, 6rem) !important;
+}
+
+/* Facets/Filters */
+.facets__summary {
+    border-radius: 0 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    font-weight: 500 !important;
+}
+
+.facet-filters .select {
+    border-radius: 0 !important;
+}
+
+/* Pagination */
+.pagination__item {
+    border-radius: 0 !important;
+}
+
+.pagination__item--current {
+    background: var(--sport-black) !important;
+    color: var(--sport-white) !important;
+}
+
+/* ==============================================
+   UTILITY CLASSES
+   ============================================== */
+
+.sport-headline {
+    font-family: var(--font-heading-family) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.03em !important;
+    line-height: 0.9 !important;
+}
+
+.sport-subhead {
+    font-family: var(--font-body-family) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.15em !important;
+    font-weight: 500 !important;
+    font-size: 1.2rem !important;
+}
+
+/* Diagonal clip for dynamic sections */
+.sport-diagonal {
+    clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
+}
+
+.sport-diagonal-reverse {
+    clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+}
+

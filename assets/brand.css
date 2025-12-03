@@ -1,12 +1,23 @@
-/* Brand layer: HAYA-inspired modern activewear aesthetic for Dawn */
+/* ==============================================
+   NIKE SPORT BRAND LAYER
+   High-contrast black/white athletic aesthetic
+   ============================================== */
 
-/* Typography */
+/* Typography & Colors */
 :root {
     --brand-letter-spacing-wide: 0.04em;
-    --haya-beige: #e8e4df;
-    --haya-dark: #1a1a1a;
+    /* Sport color palette */
+    --sport-black: #000000;
+    --sport-white: #ffffff;
+    --sport-accent: #ff0000;
+    --sport-gray-dark: #111111;
+    --sport-gray-mid: #333333;
+    --sport-gray-light: #f5f5f5;
+    /* Legacy vars for compatibility */
+    --haya-beige: #f5f5f5;
+    --haya-dark: #000000;
     --haya-light-gray: #f5f5f5;
-    --haya-pink-accent: #fce4ec;
+    --haya-pink-accent: #ff0000;
 }
 
 body,
@@ -31,20 +42,20 @@ h3 {
     text-transform: none;
 }
 
-/* Buttons: bold, squared, uppercase */
+/* Buttons: Sharp sport style - NO rounded corners */
 .button,
 button,
 input[type="submit"],
 .shopify-payment-button__button {
-    border-radius: 6px;
+    border-radius: 0 !important;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    font-weight: 700;
+    letter-spacing: 0.1em;
+    font-weight: 600;
 }
 
 .button--secondary,
 .button--tertiary {
-    border-radius: 6px;
+    border-radius: 0 !important;
 }
 
 /* Header/Nav */
@@ -164,24 +175,26 @@ input[type="submit"],
     font-weight: 700;
 }
 
-/* Quick add prominence */
+/* Quick add prominence - Sport style */
 .quick-add__submit,
 .card__badge {
-    border-radius: 6px;
+    border-radius: 0 !important;
 }
 
 .quick-add__submit {
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    font-weight: 800;
+    font-weight: 600;
+    background: var(--sport-black, #000000) !important;
+    color: var(--sport-white, #ffffff) !important;
 }
 
-/* Badges: square and bold */
+/* Badges: Sharp sport style */
 .badge {
-    border-radius: 6px;
+    border-radius: 0 !important;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    font-weight: 800;
+    font-weight: 700;
 }
 
 /* Product page refinements */
@@ -194,17 +207,19 @@ input[type="submit"],
     font-weight: 800;
 }
 
-/* Variant pills more brandy */
+/* Variant pills - Sport style */
 .product-form__input--pill input[type='radio']+label {
-    border-radius: 8px;
+    border-radius: 0 !important;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    font-weight: 800;
+    font-weight: 600;
+    border: 2px solid var(--sport-black, #000000);
 }
 
 .product-form__input--pill input[type='radio']:checked+label {
-    background-color: rgb(var(--color-foreground));
-    color: rgb(var(--color-background));
+    background-color: var(--sport-black, #000000);
+    color: var(--sport-white, #ffffff);
+    border-color: var(--sport-black, #000000);
 }
 
 /* Footer */
@@ -275,17 +290,17 @@ input[type="submit"],
     text-decoration: none;
 }
 
-/* Collection grid polish */
+/* Collection grid polish - Sport style */
 .facets-container .facets__summary,
 .facets-container .facets__label {
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-weight: 700;
+    letter-spacing: 0.08em;
+    font-weight: 600;
 }
 
 .pagination__list .pagination__item--current,
 .pagination__list .pagination__item:hover {
-    border-color: rgb(var(--color-foreground));
+    border-color: var(--sport-black, #000000);
 }
 
 /* HAYA-style section spacing */
@@ -293,15 +308,23 @@ input[type="submit"],
     margin-top: 0;
 }
 
-/* Newsletter section HAYA styling */
+/* Newsletter section - Sport style */
 .newsletter {
-    background: var(--haya-beige, #e8e4df);
+    background: var(--sport-black, #000000) !important;
+    color: var(--sport-white, #ffffff) !important;
 }
 
 .newsletter .newsletter__heading {
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 700;
-    letter-spacing: -0.02em;
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--sport-white, #ffffff);
+}
+
+.newsletter .rte {
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .newsletter-form__field-wrapper {
@@ -310,17 +333,31 @@ input[type="submit"],
 }
 
 .newsletter-form__field-wrapper .field__input {
-    border-radius: 50px;
-    padding: 1.2rem 1.5rem;
+    border-radius: 0 !important;
+    padding: 1.4rem 1.5rem;
     font-size: 1.4rem;
+    border: 2px solid var(--sport-white, #ffffff);
+    background: transparent;
+    color: var(--sport-white, #ffffff);
+}
+
+.newsletter-form__field-wrapper .field__input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .newsletter-form__button {
-    border-radius: 50px;
-    padding: 1.2rem 2rem;
+    border-radius: 0 !important;
+    padding: 1.4rem 2.5rem;
     font-weight: 600;
-    text-transform: none;
-    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: var(--sport-white, #ffffff) !important;
+    color: var(--sport-black, #000000) !important;
+}
+
+.newsletter-form__button:hover {
+    background: var(--sport-accent, #ff0000) !important;
+    color: var(--sport-white, #ffffff) !important;
 }
 
 /* Smooth scroll behavior */
@@ -344,34 +381,37 @@ html {
     transform: scale(1.03);
 }
 
-/* Rounded buttons throughout */
+/* Sharp sport buttons - NO rounded corners */
 .button {
-    border-radius: 50px;
-    padding: 1.2rem 2.4rem;
+    border-radius: 0 !important;
+    padding: 1.4rem 2.8rem;
     font-weight: 600;
-    letter-spacing: 0.02em;
-    text-transform: none;
-    transition: all 0.2s ease;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: all 0.25s ease;
 }
 
 .button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transform: none;
+    box-shadow: none;
 }
 
 .button--secondary {
-    border-radius: 50px;
+    border-radius: 0 !important;
     border-width: 2px;
 }
 
-/* Collection page cards - cleaner look */
+/* Collection page cards - Sport style */
 .card--standard .card__content {
     padding: 1.25rem 0;
 }
 
 .card__heading {
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
 }
 
 /* Price styling */
@@ -384,34 +424,37 @@ html {
     opacity: 0.5;
 }
 
-/* Sale badge */
+/* Sale badge - Sport style */
 .badge {
-    border-radius: 4px;
+    border-radius: 0 !important;
     font-size: 1.1rem;
     font-weight: 700;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
+    background: var(--sport-accent, #ff0000) !important;
+    color: var(--sport-white, #ffffff) !important;
 }
 
-/* Form inputs - rounded */
+/* Form inputs - Sharp sport style */
 .field__input,
 input[type="text"],
 input[type="email"],
 input[type="password"],
 textarea,
 select {
-    border-radius: 8px;
+    border-radius: 0 !important;
     font-size: 1.4rem;
+    border: 2px solid var(--sport-black, #000000);
 }
 
 /* Quantity selector styling */
 .quantity__button {
-    border-radius: 50%;
+    border-radius: 0 !important;
 }
 
 /* Quick add overlay */
 .quick-add-modal__content-info {
-    border-radius: 16px;
+    border-radius: 0 !important;
 }
 
 /* Cart drawer refinements */
@@ -489,12 +532,12 @@ select {
     }
 }
 
-/* Product cards - HAYA style with stronger selectors */
+/* Product cards - Sport style with sharp edges */
 .product-grid .grid__item .card-wrapper,
 .collection .grid__item .card-wrapper,
 #product-grid .card-wrapper {
-    background: #f0f0f0 !important;
-    border-radius: 16px !important;
+    background: #f5f5f5 !important;
+    border-radius: 0 !important;
     overflow: hidden !important;
 }
 
@@ -511,8 +554,8 @@ select {
 .collection .card--card,
 #product-grid .card--card {
     border: none !important;
-    border-radius: 16px !important;
-    background: #f0f0f0 !important;
+    border-radius: 0 !important;
+    background: #f5f5f5 !important;
     box-shadow: none !important;
 }
 
@@ -522,11 +565,11 @@ select {
     display: none !important;
 }
 
-/* Image container - rounded corners */
+/* Image container - Sharp edges */
 .product-grid .card__media,
 .collection .card__media,
 #product-grid .card__media {
-    border-radius: 16px !important;
+    border-radius: 0 !important;
     overflow: hidden !important;
     margin: 0 !important;
 }
@@ -534,13 +577,13 @@ select {
 .product-grid .card .media,
 .collection .card .media,
 #product-grid .card .media {
-    border-radius: 16px !important;
+    border-radius: 0 !important;
 }
 
 .product-grid .card .media img,
 .collection .card .media img,
 #product-grid .card .media img {
-    border-radius: 16px !important;
+    border-radius: 0 !important;
     object-fit: cover !important;
 }
 
@@ -617,58 +660,60 @@ select {
     transform: scale(1.03) !important;
 }
 
-/* Facets/Filters styling */
+/* Facets/Filters styling - Sport style */
 .facets-wrapper {
     padding-bottom: 2rem;
     margin-bottom: 1rem;
 }
 
 .facets__summary {
-    font-size: 1.4rem;
-    font-weight: 500;
-    text-transform: none;
-    letter-spacing: 0;
-    padding: 0.8rem 1.2rem;
-    border: 1px solid #e5e5e5;
-    border-radius: 8px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 1rem 1.4rem;
+    border: 2px solid var(--sport-black, #000000);
+    border-radius: 0 !important;
     background: white;
 }
 
 .facets__summary:hover {
-    border-color: #1a1a1a;
+    background: var(--sport-black, #000000);
+    color: var(--sport-white, #ffffff);
 }
 
 .facets__label {
-    font-weight: 500;
-    text-transform: none;
-    letter-spacing: 0;
-    color: #666;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #333;
     margin-right: 0.5rem;
 }
 
 .facet-filters__label {
-    font-weight: 500;
-    text-transform: none;
-    letter-spacing: 0;
-    color: #666;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #333;
 }
 
 /* Sort dropdown */
 .facet-filters .select {
-    border-radius: 8px;
-    border: 1px solid #e5e5e5;
+    border-radius: 0 !important;
+    border: 2px solid var(--sport-black, #000000);
 }
 
 .facet-filters .select:hover {
-    border-color: #1a1a1a;
+    background: var(--sport-black, #000000);
+    color: var(--sport-white, #ffffff);
 }
 
 .facet-filters__sort {
-    font-size: 1.4rem;
-    font-weight: 500;
-    text-transform: none;
-    letter-spacing: 0;
-    padding: 0.8rem 3rem 0.8rem 1.2rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 1rem 3rem 1rem 1.4rem;
 }
 
 /* Product count */
@@ -683,21 +728,21 @@ select {
     margin-right: 0.75rem;
 }
 
-/* Badge styling - teal like HAYA "NEW" badge */
+/* Badge styling - Sport style red accent */
 .product-grid .badge,
 .collection .badge,
 #product-grid .badge {
-    background: #0d9488 !important;
-    color: white !important;
+    background: var(--sport-accent, #ff0000) !important;
+    color: var(--sport-white, #ffffff) !important;
     font-size: 1rem !important;
-    font-weight: 600 !important;
-    letter-spacing: 0.05em !important;
-    padding: 0.4rem 0.8rem !important;
-    border-radius: 4px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.08em !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 0 !important;
     text-transform: uppercase !important;
 }
 
-/* Mobile collection styling */
+/* Mobile collection styling - Sport style */
 @media screen and (max-width: 749px) {
     /* Force 2-column grid on mobile */
     .collection .product-grid,
@@ -717,7 +762,7 @@ select {
     .product-grid .grid__item .card-wrapper,
     .collection .grid__item .card-wrapper,
     #product-grid .card-wrapper {
-        border-radius: 12px !important;
+        border-radius: 0 !important;
     }
 
     .product-grid .card__media,
@@ -732,13 +777,15 @@ select {
     .product-grid .card--standard .card__inner,
     .collection .card--standard .card__inner,
     #product-grid .card--standard .card__inner {
-        border-radius: 12px !important;
+        border-radius: 0 !important;
     }
 
     .product-grid .card__heading,
     .collection .card__heading,
     #product-grid .card__heading {
-        font-size: 1.2rem !important;
+        font-size: 1.4rem !important;
+        font-family: 'Bebas Neue', 'Impact', sans-serif !important;
+        text-transform: uppercase !important;
     }
 
     .product-grid .price,
@@ -747,13 +794,14 @@ select {
     .product-grid .price-item,
     .collection .price-item,
     #product-grid .price-item {
-        font-size: 1.2rem !important;
+        font-size: 1.3rem !important;
+        font-weight: 600 !important;
     }
 
     .product-grid .card__content,
     .collection .card__content,
     #product-grid .card__content {
-        padding: 0.75rem 0.25rem 0.25rem !important;
+        padding: 0.75rem 0.5rem 0.5rem !important;
     }
 
     /* Mobile filter bar */
@@ -763,45 +811,51 @@ select {
 
     .mobile-facets__open {
         font-size: 1.3rem;
-        font-weight: 500;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
     }
 }
 
-/* Collection page header/banner */
+/* Collection page header/banner - Sport style */
 .main-collection-banner {
     padding-bottom: 2rem;
 }
 
 .collection-hero__title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 500;
-    letter-spacing: -0.02em;
+    font-family: 'Bebas Neue', 'Impact', sans-serif !important;
+    font-size: clamp(4rem, 10vw, 8rem) !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.02em !important;
+    text-transform: uppercase !important;
 }
 
-/* Pagination styling */
+/* Pagination styling - Sport style */
 .pagination {
     margin-top: 3rem;
     padding-top: 2rem;
-    border-top: 1px solid #e5e5e5;
+    border-top: 2px solid var(--sport-black, #000000);
 }
 
 .pagination__list {
-    gap: 0.5rem;
+    gap: 0.75rem;
 }
 
 .pagination__item {
-    min-width: 4rem;
-    height: 4rem;
-    border-radius: 8px;
-    font-weight: 500;
+    min-width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 0 !important;
+    font-weight: 600;
+    border: 2px solid var(--sport-black, #000000);
 }
 
 .pagination__item--current {
-    background: #1a1a1a;
-    color: white;
-    border-color: #1a1a1a;
+    background: var(--sport-black, #000000);
+    color: var(--sport-white, #ffffff);
+    border-color: var(--sport-black, #000000);
 }
 
 .pagination__item:hover:not(.pagination__item--current) {
-    border-color: #1a1a1a;
+    background: var(--sport-black, #000000);
+    color: var(--sport-white, #ffffff);
 }

@@ -1,21 +1,25 @@
 {%- style -%}
-  .haya-hero {
+  /* ==============================================
+     NIKE SPORT HERO - Bold Uppercase Athletic
+     ============================================== */
+  
+  .sport-hero {
     position: relative;
-    min-height: 60vh;
+    min-height: 70vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    background: {{ section.settings.background_color }};
+    align-items: flex-end;
+    justify-content: flex-start;
+    background: #000000;
     overflow: hidden;
   }
 
   @media screen and (min-width: 750px) {
-    .haya-hero {
-      min-height: 90vh;
+    .sport-hero {
+      min-height: 95vh;
     }
   }
 
-  .haya-hero__media {
+  .sport-hero__media {
     position: absolute;
     top: 0;
     left: 0;
@@ -24,14 +28,15 @@
     z-index: 1;
   }
 
-  .haya-hero__media img {
+  .sport-hero__media img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center top;
   }
 
-  .haya-hero__media::after {
+  /* Dramatic gradient overlay */
+  .sport-hero__media::after {
     content: '';
     position: absolute;
     top: 0;
@@ -39,94 +44,243 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.1) 0%,
-      rgba(0, 0, 0, 0.2) 50%,
-      rgba(0, 0, 0, 0.4) 100%
+      135deg,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.3) 40%,
+      rgba(0, 0, 0, 0.1) 60%,
+      transparent 100%
     );
     pointer-events: none;
   }
 
-  .haya-hero__content {
+  /* Additional bottom gradient for text readability */
+  .sport-hero__media::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.8) 0%,
+      transparent 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .sport-hero__content {
     position: relative;
     z-index: 2;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 2rem;
+    align-items: flex-start;
+    text-align: left;
+    padding: 3rem 2rem;
     max-width: 900px;
+    width: 100%;
   }
 
   @media screen and (min-width: 750px) {
-    .haya-hero__content {
-      padding: 3rem;
+    .sport-hero__content {
+      padding: 5rem 4rem;
     }
   }
 
-  .haya-hero__heading {
-    font-family: var(--font-heading-family);
-    font-size: clamp(4rem, 12vw, 9rem);
-    font-weight: 400;
-    line-height: 1;
-    letter-spacing: -0.02em;
-    color: {{ section.settings.text_color }};
-    margin: 0 0 2rem;
-    text-transform: lowercase;
-    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
-  }
-
-  @media screen and (min-width: 750px) {
-    .haya-hero__heading {
-      font-size: clamp(5rem, 10vw, 10rem);
+  @media screen and (min-width: 990px) {
+    .sport-hero__content {
+      padding: 6rem;
     }
   }
 
-  .haya-hero__button {
-    display: inline-flex;
+  /* Eyebrow/Label - Small caps */
+  .sport-hero__label {
+    font-family: var(--font-body-family);
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #ffffff;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+    display: flex;
     align-items: center;
     gap: 0.75rem;
-    background: {{ section.settings.button_background }};
-    color: {{ section.settings.button_text_color }};
-    padding: 1.2rem 2.4rem;
-    border-radius: 50px;
+  }
+
+  .sport-hero__label::before {
+    content: '';
+    width: 24px;
+    height: 2px;
+    background: #ff0000;
+  }
+
+  /* Main Headline - Giant Bold Caps */
+  .sport-hero__heading {
+    font-family: 'Bebas Neue', 'Impact', 'Arial Black', sans-serif;
+    font-size: clamp(4.5rem, 14vw, 12rem);
+    font-weight: 400;
+    line-height: 0.9;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+    margin: 0 0 2rem;
+    text-transform: uppercase;
+  }
+
+  @media screen and (min-width: 750px) {
+    .sport-hero__heading {
+      font-size: clamp(6rem, 12vw, 14rem);
+    }
+  }
+
+  /* Subheading */
+  .sport-hero__subheading {
+    font-family: var(--font-body-family);
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+  }
+
+  /* CTA Button - Sharp rectangle */
+  .sport-hero__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: #ffffff;
+    color: #000000;
+    padding: 1.4rem 2.8rem;
+    border: none;
+    font-family: var(--font-body-family);
     font-size: 1.4rem;
     font-weight: 600;
     text-decoration: none;
-    text-transform: none;
-    letter-spacing: 0.02em;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .haya-hero__button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  }
-
-  .haya-hero__button svg {
-    width: 16px;
-    height: 16px;
-    transition: transform 0.2s ease;
-  }
-
-  .haya-hero__button:hover svg {
-    transform: translateX(4px);
-  }
-
-  .haya-hero__label {
-    font-size: 1.2rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: {{ section.settings.text_color }};
-    opacity: 0.8;
-    margin-bottom: 1rem;
-    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.1em;
+    transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sport-hero__button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    transition: left 0.3s ease;
+    z-index: 0;
+  }
+
+  .sport-hero__button:hover::before {
+    left: 0;
+  }
+
+  .sport-hero__button span,
+  .sport-hero__button svg {
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+  }
+
+  .sport-hero__button:hover {
+    color: #ffffff;
+  }
+
+  .sport-hero__button:hover span,
+  .sport-hero__button:hover svg {
+    color: #ffffff;
+  }
+
+  .sport-hero__button svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  .sport-hero__button:hover svg {
+    transform: translateX(5px);
+  }
+
+  /* Secondary button style */
+  .sport-hero__button--secondary {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    margin-left: 1rem;
+  }
+
+  .sport-hero__button--secondary::before {
+    background: #ffffff;
+  }
+
+  .sport-hero__button--secondary:hover {
+    color: #000000;
+  }
+
+  /* Button group */
+  .sport-hero__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  /* Diagonal accent element */
+  .sport-hero__accent {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40%;
+    height: 100%;
+    background: #ff0000;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    opacity: 0.1;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  /* Scroll indicator */
+  .sport-hero__scroll {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    z-index: 2;
+  }
+
+  .sport-hero__scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { transform: scaleY(1); opacity: 1; }
+    50% { transform: scaleY(0.6); opacity: 0.5; }
+  }
+
+  @media screen and (max-width: 749px) {
+    .sport-hero__scroll {
+      display: none;
+    }
   }
 {%- endstyle -%}
 
-<section class="haya-hero{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
-  <div class="haya-hero__media">
+<section class="sport-hero{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+  <div class="sport-hero__media">
     {%- if section.settings.image != blank -%}
       {{
         section.settings.image
@@ -138,32 +292,43 @@
     {%- endif -%}
   </div>
 
-  <div class="haya-hero__content">
+  <!-- Diagonal accent -->
+  <div class="sport-hero__accent"></div>
+
+  <div class="sport-hero__content page-width">
     {%- if section.settings.label != blank -%}
-      <p class="haya-hero__label">{{ section.settings.label }}</p>
+      <p class="sport-hero__label">{{ section.settings.label }}</p>
     {%- endif -%}
 
-    <h1 class="haya-hero__heading">
+    <h1 class="sport-hero__heading">
       {{ section.settings.heading | newline_to_br }}
     </h1>
 
-    {%- if section.settings.button_label != blank -%}
-      <a href="{{ section.settings.button_link }}" class="haya-hero__button">
-        {{ section.settings.button_label }}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <line x1="5" y1="12" x2="19" y2="12"></line>
-          <polyline points="12 5 19 12 12 19"></polyline>
-        </svg>
-      </a>
-    {%- endif -%}
+    <div class="sport-hero__buttons">
+      {%- if section.settings.button_label != blank -%}
+        <a href="{{ section.settings.button_link }}" class="sport-hero__button">
+          <span>{{ section.settings.button_label }}</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="sport-hero__scroll">
+    <span>Scroll</span>
+    <div class="sport-hero__scroll-line"></div>
   </div>
 </section>
 

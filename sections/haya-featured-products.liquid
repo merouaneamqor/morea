@@ -2,59 +2,71 @@
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
-  .haya-products {
+  /* ==============================================
+     SPORT FEATURED PRODUCTS - Nike Style
+     ============================================== */
+
+  .sport-products {
     padding: {{ section.settings.padding_top | times: 0.75 }}px 0 {{ section.settings.padding_bottom | times: 0.75 }}px;
-    background: {{ section.settings.background_color }};
+    background: #ffffff;
   }
 
   @media screen and (min-width: 750px) {
-    .haya-products {
+    .sport-products {
       padding: {{ section.settings.padding_top }}px 0 {{ section.settings.padding_bottom }}px;
     }
   }
 
-  .haya-products__header {
+  .sport-products__header {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     padding: 0 2rem;
   }
 
   @media screen and (min-width: 750px) {
-    .haya-products__header {
+    .sport-products__header {
       padding: 0;
-      margin-bottom: 2.5rem;
+      margin-bottom: 3rem;
     }
   }
 
-  .haya-products__title {
-    font-family: var(--font-heading-family);
-    font-size: 2.4rem;
-    font-weight: 500;
-    font-style: italic;
-    letter-spacing: -0.02em;
+  /* Bold uppercase title */
+  .sport-products__title {
+    font-family: 'Bebas Neue', 'Impact', 'Arial Black', sans-serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0.02em;
+    line-height: 0.9;
     margin: 0;
-    color: {{ section.settings.text_color }};
+    color: #000000;
+    text-transform: uppercase;
   }
 
-  @media screen and (min-width: 750px) {
-    .haya-products__title {
-      font-size: 3rem;
-    }
+  .sport-products__subtitle {
+    font-family: var(--font-body-family);
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #666666;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin: 0.75rem 0 0;
   }
 
-  .haya-products__nav {
+  /* Navigation arrows - Sharp style */
+  .sport-products__nav {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.75rem;
   }
 
-  .haya-products__nav-btn {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: 1px solid #e5e5e5;
-    background: #fff;
+  .sport-products__nav-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 0;
+    border: 2px solid #000000;
+    background: #ffffff;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -62,255 +74,326 @@
     transition: all 0.2s ease;
   }
 
-  .haya-products__nav-btn:hover {
-    border-color: #1a1a1a;
-    background: #1a1a1a;
+  .sport-products__nav-btn:hover {
+    background: #000000;
   }
 
-  .haya-products__nav-btn:hover svg {
-    stroke: #fff;
+  .sport-products__nav-btn:hover svg {
+    stroke: #ffffff;
   }
 
-  .haya-products__nav-btn svg {
+  .sport-products__nav-btn svg {
     width: 20px;
     height: 20px;
-    stroke: #1a1a1a;
+    stroke: #000000;
     stroke-width: 2;
     fill: none;
+    transition: stroke 0.2s ease;
   }
 
-  .haya-products__subtitle {
-    font-size: 1.3rem;
-    color: {{ section.settings.text_color }};
-    opacity: 0.6;
-    margin: 0.5rem 0 0;
-  }
-
-  .haya-products__slider-wrapper {
+  .sport-products__slider-wrapper {
     position: relative;
     overflow: hidden;
   }
 
-  .haya-products__grid {
+  .sport-products__grid {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.25rem;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-    padding: 0.5rem 2rem 1rem;
+    padding: 0 2rem 1rem;
     scrollbar-width: none;
     -ms-overflow-style: none;
   }
 
-  .haya-products__grid::-webkit-scrollbar {
+  .sport-products__grid::-webkit-scrollbar {
     display: none;
   }
 
   @media screen and (min-width: 990px) {
-    .haya-products__grid {
+    .sport-products__grid {
       gap: 1.5rem;
-      padding: 0.5rem 0 1rem;
+      padding: 0 0 1rem;
     }
   }
 
-  .haya-product-card {
+  /* Product Card - Sharp Sport Style */
+  .sport-product-card {
     flex: 0 0 280px;
     min-width: 280px;
     scroll-snap-align: start;
-    background: #f8f8f8;
-    border-radius: 16px;
+    background: #f5f5f5;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
   }
 
   @media screen and (min-width: 750px) {
-    .haya-product-card {
-      flex: 0 0 300px;
-      min-width: 300px;
+    .sport-product-card {
+      flex: 0 0 320px;
+      min-width: 320px;
     }
   }
 
-  .haya-product-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  .sport-product-card:hover {
+    transform: translateY(-6px);
   }
 
-  .haya-product-card__media {
+  .sport-product-card__media {
     position: relative;
     aspect-ratio: 4/5;
     overflow: hidden;
-    background: #f0f0f0;
-    border-radius: 16px 16px 0 0;
+    background: #eeeeee;
   }
 
-  .haya-product-card__media img {
+  .sport-product-card__media img {
     width: 100%;
-    height: 66%;
+    height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-  .haya-product-card:hover .haya-product-card__media img {
-    transform: scale(1.03);
+  .sport-product-card:hover .sport-product-card__media img {
+    transform: scale(1.06);
   }
 
-  .haya-product-card__badge {
+  /* Badge - Sharp rectangle */
+  .sport-product-card__badge {
     position: absolute;
-    top: -22px;
+    top: 12px;
     left: 12px;
-    background:rgb(0, 0, 0);
-    color: #fff;
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-  }
-
-  .haya-product-card__content {
-    padding: 1.25rem 1.5rem 1.5rem;
-    background: #fff;
-  }
-
-  .haya-product-card__title {
-    font-family: var(--font-heading-family);
-    font-size: 1.7rem;
+    background: #ff0000;
+    color: #ffffff;
+    padding: 6px 14px;
+    font-family: var(--font-body-family);
+    font-size: 1.1rem;
     font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .sport-product-card__badge--new {
+    background: #000000;
+  }
+
+  .sport-product-card__badge--soldout {
+    background: #666666;
+  }
+
+  .sport-product-card__content {
+    padding: 1.25rem 1.25rem 1.5rem;
+    background: #ffffff;
+  }
+
+  /* Product title - Bold uppercase */
+  .sport-product-card__title {
+    font-family: 'Bebas Neue', 'Impact', 'Arial Black', sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
     margin: 0 0 0.5rem;
-    color: {{ section.settings.text_color }};
-    line-height: 1.3;
+    color: #000000;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
 
-  .haya-product-card__price {
+  .sport-product-card__price {
     display: flex;
     align-items: baseline;
-    gap: 0.5rem;
+    gap: 0.75rem;
     margin-bottom: 1rem;
     flex-wrap: wrap;
   }
 
-  .haya-product-card__price-current {
+  .sport-product-card__price-current {
+    font-family: var(--font-body-family);
     font-size: 1.5rem;
-    font-weight: 500;
-    color: {{ section.settings.text_color }};
+    font-weight: 600;
+    color: #000000;
   }
 
-  .haya-product-card__price-compare {
-    font-size: 1.4rem;
-    color: #999;
+  .sport-product-card__price-compare {
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #999999;
     text-decoration: line-through;
   }
 
-  .haya-product-card__swatches {
+  /* Color swatches - Square */
+  .sport-product-card__swatches {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     margin-bottom: 1.25rem;
     flex-wrap: wrap;
   }
 
-  .haya-product-card__swatch {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    border: 2px solid #fff;
-    box-shadow: 0 0 0 1px rgba(0,0,0,0.15), inset 0 0 0 1px rgba(0,0,0,0.08);
+  .sport-product-card__swatch {
+    width: 20px;
+    height: 20px;
+    border-radius: 0;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.2);
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
-  .haya-product-card__swatch:hover {
-    transform: scale(1.2);
-    box-shadow: 0 0 0 2px rgba(0,0,0,0.3), inset 0 0 0 1px rgba(0,0,0,0.08);
+  .sport-product-card__swatch:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 2px rgba(0,0,0,0.4);
   }
 
-  .haya-product-card__colors-count {
-    font-size: 1.3rem;
+  .sport-product-card__colors-count {
+    font-size: 1.2rem;
     font-weight: 500;
-    color: {{ section.settings.text_color }};
-    opacity: 0.7;
+    color: #666666;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     margin-left: 4px;
   }
 
-  .haya-product-card__button {
+  /* CTA Button - Sharp rectangle */
+  .sport-product-card__button {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
     width: 100%;
-    background: #1a1a1a;
-    color: #fff;
-    padding: 14px 1.5rem;
-    border-radius: 30px;
-    font-size: 1.4rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: all 0.2s ease;
-  }
-
-  .haya-product-card__button:hover {
-    background: #333;
-  }
-
-  .haya-product-card__button svg {
-    width: 18px;
-    height: 18px;
-    transition: transform 0.2s ease;
-  }
-
-  .haya-product-card__button:hover svg {
-    transform: translateX(4px);
-  }
-
-  .haya-products__view-all {
-    display: flex;
-    justify-content: center;
-    margin-top: 3rem;
-    padding: 0 2rem;
-  }
-
-  .haya-products__view-all-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    background: transparent;
-    color: {{ section.settings.text_color }};
-    padding: 1rem 2rem;
-    border: 2px solid {{ section.settings.text_color }};
-    border-radius: 50px;
+    background: #000000;
+    color: #ffffff;
+    padding: 1.2rem 1.5rem;
+    font-family: var(--font-body-family);
     font-size: 1.3rem;
     font-weight: 600;
     text-decoration: none;
-    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
   }
 
-  .haya-products__view-all-btn:hover {
-    background: {{ section.settings.text_color }};
-    color: {{ section.settings.background_color }};
+  .sport-product-card__button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #333333;
+    transition: left 0.3s ease;
+    z-index: 0;
+  }
+
+  .sport-product-card__button:hover::before {
+    left: 0;
+  }
+
+  .sport-product-card__button span,
+  .sport-product-card__button svg {
+    position: relative;
+    z-index: 1;
+  }
+
+  .sport-product-card__button svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+  }
+
+  .sport-product-card__button:hover svg {
+    transform: translateX(5px);
+  }
+
+  /* View All Button - Sport style */
+  .sport-products__view-all {
+    display: flex;
+    justify-content: center;
+    margin-top: 3.5rem;
+    padding: 0 2rem;
+  }
+
+  .sport-products__view-all-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    background: transparent;
+    color: #000000;
+    padding: 1.2rem 2.5rem;
+    border: 2px solid #000000;
+    font-family: var(--font-body-family);
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sport-products__view-all-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    transition: left 0.3s ease;
+    z-index: 0;
+  }
+
+  .sport-products__view-all-btn:hover::before {
+    left: 0;
+  }
+
+  .sport-products__view-all-btn span,
+  .sport-products__view-all-btn svg {
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+  }
+
+  .sport-products__view-all-btn:hover {
+    color: #ffffff;
+  }
+
+  .sport-products__view-all-btn:hover span,
+  .sport-products__view-all-btn:hover svg {
+    color: #ffffff;
+  }
+
+  .sport-products__view-all-btn svg {
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  .sport-products__view-all-btn:hover svg {
+    transform: translateX(5px);
   }
 {%- endstyle -%}
 
-<section class="haya-products{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+<section class="sport-products{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
   <div class="page-width">
-    <div class="haya-products__header">
+    <div class="sport-products__header">
       <div>
         {%- if section.settings.title != blank -%}
-          <h2 class="haya-products__title">{{ section.settings.title }}</h2>
+          <h2 class="sport-products__title">{{ section.settings.title }}</h2>
         {%- endif -%}
         {%- if section.settings.subtitle != blank -%}
-          <p class="haya-products__subtitle">{{ section.settings.subtitle }}</p>
+          <p class="sport-products__subtitle">{{ section.settings.subtitle }}</p>
         {%- endif -%}
       </div>
-      <div class="haya-products__nav">
+      <div class="sport-products__nav">
         <button
           type="button"
-          class="haya-products__nav-btn"
-          onclick="document.getElementById('haya-slider-{{ section.id }}').scrollBy({left: -320, behavior: 'smooth'})"
+          class="sport-products__nav-btn"
+          onclick="document.getElementById('sport-slider-{{ section.id }}').scrollBy({left: -340, behavior: 'smooth'})"
           aria-label="Previous"
         >
           <svg viewBox="0 0 24 24">
@@ -319,8 +402,8 @@
         </button>
         <button
           type="button"
-          class="haya-products__nav-btn"
-          onclick="document.getElementById('haya-slider-{{ section.id }}').scrollBy({left: 320, behavior: 'smooth'})"
+          class="sport-products__nav-btn"
+          onclick="document.getElementById('sport-slider-{{ section.id }}').scrollBy({left: 340, behavior: 'smooth'})"
           aria-label="Next"
         >
           <svg viewBox="0 0 24 24">
@@ -331,16 +414,16 @@
     </div>
 
     {%- if section.settings.collection != blank -%}
-      <div class="haya-products__slider-wrapper">
-        <div class="haya-products__grid" id="haya-slider-{{ section.id }}">
+      <div class="sport-products__slider-wrapper">
+        <div class="sport-products__grid" id="sport-slider-{{ section.id }}">
           {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%}
             <div
-              class="haya-product-card{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+              class="sport-product-card{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
               {% if settings.animations_reveal_on_scroll %}
                 style="--animation-order: {{ forloop.index }};"
               {% endif %}
             >
-              <a href="{{ product.url }}" class="haya-product-card__media">
+              <a href="{{ product.url }}" class="sport-product-card__media">
                 {%- if product.featured_media -%}
                   {{
                     product.featured_media
@@ -354,21 +437,21 @@
                 {%- endif -%}
 
                 {%- if forloop.first -%}
-                  <span class="haya-product-card__badge">Best Seller</span>
+                  <span class="sport-product-card__badge sport-product-card__badge--new">Best Seller</span>
                 {%- elsif product.compare_at_price > product.price -%}
-                  <span class="haya-product-card__badge" style="background: #dc143c;">Sale</span>
+                  <span class="sport-product-card__badge">Sale</span>
                 {%- elsif product.available == false -%}
-                  <span class="haya-product-card__badge" style="background: #666;">Sold Out</span>
+                  <span class="sport-product-card__badge sport-product-card__badge--soldout">Sold Out</span>
                 {%- endif -%}
               </a>
 
-              <div class="haya-product-card__content">
-                <h3 class="haya-product-card__title">{{ product.title }}</h3>
+              <div class="sport-product-card__content">
+                <h3 class="sport-product-card__title">{{ product.title }}</h3>
 
-                <div class="haya-product-card__price">
-                  <span class="haya-product-card__price-current">from {{ product.price | money }}</span>
+                <div class="sport-product-card__price">
+                  <span class="sport-product-card__price-current">{{ product.price | money }}</span>
                   {%- if product.compare_at_price > product.price -%}
-                    <span class="haya-product-card__price-compare">{{ product.compare_at_price | money }}</span>
+                    <span class="sport-product-card__price-compare">{{ product.compare_at_price | money }}</span>
                   {%- endif -%}
                 </div>
 
@@ -378,12 +461,12 @@
                   | default: product.options_by_name.couleur
                 -%}
                 {%- if color_option and color_option.values.size > 0 -%}
-                  <div class="haya-product-card__swatches">
+                  <div class="sport-product-card__swatches">
                     {%- for color in color_option.values limit: 6 -%}
                       {%- assign color_handle = color | handleize -%}
                       {%- case color_handle -%}
                         {%- when 'black' -%}
-                          {%- assign swatch_color = '#1a1a1a' -%}
+                          {%- assign swatch_color = '#000000' -%}
                         {%- when 'white' -%}
                           {%- assign swatch_color = '#ffffff' -%}
                         {%- when 'navy', 'navy-blue' -%}
@@ -401,7 +484,7 @@
                         {%- when 'blue' -%}
                           {%- assign swatch_color = '#4169e1' -%}
                         {%- when 'red' -%}
-                          {%- assign swatch_color = '#dc143c' -%}
+                          {%- assign swatch_color = '#ff0000' -%}
                         {%- when 'green' -%}
                           {%- assign swatch_color = '#228b22' -%}
                         {%- when 'brown' -%}
@@ -427,7 +510,7 @@
                         {%- when 'lavender' -%}
                           {%- assign swatch_color = '#e6e6fa' -%}
                         {%- when 'noir' -%}
-                          {%- assign swatch_color = '#1a1a1a' -%}
+                          {%- assign swatch_color = '#000000' -%}
                         {%- when 'blanc' -%}
                           {%- assign swatch_color = '#ffffff' -%}
                         {%- when 'gris' -%}
@@ -435,7 +518,7 @@
                         {%- when 'bleu' -%}
                           {%- assign swatch_color = '#4169e1' -%}
                         {%- when 'rouge' -%}
-                          {%- assign swatch_color = '#dc143c' -%}
+                          {%- assign swatch_color = '#ff0000' -%}
                         {%- when 'vert' -%}
                           {%- assign swatch_color = '#228b22' -%}
                         {%- when 'rose' -%}
@@ -448,21 +531,19 @@
                           {%- assign swatch_color = '#cccccc' -%}
                       {%- endcase -%}
                       <span
-                        class="haya-product-card__swatch"
+                        class="sport-product-card__swatch"
                         style="background: {{ swatch_color }};"
                         title="{{ color }}"
                       ></span>
                     {%- endfor -%}
                     {%- if color_option.values.size > 6 -%}
-                      <span class="haya-product-card__colors-count">{{ color_option.values.size }}+ colors</span>
-                    {%- elsif color_option.values.size > 1 -%}
-                      <span class="haya-product-card__colors-count">{{ color_option.values.size }} colors</span>
+                      <span class="sport-product-card__colors-count">+{{ color_option.values.size | minus: 6 }}</span>
                     {%- endif -%}
                   </div>
                 {%- endif -%}
 
-                <a href="{{ product.url }}" class="haya-product-card__button">
-                  Shop Now
+                <a href="{{ product.url }}" class="sport-product-card__button">
+                  <span>Shop Now</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
@@ -483,9 +564,9 @@
       </div>
 
       {%- if section.settings.show_view_all -%}
-        <div class="haya-products__view-all">
-          <a href="{{ section.settings.collection.url }}" class="haya-products__view-all-btn">
-            Voir Tous les Produits
+        <div class="sport-products__view-all">
+          <a href="{{ section.settings.collection.url }}" class="sport-products__view-all-btn">
+            <span>View All Products</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -494,8 +575,8 @@
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
-              width="16"
-              height="16"
+              width="18"
+              height="18"
             >
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
@@ -504,28 +585,26 @@
         </div>
       {%- endif -%}
     {%- else -%}
-      <div class="haya-products__slider-wrapper">
-        <div class="haya-products__grid" id="haya-slider-{{ section.id }}">
+      <div class="sport-products__slider-wrapper">
+        <div class="sport-products__grid" id="sport-slider-{{ section.id }}">
           {%- for i in (1..4) -%}
-            <div class="haya-product-card">
-              <div class="haya-product-card__media">
-                <span class="haya-product-card__badge">Best Seller</span>
+            <div class="sport-product-card">
+              <div class="sport-product-card__media">
+                <span class="sport-product-card__badge sport-product-card__badge--new">New</span>
                 {{ 'product-' | append: i | placeholder_svg_tag: 'placeholder-svg' }}
               </div>
-              <div class="haya-product-card__content">
-                <h3 class="haya-product-card__title">Product Title</h3>
-                <div class="haya-product-card__price">
-                  <span class="haya-product-card__price-current">from 349 dh</span>
+              <div class="sport-product-card__content">
+                <h3 class="sport-product-card__title">Product Title</h3>
+                <div class="sport-product-card__price">
+                  <span class="sport-product-card__price-current">349 MAD</span>
                 </div>
-                <div class="haya-product-card__swatches">
-                  <span class="haya-product-card__swatch" style="background: #1a1a1a;"></span>
-                  <span class="haya-product-card__swatch" style="background: #1e3a5f;"></span>
-                  <span class="haya-product-card__swatch" style="background: #d4a5a5;"></span>
-                  <span class="haya-product-card__swatch" style="background: #f5f5dc;"></span>
-                  <span class="haya-product-card__colors-count">4+ couleurs</span>
+                <div class="sport-product-card__swatches">
+                  <span class="sport-product-card__swatch" style="background: #000000;"></span>
+                  <span class="sport-product-card__swatch" style="background: #ffffff;"></span>
+                  <span class="sport-product-card__swatch" style="background: #808080;"></span>
                 </div>
-                <a href="#" class="haya-product-card__button">
-                  Shop Now
+                <a href="#" class="sport-product-card__button">
+                  <span>Shop Now</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"

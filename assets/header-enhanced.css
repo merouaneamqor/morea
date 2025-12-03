@@ -1,55 +1,220 @@
-/* Enhanced Navbar Styling - minimal, sporty, and clean */
+/* ==============================================
+   NIKE SPORT STYLE - ENHANCED HEADER
+   Bold, black, athletic navigation
+   ============================================== */
 
+/* Header Wrapper - Black Bar */
 .section-header.header-wrapper {
-    border-bottom: 1px solid rgba(var(--color-foreground), 0.06);
+    background: #000000 !important;
+    border-bottom: none !important;
+    position: relative;
+    z-index: 1000;
+}
+
+.header-wrapper {
+    background: #000000 !important;
 }
 
 .header {
     align-items: center;
+    background: #000000 !important;
+    padding: 0.8rem 2rem !important;
 }
 
 @media screen and (min-width: 990px) {
     .header {
-        gap: 2rem;
+        gap: 3rem;
+        padding: 1rem 3rem !important;
     }
 }
 
-/* Menu typography: light, spaced, uppercase */
+/* Logo - White */
+.header__heading-link {
+    color: #ffffff !important;
+}
+
+.header__heading-logo {
+    filter: brightness(0) invert(1);
+}
+
+.header__heading-link .h2,
+.header__heading-link span {
+    color: #ffffff !important;
+    font-family: 'Bebas Neue', 'Impact', sans-serif !important;
+    font-size: 2.4rem !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase !important;
+}
+
+/* Menu typography: Bold uppercase sport style */
 .list-menu__item--link {
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-weight: 300;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    font-weight: 500 !important;
+    font-size: 1.3rem !important;
+    color: #ffffff !important;
+    position: relative !important;
+    padding: 1rem 1.2rem !important;
+}
+
+/* Underline hover effect */
+.list-menu__item--link::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: 0.6rem !important;
+    left: 1.2rem !important;
+    right: 1.2rem !important;
+    height: 2px !important;
+    background: #ffffff !important;
+    transform: scaleX(0) !important;
+    transform-origin: center !important;
+    transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+.list-menu__item--link:hover::after,
+.list-menu__item--link:focus::after {
+    transform: scaleX(1) !important;
+}
+
+/* Active state */
+.header__active-menu-item::after {
+    transform: scaleX(1) !important;
 }
 
 /* Hover/active states */
 .list-menu__item--link:hover,
 .list-menu__item--link:focus {
-    opacity: 0.8;
+    opacity: 1 !important;
+    color: #ffffff !important;
 }
 
 .header-wrapper--border-bottom {
-    border-bottom-width: 1px;
+    border-bottom: none !important;
 }
 
-/* Search and icons alignment */
+/* Header icons - White */
 .header__icons {
-    gap: 0.6rem;
+    gap: 1rem;
+}
+
+.header__icon {
+    color: #ffffff !important;
+}
+
+.header__icon svg {
+    color: #ffffff !important;
+    width: 22px;
+    height: 22px;
+}
+
+.header__icon .svg-wrapper {
+    color: #ffffff !important;
 }
 
 .header__icons .svg-wrapper {
-    transition: opacity var(--duration-short) ease;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    color: #ffffff !important;
 }
 
 .header__icons a:hover .svg-wrapper {
     opacity: 0.8;
+    transform: scale(1.05);
 }
 
-/* Sticky header refinement */
-.shopify-section-header-sticky .header {
-    padding-top: 10px;
-    padding-bottom: 10px;
+/* Cart count bubble - Red accent */
+#cart-icon-bubble .cart-count-bubble {
+    background: #ff0000 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
+    min-width: 18px;
+    height: 18px;
+    border-radius: 50%;
+}
+
+/* Search modal trigger */
+.header__search .modal__toggle-open,
+details[id^="Details-header-search"] summary {
+    color: #ffffff !important;
+}
+
+/* Sticky header - Solid black */
+.shopify-section-header-sticky .header,
+.scrolled-past-header .header {
+    background: #000000 !important;
+    padding-top: 0.6rem !important;
+    padding-bottom: 0.6rem !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
+    backdrop-filter: none !important;
 }
 
 .scrolled-past-header .header__heading-logo-wrapper {
-    transform: translateZ(0);
+    transform: scale(0.9) translateZ(0);
+    transition: transform 0.3s ease;
+}
+
+/* Dropdown caret icon */
+.header__menu-item .icon-caret,
+.list-menu__item .icon-caret {
+    color: #ffffff !important;
+    width: 10px;
+    height: 10px;
+    margin-left: 0.4rem;
+    transition: transform 0.3s ease;
+}
+
+details[open] .icon-caret {
+    transform: rotate(180deg);
+}
+
+/* Hamburger icon - Mobile */
+.header__icon--menu svg {
+    color: #ffffff !important;
+    width: 24px;
+    height: 24px;
+}
+
+/* Account icon */
+.header__icon--account svg {
+    color: #ffffff !important;
+}
+
+/* Localization selectors */
+.header-localization .localization-form__select {
+    color: #ffffff !important;
+    background: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 0 !important;
+    font-size: 1.2rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+}
+
+.header-localization .disclosure__button {
+    color: #ffffff !important;
+}
+
+/* Desktop menu alignment */
+@media screen and (min-width: 990px) {
+    .header__inline-menu {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    .list-menu--inline {
+        gap: 0.5rem;
+    }
+}
+
+/* Mobile optimizations */
+@media screen and (max-width: 989px) {
+    .header {
+        padding: 0.6rem 1.5rem !important;
+    }
+
+    .header__heading-link .h2,
+    .header__heading-link span {
+        font-size: 1.8rem !important;
+    }
 }

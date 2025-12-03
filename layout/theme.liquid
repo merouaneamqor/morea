@@ -18,11 +18,11 @@
     {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
-    <!-- Brand Fonts: Inter (body) + Oswald (headings) -->
+    <!-- Brand Fonts: Inter (body) + Bebas Neue (sport headlines) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Oswald:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     >
 
@@ -147,15 +147,20 @@
       }
 
       :root {
-        /* Override to sporty/dynamic fonts */
+        /* Nike Sport Style: Bebas Neue for bold headlines */
         --font-body-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif;
         --font-body-style: normal;
         --font-body-weight: 400;
-        --font-body-weight-bold: 800;
+        --font-body-weight-bold: 700;
 
-        --font-heading-family: 'Oswald', 'Inter', system-ui, Arial, sans-serif;
+        --font-heading-family: 'Bebas Neue', 'Impact', 'Arial Black', sans-serif;
         --font-heading-style: normal;
-        --font-heading-weight: 700;
+        --font-heading-weight: 400;
+        
+        /* Sport accent color */
+        --sport-accent: #ff0000;
+        --sport-black: #000000;
+        --sport-white: #ffffff;
 
         --font-body-scale: {{ settings.body_scale | divided_by: 100.0 }};
         --font-heading-scale: {{ settings.heading_scale | times: 1.0 | divided_by: settings.body_scale }};
@@ -305,6 +310,7 @@
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
     {{ 'brand.css' | asset_url | stylesheet_tag }}
+    {{ 'sport-theme.css' | asset_url | stylesheet_tag }}
     <link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
 
     {{ 'checkout-sport.css' | asset_url | stylesheet_tag }}

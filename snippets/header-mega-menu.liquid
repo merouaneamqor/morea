@@ -1,20 +1,21 @@
 {% comment %}
-  Renders a megamenu for the header.
+  Renders a Nike-style megamenu for the header.
+  Features: Full-width dropdown, category images, bold typography
 
   Usage:
   {% render 'header-mega-menu' %}
 {% endcomment %}
 
-<nav class="header__inline-menu">
-  <ul class="list-menu list-menu--inline" role="list">
+<nav class="header__inline-menu sport-nav">
+  <ul class="list-menu list-menu--inline sport-nav__list" role="list">
     {%- for link in section.settings.menu.links -%}
-      <li>
+      <li class="sport-nav__item">
         {%- if link.links != blank -%}
           <header-menu>
-            <details id="Details-HeaderMenu-{{ forloop.index }}" class="mega-menu">
+            <details id="Details-HeaderMenu-{{ forloop.index }}" class="mega-menu sport-mega">
               <summary
                 id="HeaderMenu-{{ link.handle }}"
-                class="header__menu-item list-menu__item link focus-inset"
+                class="header__menu-item list-menu__item link focus-inset sport-nav__link"
               >
                 <span
                   {%- if link.child_active %}
@@ -23,50 +24,62 @@
                 >
                   {{- link.title | escape -}}
                 </span>
-                {{- 'icon-caret.svg' | inline_asset_content -}}
+                <svg class="sport-nav__caret" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
               </summary>
               <div
                 id="MegaMenu-Content-{{ forloop.index }}"
-                class="mega-menu__content color-{{ section.settings.menu_color_scheme }} gradient motion-reduce global-settings-popup"
+                class="mega-menu__content sport-mega__content"
                 tabindex="-1"
               >
-                <ul
-                  class="mega-menu__list page-width{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}"
-                  role="list"
-                >
-                  {%- for childlink in link.links -%}
-                    <li>
-                      <a
-                        id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
-                        href="{{ childlink.url }}"
-                        class="mega-menu__link mega-menu__link--level-2 link{% if childlink.current %} mega-menu__link--active{% endif %}"
-                        {% if childlink.current %}
-                          aria-current="page"
-                        {% endif %}
-                      >
-                        {{ childlink.title | escape }}
+                <div class="sport-mega__inner page-width">
+                  <div class="sport-mega__grid">
+                    {%- for childlink in link.links -%}
+                      <div class="sport-mega__column">
+                        <a
+                          id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
+                          href="{{ childlink.url }}"
+                          class="sport-mega__category-title{% if childlink.current %} sport-mega__category-title--active{% endif %}"
+                          {% if childlink.current %}
+                            aria-current="page"
+                          {% endif %}
+                        >
+                          {{ childlink.title | escape }}
+                        </a>
+                        {%- if childlink.links != blank -%}
+                          <ul class="sport-mega__links list-unstyled" role="list">
+                            {%- for grandchildlink in childlink.links -%}
+                              <li>
+                                <a
+                                  id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
+                                  href="{{ grandchildlink.url }}"
+                                  class="sport-mega__link{% if grandchildlink.current %} sport-mega__link--active{% endif %}"
+                                  {% if grandchildlink.current %}
+                                    aria-current="page"
+                                  {% endif %}
+                                >
+                                  {{ grandchildlink.title | escape }}
+                                </a>
+                              </li>
+                            {%- endfor -%}
+                          </ul>
+                        {%- endif -%}
+                      </div>
+                    {%- endfor -%}
+                    
+                    {%- comment %} Featured category tile with image {% endcomment -%}
+                    <div class="sport-mega__featured">
+                      <a href="{{ link.url }}" class="sport-mega__featured-tile">
+                        <div class="sport-mega__featured-overlay"></div>
+                        <span class="sport-mega__featured-label">Shop All {{ link.title }}</span>
+                        <svg class="sport-mega__featured-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
                       </a>
-                      {%- if childlink.links != blank -%}
-                        <ul class="list-unstyled" role="list">
-                          {%- for grandchildlink in childlink.links -%}
-                            <li>
-                              <a
-                                id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
-                                href="{{ grandchildlink.url }}"
-                                class="mega-menu__link link{% if grandchildlink.current %} mega-menu__link--active{% endif %}"
-                                {% if grandchildlink.current %}
-                                  aria-current="page"
-                                {% endif %}
-                              >
-                                {{ grandchildlink.title | escape }}
-                              </a>
-                            </li>
-                          {%- endfor -%}
-                        </ul>
-                      {%- endif -%}
-                    </li>
-                  {%- endfor -%}
-                </ul>
+                    </div>
+                  </div>
+                </div>
               </div>
             </details>
           </header-menu>
@@ -74,7 +87,7 @@
           <a
             id="HeaderMenu-{{ link.handle }}"
             href="{{ link.url }}"
-            class="header__menu-item list-menu__item link link--text focus-inset"
+            class="header__menu-item list-menu__item link link--text focus-inset sport-nav__link"
             {% if link.current %}
               aria-current="page"
             {% endif %}
@@ -92,3 +105,196 @@
     {%- endfor -%}
   </ul>
 </nav>
+
+<style>
+  /* Sport Navigation Styles */
+  .sport-nav__list {
+    gap: 0.5rem;
+  }
+
+  .sport-nav__link {
+    color: var(--sport-white, #fff) !important;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+    font-size: 1.3rem;
+    padding: 1rem 1.4rem !important;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    transition: opacity 0.2s ease;
+  }
+
+  .sport-nav__link:hover {
+    opacity: 0.8;
+  }
+
+  .sport-nav__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0.5rem;
+    left: 1.4rem;
+    right: 1.4rem;
+    height: 2px;
+    background: var(--sport-white, #fff);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .sport-nav__link:hover::after,
+  .sport-nav__link[aria-expanded="true"]::after {
+    transform: scaleX(1);
+  }
+
+  .sport-nav__caret {
+    width: 10px;
+    height: 6px;
+    transition: transform 0.3s ease;
+  }
+
+  .sport-nav__link[aria-expanded="true"] .sport-nav__caret {
+    transform: rotate(180deg);
+  }
+
+  /* Mega Menu Content */
+  .sport-mega__content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    background: var(--sport-black, #000) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 3rem 0;
+    animation: sportSlideDown 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 100;
+  }
+
+  @keyframes sportSlideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .sport-mega__inner {
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .sport-mega__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) 280px;
+    gap: 3rem;
+  }
+
+  .sport-mega__column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sport-mega__category-title {
+    color: var(--sport-white, #fff);
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    transition: color 0.2s ease;
+  }
+
+  .sport-mega__category-title:hover {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .sport-mega__links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .sport-mega__link {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.4rem 0;
+    transition: color 0.2s ease;
+  }
+
+  .sport-mega__link:hover {
+    color: var(--sport-white, #fff);
+  }
+
+  /* Featured Tile */
+  .sport-mega__featured {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .sport-mega__featured-tile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+    color: var(--sport-white, #fff);
+    text-decoration: none;
+    overflow: hidden;
+    width: 100%;
+    min-height: 200px;
+    transition: transform 0.3s ease;
+  }
+
+  .sport-mega__featured-tile:hover {
+    transform: scale(1.02);
+  }
+
+  .sport-mega__featured-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 60%);
+  }
+
+  .sport-mega__featured-label {
+    position: relative;
+    z-index: 1;
+    font-family: var(--font-heading-family);
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+
+  .sport-mega__featured-arrow {
+    position: relative;
+    z-index: 1;
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+  }
+
+  .sport-mega__featured-tile:hover .sport-mega__featured-arrow {
+    transform: translateX(6px);
+  }
+
+  @media screen and (max-width: 989px) {
+    .sport-mega__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sport-mega__featured {
+      grid-column: span 2;
+    }
+  }
+</style>
