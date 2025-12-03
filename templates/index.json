@@ -12,9 +12,9 @@
     "haya_hero": {
       "type": "haya-hero",
       "settings": {
-        "label": "Our Featured",
-        "heading": "performance\ncan too.",
-        "button_label": "Shop Activewear",
+        "label": "Collection Sport",
+        "heading": "Performance\net élégance.",
+        "button_label": "Découvrir la Collection",
         "button_link": "shopify://products/الطقم-الرابع-مع-غطاء-خصر-وحجاب",
         "image": "shopify://shop_images/Studio_Product_Photo_-_Muted_Dusty_Rose_Pink_1.jpg",
         "background_color": "#1a1a1a",
@@ -26,8 +26,8 @@
     "featured_products": {
       "type": "haya-featured-products",
       "settings": {
-        "title": "Our Featured",
-        "subtitle": "Best sellers",
+        "title": "Nos Articles en Vedette",
+        "subtitle": "Performance et élégance au quotidien",
         "collection": "all",
         "products_to_show": 4,
         "columns_desktop": 4,
