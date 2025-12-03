@@ -27,7 +27,7 @@
       "type": "haya-featured-products",
       "settings": {
         "title": "Our Featured",
-        "subtitle": "",
+        "subtitle": "Best sellers",
         "collection": "all",
         "products_to_show": 4,
         "columns_desktop": 4,
