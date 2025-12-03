@@ -183,7 +183,7 @@
   }
 
   .sport-hero__button span,
-  .sport-hero__button svg {
+  .sport-hero__button i {
     position: relative;
     z-index: 1;
     transition: color 0.3s ease;
@@ -194,17 +194,16 @@
   }
 
   .sport-hero__button:hover span,
-  .sport-hero__button:hover svg {
+  .sport-hero__button:hover i {
     color: #ffffff;
   }
 
-  .sport-hero__button svg {
-    width: 20px;
-    height: 20px;
+  .sport-hero__button i {
+    font-size: 1.6rem;
     transition: transform 0.3s ease, color 0.3s ease;
   }
 
-  .sport-hero__button:hover svg {
+  .sport-hero__button:hover i {
     transform: translateX(5px);
   }
 
@@ -309,18 +308,7 @@
       {%- if section.settings.button_label != blank -%}
         <a href="{{ section.settings.button_link }}" class="sport-hero__button">
           <span>{{ section.settings.button_label }}</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
+          <i class="fa-solid fa-arrow-right"></i>
         </a>
       {%- endif -%}
     </div>

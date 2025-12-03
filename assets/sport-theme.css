@@ -23,6 +23,40 @@
 }
 
 /* ==============================================
+   FONT AWESOME ICON STYLING
+   ============================================== */
+
+/* Icon base styling */
+.fa-solid, .fa-regular, .fa-brands {
+    vertical-align: middle;
+}
+
+/* Icon in buttons */
+.button i,
+a.button i {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.button:hover i,
+a.button:hover i {
+    transform: translateX(4px);
+}
+
+/* Icon colors */
+.icon-accent {
+    color: var(--sport-accent) !important;
+}
+
+.icon-dark {
+    color: var(--sport-black) !important;
+}
+
+.icon-light {
+    color: var(--sport-white) !important;
+}
+
+/* ==============================================
    GLOBAL TYPOGRAPHY - SPORT STYLE
    ============================================== */
 
@@ -489,6 +523,225 @@ input:focus {
 .pagination__item:hover:not(.pagination__item--current) {
     background: var(--sport-blush) !important;
     border-color: var(--sport-accent) !important;
+}
+
+/* ==============================================
+   PRODUCT PAGE - SYNDEED STYLE (Clean & Modest)
+   ============================================== */
+
+/* Product title - Clean elegant */
+.product__title h1,
+.product__title .h1 {
+    font-family: 'Bebas Neue', 'Impact', sans-serif !important;
+    font-size: clamp(2.4rem, 4vw, 3.6rem) !important;
+    font-weight: 400 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.03em !important;
+    color: var(--sport-black) !important;
+    margin-bottom: 0.5rem !important;
+}
+
+/* Price styling */
+.product .price-item--regular,
+.product .price-item--sale {
+    font-size: 2rem !important;
+    font-weight: 600 !important;
+    color: var(--sport-black) !important;
+}
+
+.product .price-item--regular.price-item--last {
+    color: var(--sport-gray-mid) !important;
+}
+
+/* Variant selector - Clean pills */
+.product-form__input--pill label {
+    border-radius: 8px !important;
+    border: 1px solid rgba(0, 0, 0, 0.15) !important;
+    padding: 1rem 1.8rem !important;
+    font-size: 1.3rem !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    transition: all 0.2s ease !important;
+}
+
+.product-form__input--pill label:hover {
+    border-color: var(--sport-accent) !important;
+}
+
+.product-form__input--pill input:checked + label {
+    background: var(--sport-black) !important;
+    color: var(--sport-white) !important;
+    border-color: var(--sport-black) !important;
+}
+
+/* Size guide link */
+.product-form__input .size-guide-link {
+    color: var(--sport-accent) !important;
+    text-decoration: underline !important;
+    font-size: 1.3rem !important;
+}
+
+/* Quantity selector - Clean rounded */
+.quantity {
+    border-radius: 8px !important;
+    border: 1px solid rgba(0, 0, 0, 0.15) !important;
+    overflow: hidden !important;
+}
+
+.quantity__button {
+    background: transparent !important;
+    border: none !important;
+    color: var(--sport-black) !important;
+    width: 44px !important;
+    height: 44px !important;
+}
+
+.quantity__button:hover {
+    background: var(--sport-blush) !important;
+}
+
+.quantity__input {
+    border: none !important;
+    font-weight: 600 !important;
+}
+
+/* Add to cart button - Clean prominent */
+.product-form__submit {
+    background: var(--sport-black) !important;
+    color: var(--sport-white) !important;
+    border-radius: 8px !important;
+    padding: 1.6rem 3rem !important;
+    font-size: 1.4rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    min-height: 56px !important;
+    transition: all 0.25s ease !important;
+}
+
+.product-form__submit:hover {
+    background: var(--sport-accent) !important;
+}
+
+.product-form__submit:disabled {
+    background: var(--sport-gray-mid) !important;
+    opacity: 0.7 !important;
+}
+
+/* Buy it now button */
+.shopify-payment-button__button {
+    border-radius: 8px !important;
+    min-height: 56px !important;
+}
+
+/* Product media/gallery - Clean rounded */
+.product__media-item {
+    border-radius: 12px !important;
+    overflow: hidden !important;
+}
+
+.product__media-item img {
+    border-radius: 12px !important;
+}
+
+/* Thumbnails */
+.thumbnail {
+    border-radius: 8px !important;
+    border: 2px solid transparent !important;
+    overflow: hidden !important;
+    transition: border-color 0.2s ease !important;
+}
+
+.thumbnail:hover,
+.thumbnail--active {
+    border-color: var(--sport-accent) !important;
+}
+
+/* Product description - Clean typography */
+.product__description {
+    font-size: 1.5rem !important;
+    line-height: 1.7 !important;
+    color: var(--sport-gray-dark) !important;
+}
+
+/* Accordion/collapsible content */
+.accordion summary,
+.product__accordion summary {
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    font-size: 1.3rem !important;
+    padding: 1.5rem 0 !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+.accordion .accordion__content,
+.product__accordion .accordion__content {
+    padding: 1.5rem 0 !important;
+    color: var(--sport-gray-dark) !important;
+}
+
+/* Product info spacing */
+.product__info-container > * {
+    margin-bottom: 1.5rem !important;
+}
+
+/* Trust badges */
+.product__trust-badges {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 1.5rem !important;
+    padding: 1.5rem 0 !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+    margin-top: 1.5rem !important;
+}
+
+.product__trust-badges-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    font-size: 1.2rem !important;
+    color: var(--sport-gray-mid) !important;
+}
+
+.product__trust-badges-item i {
+    font-size: 1.6rem !important;
+    color: var(--sport-accent) !important;
+}
+
+/* Sticky add to cart bar */
+.sticky-atc {
+    background: var(--sport-white) !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+.sticky-atc__button {
+    background: var(--sport-black) !important;
+    color: var(--sport-white) !important;
+    border-radius: 8px !important;
+}
+
+/* Color swatches on product page */
+.product-form__input--swatch .swatch-input__button {
+    border-radius: 50% !important;
+    border: 2px solid transparent !important;
+    transition: border-color 0.2s ease !important;
+}
+
+.product-form__input--swatch .swatch-input__button:hover,
+.product-form__input--swatch input:checked + .swatch-input__button {
+    border-color: var(--sport-accent) !important;
+}
+
+/* Related products section title */
+.related-products__heading {
+    font-family: 'Bebas Neue', 'Impact', sans-serif !important;
+    font-size: clamp(2rem, 4vw, 3rem) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.03em !important;
+    color: var(--sport-black) !important;
 }
 
 /* ==============================================
