@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "landing_ensemble": {
@@ -5,6 +14,7 @@
       "settings": {
         "title": "Ensemble d'Entraînement 4 Pièces",
         "intro_text": "Découvrez un set complet pensé pour les femmes qui veulent s'entraîner avec confort, style et modestie. Tissu premium, coupe fluide, respirabilité maximale — tout ce dont vous avez besoin pour performer avec confiance.",
+        "hero_image": "shopify://shop_images/Gemini_Generated_Image_wjylg6wjylg6wjyl.jpg",
         "product_url": "shopify://products/الطقم-الرابع-مع-غطاء-خصر-وحجاب"
       }
     }
@@ -13,4 +23,3 @@
     "landing_ensemble"
   ]
 }
-
