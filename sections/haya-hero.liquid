@@ -1,6 +1,6 @@
 {%- style -%}
   /* ==============================================
-     NIKE SPORT HERO - Bold Uppercase Athletic
+     MOREA SPORT HERO - Clean Modest Athletic
      ============================================== */
   
   .sport-hero {
@@ -9,7 +9,7 @@
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
-    background: #000000;
+    background: #faf9f7;
     overflow: hidden;
   }
 
@@ -35,7 +35,7 @@
     object-position: center top;
   }
 
-  /* Dramatic gradient overlay */
+  /* Soft gradient overlay */
   .sport-hero__media::after {
     content: '';
     position: absolute;
@@ -45,9 +45,9 @@
     height: 100%;
     background: linear-gradient(
       135deg,
-      rgba(0, 0, 0, 0.7) 0%,
-      rgba(0, 0, 0, 0.3) 40%,
-      rgba(0, 0, 0, 0.1) 60%,
+      rgba(45, 45, 45, 0.5) 0%,
+      rgba(45, 45, 45, 0.2) 40%,
+      rgba(45, 45, 45, 0.1) 60%,
       transparent 100%
     );
     pointer-events: none;
@@ -63,7 +63,7 @@
     height: 60%;
     background: linear-gradient(
       to top,
-      rgba(0, 0, 0, 0.8) 0%,
+      rgba(45, 45, 45, 0.6) 0%,
       transparent 100%
     );
     pointer-events: none;
@@ -113,7 +113,7 @@
     content: '';
     width: 24px;
     height: 2px;
-    background: #ff0000;
+    background: #d4a5a5;
   }
 
   /* Main Headline - Giant Bold Caps */
@@ -145,22 +145,23 @@
     max-width: 500px;
   }
 
-  /* CTA Button - Sharp rectangle */
+  /* CTA Button - Clean rounded */
   .sport-hero__button {
     display: inline-flex;
     align-items: center;
     gap: 1rem;
     background: #ffffff;
-    color: #000000;
+    color: #2d2d2d;
     padding: 1.4rem 2.8rem;
     border: none;
+    border-radius: 4px;
     font-family: var(--font-body-family);
     font-size: 1.4rem;
     font-weight: 600;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.25s ease;
     position: relative;
     overflow: hidden;
   }
@@ -172,7 +173,7 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: #000000;
+    background: #d4a5a5;
     transition: left 0.3s ease;
     z-index: 0;
   }
@@ -220,7 +221,7 @@
   }
 
   .sport-hero__button--secondary:hover {
-    color: #000000;
+    color: #2d2d2d;
   }
 
   /* Button group */
@@ -230,16 +231,16 @@
     gap: 1rem;
   }
 
-  /* Diagonal accent element */
+  /* Diagonal accent element - Rose/blush color */
   .sport-hero__accent {
     position: absolute;
     bottom: 0;
     right: 0;
     width: 40%;
     height: 100%;
-    background: #ff0000;
+    background: #d4a5a5;
     clip-path: polygon(100% 0, 100% 100%, 0 100%);
-    opacity: 0.1;
+    opacity: 0.15;
     z-index: 1;
     pointer-events: none;
   }

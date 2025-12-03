@@ -3,7 +3,7 @@
 
 {%- style -%}
   /* ==============================================
-     SPORT FEATURED PRODUCTS - Nike Style
+     MOREA FEATURED PRODUCTS - Clean Girly Style
      ============================================== */
 
   .sport-products {
@@ -41,7 +41,7 @@
     letter-spacing: 0.02em;
     line-height: 0.9;
     margin: 0;
-    color: #000000;
+    color: #2d2d2d;
     text-transform: uppercase;
   }
 
@@ -49,13 +49,13 @@
     font-family: var(--font-body-family);
     font-size: 1.2rem;
     font-weight: 500;
-    color: #666666;
+    color: #888888;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     margin: 0.75rem 0 0;
   }
 
-  /* Navigation arrows - Sharp style */
+  /* Navigation arrows - Clean style */
   .sport-products__nav {
     display: flex;
     gap: 0.75rem;
@@ -64,8 +64,8 @@
   .sport-products__nav-btn {
     width: 48px;
     height: 48px;
-    border-radius: 0;
-    border: 2px solid #000000;
+    border-radius: 50%;
+    border: 2px solid #2d2d2d;
     background: #ffffff;
     cursor: pointer;
     display: flex;
@@ -75,7 +75,8 @@
   }
 
   .sport-products__nav-btn:hover {
-    background: #000000;
+    background: #d4a5a5;
+    border-color: #d4a5a5;
   }
 
   .sport-products__nav-btn:hover svg {
@@ -85,7 +86,7 @@
   .sport-products__nav-btn svg {
     width: 20px;
     height: 20px;
-    stroke: #000000;
+    stroke: #2d2d2d;
     stroke-width: 2;
     fill: none;
     transition: stroke 0.2s ease;
@@ -119,14 +120,15 @@
     }
   }
 
-  /* Product Card - Sharp Sport Style */
+  /* Product Card - Clean Girly Style */
   .sport-product-card {
     flex: 0 0 280px;
     min-width: 280px;
     scroll-snap-align: start;
-    background: #f5f5f5;
+    background: #faf9f7;
+    border-radius: 12px;
     overflow: hidden;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
   @media screen and (min-width: 750px) {
@@ -138,13 +140,15 @@
 
   .sport-product-card:hover {
     transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
   }
 
   .sport-product-card__media {
     position: relative;
     aspect-ratio: 4/5;
     overflow: hidden;
-    background: #eeeeee;
+    background: #f0eeec;
+    border-radius: 12px 12px 0 0;
   }
 
   .sport-product-card__media img {
@@ -158,14 +162,15 @@
     transform: scale(1.06);
   }
 
-  /* Badge - Sharp rectangle */
+  /* Badge - Soft rounded */
   .sport-product-card__badge {
     position: absolute;
     top: 12px;
     left: 12px;
-    background: #ff0000;
+    background: #d4a5a5;
     color: #ffffff;
     padding: 6px 14px;
+    border-radius: 4px;
     font-family: var(--font-body-family);
     font-size: 1.1rem;
     font-weight: 700;
@@ -174,11 +179,11 @@
   }
 
   .sport-product-card__badge--new {
-    background: #000000;
+    background: #2d2d2d;
   }
 
   .sport-product-card__badge--soldout {
-    background: #666666;
+    background: #888888;
   }
 
   .sport-product-card__content {
@@ -192,7 +197,7 @@
     font-size: 2rem;
     font-weight: 400;
     margin: 0 0 0.5rem;
-    color: #000000;
+    color: #2d2d2d;
     line-height: 1;
     text-transform: uppercase;
     letter-spacing: 0.02em;
@@ -214,7 +219,7 @@
     font-family: var(--font-body-family);
     font-size: 1.5rem;
     font-weight: 600;
-    color: #000000;
+    color: #2d2d2d;
   }
 
   .sport-product-card__price-compare {
@@ -224,7 +229,7 @@
     text-decoration: line-through;
   }
 
-  /* Color swatches - Square */
+  /* Color swatches - Round */
   .sport-product-card__swatches {
     display: flex;
     align-items: center;
@@ -234,39 +239,40 @@
   }
 
   .sport-product-card__swatch {
-    width: 20px;
-    height: 20px;
-    border-radius: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
     border: 2px solid #ffffff;
-    box-shadow: 0 0 0 1px rgba(0,0,0,0.2);
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.15);
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
   .sport-product-card__swatch:hover {
     transform: scale(1.15);
-    box-shadow: 0 0 0 2px rgba(0,0,0,0.4);
+    box-shadow: 0 0 0 2px #d4a5a5;
   }
 
   .sport-product-card__colors-count {
     font-size: 1.2rem;
     font-weight: 500;
-    color: #666666;
+    color: #888888;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     margin-left: 4px;
   }
 
-  /* CTA Button - Sharp rectangle */
+  /* CTA Button - Clean rounded */
   .sport-product-card__button {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.75rem;
     width: 100%;
-    background: #000000;
+    background: #2d2d2d;
     color: #ffffff;
     padding: 1.2rem 1.5rem;
+    border-radius: 8px;
     font-family: var(--font-body-family);
     font-size: 1.3rem;
     font-weight: 600;
@@ -285,7 +291,7 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: #333333;
+    background: #d4a5a5;
     transition: left 0.3s ease;
     z-index: 0;
   }
@@ -310,7 +316,7 @@
     transform: translateX(5px);
   }
 
-  /* View All Button - Sport style */
+  /* View All Button - Clean girly style */
   .sport-products__view-all {
     display: flex;
     justify-content: center;
@@ -323,9 +329,10 @@
     align-items: center;
     gap: 1rem;
     background: transparent;
-    color: #000000;
+    color: #2d2d2d;
     padding: 1.2rem 2.5rem;
-    border: 2px solid #000000;
+    border: 2px solid #2d2d2d;
+    border-radius: 8px;
     font-family: var(--font-body-family);
     font-size: 1.3rem;
     font-weight: 600;
@@ -344,7 +351,7 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: #000000;
+    background: #d4a5a5;
     transition: left 0.3s ease;
     z-index: 0;
   }
@@ -362,6 +369,7 @@
 
   .sport-products__view-all-btn:hover {
     color: #ffffff;
+    border-color: #d4a5a5;
   }
 
   .sport-products__view-all-btn:hover span,

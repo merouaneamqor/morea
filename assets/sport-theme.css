@@ -1,17 +1,20 @@
 /* ==============================================
-   NIKE SPORT STYLE THEME
-   High-contrast black/white athletic aesthetic
+   MOREA SPORT STYLE THEME
+   Clean, modest, girly athletic aesthetic
    ============================================== */
 
 :root {
-    /* Core Sport Palette */
-    --sport-black: #000000;
+    /* Girly Sport Palette - Soft & Clean */
+    --sport-black: #2d2d2d;
     --sport-white: #ffffff;
-    --sport-accent: #ff0000;
-    --sport-accent-hover: #cc0000;
-    --sport-gray-dark: #111111;
-    --sport-gray-mid: #333333;
-    --sport-gray-light: #f5f5f5;
+    --sport-accent: #d4a5a5;
+    --sport-accent-hover: #c49393;
+    --sport-accent-dark: #b88585;
+    --sport-gray-dark: #4a4a4a;
+    --sport-gray-mid: #888888;
+    --sport-gray-light: #faf9f7;
+    --sport-blush: #f5e6e6;
+    --sport-rose: #e8d4d4;
     
     /* Typography overrides */
     --font-heading-family: 'Bebas Neue', 'Impact', 'Arial Black', sans-serif;
@@ -32,29 +35,29 @@ h1, h2, h3, .h0, .h1, .h2, .h3 {
 }
 
 /* ==============================================
-   BUTTONS - SHARP SPORT STYLE
+   BUTTONS - CLEAN SPORT STYLE
    ============================================== */
 
 .button,
 button:not(.unstyled-button),
 input[type="submit"],
 .shopify-payment-button__button {
-    border-radius: 0 !important;
+    border-radius: 4px !important;
     text-transform: uppercase !important;
     letter-spacing: 0.1em !important;
     font-weight: 600 !important;
     font-family: var(--font-body-family) !important;
     padding: 1.4rem 2.8rem !important;
-    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    transition: all 0.25s ease !important;
 }
 
 .button:hover,
 button:not(.unstyled-button):hover {
-    transform: none !important;
-    box-shadow: none !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* Primary Button - Black */
+/* Primary Button - Dark gray */
 .button--primary,
 .shopify-payment-button__button--unbranded {
     background: var(--sport-black) !important;
@@ -64,8 +67,8 @@ button:not(.unstyled-button):hover {
 
 .button--primary:hover,
 .shopify-payment-button__button--unbranded:hover {
-    background: var(--sport-white) !important;
-    color: var(--sport-black) !important;
+    background: var(--sport-gray-dark) !important;
+    border-color: var(--sport-gray-dark) !important;
 }
 
 /* Secondary Button - Outline */
@@ -73,7 +76,7 @@ button:not(.unstyled-button):hover {
     background: transparent !important;
     color: var(--sport-black) !important;
     border: 2px solid var(--sport-black) !important;
-    border-radius: 0 !important;
+    border-radius: 4px !important;
 }
 
 .button--secondary:hover {
@@ -81,7 +84,7 @@ button:not(.unstyled-button):hover {
     color: var(--sport-white) !important;
 }
 
-/* Accent Button - Red */
+/* Accent Button - Rose/Blush */
 .button--accent {
     background: var(--sport-accent) !important;
     color: var(--sport-white) !important;
@@ -94,29 +97,29 @@ button:not(.unstyled-button):hover {
 }
 
 /* ==============================================
-   HEADER - NIKE STYLE NAVIGATION
+   HEADER - CLEAN LIGHT NAVIGATION
    ============================================== */
 
 .section-header {
-    background: var(--sport-black) !important;
+    background: var(--sport-white) !important;
 }
 
 .header-wrapper {
-    background: var(--sport-black) !important;
-    border-bottom: none !important;
+    background: var(--sport-white) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
 }
 
 .header {
-    background: var(--sport-black) !important;
+    background: var(--sport-white) !important;
 }
 
-/* Logo/Brand - White on black */
+/* Logo/Brand */
 .header__heading-link {
-    color: var(--sport-white) !important;
+    color: var(--sport-black) !important;
 }
 
 .header__heading-link .h2 {
-    color: var(--sport-white) !important;
+    color: var(--sport-black) !important;
     font-family: var(--font-heading-family) !important;
     text-transform: uppercase !important;
     letter-spacing: 0.1em !important;
@@ -126,7 +129,7 @@ button:not(.unstyled-button):hover {
 .header__inline-menu .list-menu__item,
 .header__menu-item,
 .list-menu__item--link {
-    color: var(--sport-white) !important;
+    color: var(--sport-black) !important;
     text-transform: uppercase !important;
     letter-spacing: 0.08em !important;
     font-weight: 500 !important;
@@ -143,7 +146,7 @@ button:not(.unstyled-button):hover {
     left: 50% !important;
     width: 0 !important;
     height: 2px !important;
-    background: var(--sport-white) !important;
+    background: var(--sport-accent) !important;
     transition: all 0.3s ease !important;
     transform: translateX(-50%) !important;
 }
@@ -157,12 +160,12 @@ button:not(.unstyled-button):hover {
 .header__icon,
 .header__icon svg,
 .header__icons .svg-wrapper {
-    color: var(--sport-white) !important;
-    fill: var(--sport-white) !important;
+    color: var(--sport-black) !important;
+    fill: var(--sport-black) !important;
 }
 
 .header__icon:hover {
-    opacity: 0.8 !important;
+    color: var(--sport-accent) !important;
 }
 
 /* Cart bubble */
@@ -175,27 +178,28 @@ button:not(.unstyled-button):hover {
 /* Search icon */
 .header__search .modal__toggle-open svg,
 .header__icon--search svg {
-    color: var(--sport-white) !important;
+    color: var(--sport-black) !important;
 }
 
 /* Sticky header */
 .shopify-section-header-sticky .header,
 .scrolled-past-header .header {
-    background: var(--sport-black) !important;
-    backdrop-filter: none !important;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3) !important;
+    background: var(--sport-white) !important;
+    backdrop-filter: saturate(120%) blur(10px) !important;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08) !important;
 }
 
 /* ==============================================
-   MEGA MENU - NIKE STYLE
+   MEGA MENU - CLEAN LIGHT STYLE
    ============================================== */
 
 .mega-menu__content {
-    background: var(--sport-black) !important;
+    background: var(--sport-white) !important;
     border: none !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
     padding: 3rem 0 !important;
     animation: slideDown 0.3s ease !important;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08) !important;
 }
 
 @keyframes slideDown {
@@ -216,7 +220,7 @@ button:not(.unstyled-button):hover {
 }
 
 .mega-menu__link {
-    color: var(--sport-white) !important;
+    color: var(--sport-gray-mid) !important;
     text-transform: uppercase !important;
     letter-spacing: 0.08em !important;
     font-weight: 500 !important;
@@ -226,15 +230,15 @@ button:not(.unstyled-button):hover {
 }
 
 .mega-menu__link:hover {
-    color: rgba(255, 255, 255, 0.7) !important;
+    color: var(--sport-accent) !important;
 }
 
 .mega-menu__link--level-2 {
     font-size: 1.4rem !important;
     font-weight: 600 !important;
     margin-bottom: 1rem !important;
-    color: var(--sport-white) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    color: var(--sport-black) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
     padding-bottom: 1rem !important;
 }
 
@@ -243,7 +247,7 @@ button:not(.unstyled-button):hover {
     position: relative;
     overflow: hidden;
     aspect-ratio: 1;
-    background: var(--sport-gray-dark);
+    background: var(--sport-gray-light);
 }
 
 .mega-menu__category-tile img {
@@ -261,7 +265,7 @@ button:not(.unstyled-button):hover {
     position: absolute;
     bottom: 1rem;
     left: 1rem;
-    color: var(--sport-white);
+    color: var(--sport-black);
     font-family: var(--font-heading-family);
     font-size: 1.8rem;
     text-transform: uppercase;
@@ -269,40 +273,41 @@ button:not(.unstyled-button):hover {
 }
 
 /* ==============================================
-   MOBILE DRAWER - SPORT STYLE
+   MOBILE DRAWER - CLEAN LIGHT STYLE
    ============================================== */
 
 .menu-drawer {
-    background: var(--sport-black) !important;
+    background: var(--sport-white) !important;
 }
 
 .menu-drawer__navigation .list-menu__item,
 .menu-drawer__menu-item {
-    color: var(--sport-white) !important;
+    color: var(--sport-black) !important;
     text-transform: uppercase !important;
     letter-spacing: 0.1em !important;
     font-weight: 500 !important;
     font-size: 1.6rem !important;
     padding: 1.5rem 2rem !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
 }
 
 .menu-drawer__menu-item:hover {
-    background: rgba(255, 255, 255, 0.05) !important;
+    background: var(--sport-blush) !important;
+    color: var(--sport-accent-dark) !important;
 }
 
 .menu-drawer__close-button {
-    color: var(--sport-white) !important;
+    color: var(--sport-black) !important;
 }
 
 .menu-drawer svg {
-    color: var(--sport-white) !important;
-    fill: var(--sport-white) !important;
+    color: var(--sport-black) !important;
+    fill: var(--sport-black) !important;
 }
 
 /* Hamburger icon */
 .header__icon--menu svg {
-    color: var(--sport-white) !important;
+    color: var(--sport-black) !important;
 }
 
 /* ==============================================
@@ -323,11 +328,11 @@ button:not(.unstyled-button):hover {
 }
 
 /* ==============================================
-   BADGES - SPORT STYLE
+   BADGES - CLEAN GIRLY STYLE
    ============================================== */
 
 .badge {
-    border-radius: 0 !important;
+    border-radius: 4px !important;
     text-transform: uppercase !important;
     letter-spacing: 0.08em !important;
     font-weight: 700 !important;
@@ -341,13 +346,13 @@ button:not(.unstyled-button):hover {
 }
 
 /* ==============================================
-   PRODUCT CARDS - SPORT STYLE
+   PRODUCT CARDS - CLEAN GIRLY STYLE
    ============================================== */
 
 .card-wrapper,
 .card,
 .card__inner {
-    border-radius: 0 !important;
+    border-radius: 12px !important;
 }
 
 .card__heading {
@@ -355,17 +360,18 @@ button:not(.unstyled-button):hover {
     text-transform: uppercase !important;
     letter-spacing: 0.03em !important;
     font-size: 1.6rem !important;
+    color: var(--sport-black) !important;
 }
 
 .card__media,
 .card .media,
 .card .media img {
-    border-radius: 0 !important;
+    border-radius: 12px !important;
 }
 
 /* Quick add button */
 .quick-add__submit {
-    border-radius: 0 !important;
+    border-radius: 4px !important;
     text-transform: uppercase !important;
     letter-spacing: 0.1em !important;
     font-weight: 600 !important;
@@ -374,11 +380,11 @@ button:not(.unstyled-button):hover {
 }
 
 .quick-add__submit:hover {
-    background: var(--sport-gray-mid) !important;
+    background: var(--sport-accent) !important;
 }
 
 /* ==============================================
-   FORMS - SPORT STYLE
+   FORMS - CLEAN STYLE
    ============================================== */
 
 .field__input,
@@ -387,23 +393,23 @@ input[type="email"],
 input[type="password"],
 textarea,
 select {
-    border-radius: 0 !important;
-    border: 2px solid var(--sport-black) !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(0, 0, 0, 0.15) !important;
 }
 
 .field__input:focus,
 input:focus {
     border-color: var(--sport-accent) !important;
-    box-shadow: none !important;
+    box-shadow: 0 0 0 3px var(--sport-blush) !important;
 }
 
 /* Newsletter */
 .newsletter-form__field-wrapper .field__input {
-    border-radius: 0 !important;
+    border-radius: 8px !important;
 }
 
 .newsletter-form__button {
-    border-radius: 0 !important;
+    border-radius: 8px !important;
     background: var(--sport-black) !important;
     color: var(--sport-white) !important;
     text-transform: uppercase !important;
@@ -411,18 +417,23 @@ input:focus {
 }
 
 /* ==============================================
-   FOOTER - SPORT STYLE
+   FOOTER - CLEAN LIGHT STYLE
    ============================================== */
 
 .footer {
-    background: var(--sport-black) !important;
-    color: var(--sport-white) !important;
-    border-top: none !important;
+    background: var(--sport-gray-light) !important;
+    color: var(--sport-black) !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
 }
 
 .footer a,
 .footer .link {
-    color: var(--sport-white) !important;
+    color: var(--sport-gray-dark) !important;
+}
+
+.footer a:hover,
+.footer .link:hover {
+    color: var(--sport-accent) !important;
 }
 
 .footer__block-heading,
@@ -430,15 +441,19 @@ input:focus {
     font-family: var(--font-heading-family) !important;
     text-transform: uppercase !important;
     letter-spacing: 0.1em !important;
-    color: var(--sport-white) !important;
+    color: var(--sport-black) !important;
 }
 
 .footer .list-social__link svg {
-    fill: var(--sport-white) !important;
+    fill: var(--sport-gray-dark) !important;
+}
+
+.footer .list-social__link:hover svg {
+    fill: var(--sport-accent) !important;
 }
 
 /* ==============================================
-   COLLECTION PAGE - SPORT STYLE
+   COLLECTION PAGE - CLEAN STYLE
    ============================================== */
 
 .collection-hero__title {
@@ -446,28 +461,34 @@ input:focus {
     text-transform: uppercase !important;
     letter-spacing: 0.05em !important;
     font-size: clamp(3rem, 8vw, 6rem) !important;
+    color: var(--sport-black) !important;
 }
 
 /* Facets/Filters */
 .facets__summary {
-    border-radius: 0 !important;
+    border-radius: 8px !important;
     text-transform: uppercase !important;
     letter-spacing: 0.08em !important;
     font-weight: 500 !important;
 }
 
 .facet-filters .select {
-    border-radius: 0 !important;
+    border-radius: 8px !important;
 }
 
 /* Pagination */
 .pagination__item {
-    border-radius: 0 !important;
+    border-radius: 8px !important;
 }
 
 .pagination__item--current {
     background: var(--sport-black) !important;
     color: var(--sport-white) !important;
+}
+
+.pagination__item:hover:not(.pagination__item--current) {
+    background: var(--sport-blush) !important;
+    border-color: var(--sport-accent) !important;
 }
 
 /* ==============================================
@@ -479,6 +500,7 @@ input:focus {
     text-transform: uppercase !important;
     letter-spacing: 0.03em !important;
     line-height: 0.9 !important;
+    color: var(--sport-black) !important;
 }
 
 .sport-subhead {
@@ -487,14 +509,6 @@ input:focus {
     letter-spacing: 0.15em !important;
     font-weight: 500 !important;
     font-size: 1.2rem !important;
-}
-
-/* Diagonal clip for dynamic sections */
-.sport-diagonal {
-    clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
-}
-
-.sport-diagonal-reverse {
-    clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+    color: var(--sport-gray-mid) !important;
 }
 

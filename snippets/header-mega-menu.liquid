@@ -127,7 +127,7 @@
   }
 
   .sport-nav__link {
-    color: var(--sport-white, #fff) !important;
+    color: #2d2d2d !important;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     font-weight: 500;
@@ -137,11 +137,11 @@
     align-items: center;
     gap: 0.5rem;
     position: relative;
-    transition: opacity 0.2s ease;
+    transition: color 0.2s ease;
   }
 
   .sport-nav__link:hover {
-    opacity: 0.8;
+    color: #d4a5a5 !important;
   }
 
   .sport-nav__link::after {
@@ -151,7 +151,7 @@
     left: 1.4rem;
     right: 1.4rem;
     height: 2px;
-    background: var(--sport-white, #fff);
+    background: #d4a5a5;
     transform: scaleX(0);
     transition: transform 0.3s ease;
   }
@@ -177,11 +177,12 @@
     left: 0;
     right: 0;
     top: 100%;
-    background: var(--sport-black, #000) !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: #ffffff !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
     padding: 3rem 0;
     animation: sportSlideDown 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     z-index: 100;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   }
 
   @keyframes sportSlideDown {
@@ -213,19 +214,19 @@
   }
 
   .sport-mega__category-title {
-    color: var(--sport-white, #fff);
+    color: #2d2d2d;
     font-size: 1.4rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     padding-bottom: 1rem;
     margin-bottom: 1rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     transition: color 0.2s ease;
   }
 
   .sport-mega__category-title:hover {
-    color: rgba(255, 255, 255, 0.7);
+    color: #d4a5a5;
   }
 
   .sport-mega__links {
@@ -235,7 +236,7 @@
   }
 
   .sport-mega__link {
-    color: rgba(255, 255, 255, 0.7);
+    color: #888888;
     font-size: 1.3rem;
     font-weight: 400;
     text-transform: uppercase;
@@ -245,7 +246,7 @@
   }
 
   .sport-mega__link:hover {
-    color: var(--sport-white, #fff);
+    color: #d4a5a5;
   }
 
   /* Featured Tile */
@@ -260,13 +261,14 @@
     flex-direction: column;
     justify-content: flex-end;
     padding: 1.5rem;
-    background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
-    color: var(--sport-white, #fff);
+    background: linear-gradient(135deg, #f5e6e6 0%, #e8d4d4 100%);
+    color: #2d2d2d;
     text-decoration: none;
     overflow: hidden;
     width: 100%;
     min-height: 200px;
     transition: transform 0.3s ease;
+    border-radius: 12px;
   }
 
   .sport-mega__featured-tile:hover {
@@ -276,7 +278,7 @@
   .sport-mega__featured-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 60%);
+    background: linear-gradient(to top, rgba(212, 165, 165, 0.3) 0%, transparent 60%);
   }
 
   .sport-mega__featured-label {
@@ -288,6 +290,7 @@
     letter-spacing: 0.03em;
     line-height: 1.1;
     margin-bottom: 0.5rem;
+    color: #2d2d2d;
   }
 
   .sport-mega__featured-arrow {
@@ -296,6 +299,7 @@
     width: 24px;
     height: 24px;
     transition: transform 0.3s ease;
+    color: #2d2d2d;
   }
 
   .sport-mega__featured-tile:hover .sport-mega__featured-arrow {

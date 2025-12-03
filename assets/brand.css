@@ -1,23 +1,26 @@
 /* ==============================================
-   NIKE SPORT BRAND LAYER
-   High-contrast black/white athletic aesthetic
+   MOREA SPORT BRAND LAYER
+   Clean, modest, girly athletic aesthetic
    ============================================== */
 
 /* Typography & Colors */
 :root {
     --brand-letter-spacing-wide: 0.04em;
-    /* Sport color palette */
-    --sport-black: #000000;
+    /* Girly Sport Palette */
+    --sport-black: #2d2d2d;
     --sport-white: #ffffff;
-    --sport-accent: #ff0000;
-    --sport-gray-dark: #111111;
-    --sport-gray-mid: #333333;
-    --sport-gray-light: #f5f5f5;
+    --sport-accent: #d4a5a5;
+    --sport-accent-hover: #c49393;
+    --sport-gray-dark: #4a4a4a;
+    --sport-gray-mid: #888888;
+    --sport-gray-light: #faf9f7;
+    --sport-blush: #f5e6e6;
+    --sport-rose: #e8d4d4;
     /* Legacy vars for compatibility */
-    --haya-beige: #f5f5f5;
-    --haya-dark: #000000;
-    --haya-light-gray: #f5f5f5;
-    --haya-pink-accent: #ff0000;
+    --haya-beige: #faf9f7;
+    --haya-dark: #2d2d2d;
+    --haya-light-gray: #faf9f7;
+    --haya-pink-accent: #d4a5a5;
 }
 
 body,
@@ -42,12 +45,12 @@ h3 {
     text-transform: none;
 }
 
-/* Buttons: Sharp sport style - NO rounded corners */
+/* Buttons: Clean modest style */
 .button,
 button,
 input[type="submit"],
 .shopify-payment-button__button {
-    border-radius: 0 !important;
+    border-radius: 8px !important;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-weight: 600;
@@ -55,7 +58,7 @@ input[type="submit"],
 
 .button--secondary,
 .button--tertiary {
-    border-radius: 0 !important;
+    border-radius: 8px !important;
 }
 
 /* Header/Nav */
@@ -175,23 +178,27 @@ input[type="submit"],
     font-weight: 700;
 }
 
-/* Quick add prominence - Sport style */
+/* Quick add prominence - Clean style */
 .quick-add__submit,
 .card__badge {
-    border-radius: 0 !important;
+    border-radius: 6px !important;
 }
 
 .quick-add__submit {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-weight: 600;
-    background: var(--sport-black, #000000) !important;
+    background: var(--sport-black, #2d2d2d) !important;
     color: var(--sport-white, #ffffff) !important;
 }
 
-/* Badges: Sharp sport style */
+.quick-add__submit:hover {
+    background: var(--sport-accent, #d4a5a5) !important;
+}
+
+/* Badges: Clean modest style */
 .badge {
-    border-radius: 0 !important;
+    border-radius: 4px !important;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     font-weight: 700;
@@ -207,19 +214,23 @@ input[type="submit"],
     font-weight: 800;
 }
 
-/* Variant pills - Sport style */
+/* Variant pills - Clean modest style */
 .product-form__input--pill input[type='radio']+label {
-    border-radius: 0 !important;
+    border-radius: 8px !important;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     font-weight: 600;
-    border: 2px solid var(--sport-black, #000000);
+    border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .product-form__input--pill input[type='radio']:checked+label {
-    background-color: var(--sport-black, #000000);
+    background-color: var(--sport-black, #2d2d2d);
     color: var(--sport-white, #ffffff);
-    border-color: var(--sport-black, #000000);
+    border-color: var(--sport-black, #2d2d2d);
+}
+
+.product-form__input--pill input[type='radio']+label:hover {
+    border-color: var(--sport-accent, #d4a5a5);
 }
 
 /* Footer */
@@ -308,10 +319,10 @@ input[type="submit"],
     margin-top: 0;
 }
 
-/* Newsletter section - Sport style */
+/* Newsletter section - Clean girly style */
 .newsletter {
-    background: var(--sport-black, #000000) !important;
-    color: var(--sport-white, #ffffff) !important;
+    background: #f5e6e6 !important;
+    color: #2d2d2d !important;
 }
 
 .newsletter .newsletter__heading {
@@ -320,11 +331,11 @@ input[type="submit"],
     font-weight: 400;
     letter-spacing: 0.02em;
     text-transform: uppercase;
-    color: var(--sport-white, #ffffff);
+    color: #2d2d2d;
 }
 
 .newsletter .rte {
-    color: rgba(255, 255, 255, 0.8);
+    color: #4a4a4a;
 }
 
 .newsletter-form__field-wrapper {
@@ -333,31 +344,31 @@ input[type="submit"],
 }
 
 .newsletter-form__field-wrapper .field__input {
-    border-radius: 0 !important;
+    border-radius: 8px !important;
     padding: 1.4rem 1.5rem;
     font-size: 1.4rem;
-    border: 2px solid var(--sport-white, #ffffff);
-    background: transparent;
-    color: var(--sport-white, #ffffff);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    background: #ffffff;
+    color: #2d2d2d;
 }
 
 .newsletter-form__field-wrapper .field__input::placeholder {
-    color: rgba(255, 255, 255, 0.6);
+    color: #888888;
 }
 
 .newsletter-form__button {
-    border-radius: 0 !important;
+    border-radius: 8px !important;
     padding: 1.4rem 2.5rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    background: var(--sport-white, #ffffff) !important;
-    color: var(--sport-black, #000000) !important;
+    background: #2d2d2d !important;
+    color: #ffffff !important;
 }
 
 .newsletter-form__button:hover {
-    background: var(--sport-accent, #ff0000) !important;
-    color: var(--sport-white, #ffffff) !important;
+    background: #d4a5a5 !important;
+    color: #ffffff !important;
 }
 
 /* Smooth scroll behavior */
@@ -381,9 +392,9 @@ html {
     transform: scale(1.03);
 }
 
-/* Sharp sport buttons - NO rounded corners */
+/* Clean modest buttons */
 .button {
-    border-radius: 0 !important;
+    border-radius: 8px !important;
     padding: 1.4rem 2.8rem;
     font-weight: 600;
     letter-spacing: 0.1em;
@@ -392,12 +403,12 @@ html {
 }
 
 .button:hover {
-    transform: none;
-    box-shadow: none;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .button--secondary {
-    border-radius: 0 !important;
+    border-radius: 8px !important;
     border-width: 2px;
 }
 
@@ -424,37 +435,43 @@ html {
     opacity: 0.5;
 }
 
-/* Sale badge - Sport style */
+/* Sale badge - Clean modest style */
 .badge {
-    border-radius: 0 !important;
+    border-radius: 4px !important;
     font-size: 1.1rem;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    background: var(--sport-accent, #ff0000) !important;
+    background: var(--sport-accent, #d4a5a5) !important;
     color: var(--sport-white, #ffffff) !important;
 }
 
-/* Form inputs - Sharp sport style */
+/* Form inputs - Clean modest style */
 .field__input,
 input[type="text"],
 input[type="email"],
 input[type="password"],
 textarea,
 select {
-    border-radius: 0 !important;
+    border-radius: 8px !important;
     font-size: 1.4rem;
-    border: 2px solid var(--sport-black, #000000);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.field__input:focus,
+input:focus {
+    border-color: var(--sport-accent, #d4a5a5) !important;
+    box-shadow: 0 0 0 3px rgba(212, 165, 165, 0.2) !important;
 }
 
 /* Quantity selector styling */
 .quantity__button {
-    border-radius: 0 !important;
+    border-radius: 50% !important;
 }
 
 /* Quick add overlay */
 .quick-add-modal__content-info {
-    border-radius: 0 !important;
+    border-radius: 16px !important;
 }
 
 /* Cart drawer refinements */
@@ -532,12 +549,12 @@ select {
     }
 }
 
-/* Product cards - Sport style with sharp edges */
+/* Product cards - Clean modest style with soft edges */
 .product-grid .grid__item .card-wrapper,
 .collection .grid__item .card-wrapper,
 #product-grid .card-wrapper {
-    background: #f5f5f5 !important;
-    border-radius: 0 !important;
+    background: #faf9f7 !important;
+    border-radius: 12px !important;
     overflow: hidden !important;
 }
 
@@ -554,8 +571,8 @@ select {
 .collection .card--card,
 #product-grid .card--card {
     border: none !important;
-    border-radius: 0 !important;
-    background: #f5f5f5 !important;
+    border-radius: 12px !important;
+    background: #faf9f7 !important;
     box-shadow: none !important;
 }
 
@@ -565,11 +582,11 @@ select {
     display: none !important;
 }
 
-/* Image container - Sharp edges */
+/* Image container - Soft rounded edges */
 .product-grid .card__media,
 .collection .card__media,
 #product-grid .card__media {
-    border-radius: 0 !important;
+    border-radius: 12px !important;
     overflow: hidden !important;
     margin: 0 !important;
 }
@@ -577,13 +594,13 @@ select {
 .product-grid .card .media,
 .collection .card .media,
 #product-grid .card .media {
-    border-radius: 0 !important;
+    border-radius: 12px !important;
 }
 
 .product-grid .card .media img,
 .collection .card .media img,
 #product-grid .card .media img {
-    border-radius: 0 !important;
+    border-radius: 12px !important;
     object-fit: cover !important;
 }
 
@@ -660,7 +677,7 @@ select {
     transform: scale(1.03) !important;
 }
 
-/* Facets/Filters styling - Sport style */
+/* Facets/Filters styling - Clean modest style */
 .facets-wrapper {
     padding-bottom: 2rem;
     margin-bottom: 1rem;
@@ -672,21 +689,21 @@ select {
     text-transform: uppercase;
     letter-spacing: 0.08em;
     padding: 1rem 1.4rem;
-    border: 2px solid var(--sport-black, #000000);
-    border-radius: 0 !important;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 8px !important;
     background: white;
 }
 
 .facets__summary:hover {
-    background: var(--sport-black, #000000);
-    color: var(--sport-white, #ffffff);
+    border-color: var(--sport-accent, #d4a5a5);
+    color: var(--sport-accent, #d4a5a5);
 }
 
 .facets__label {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: #333;
+    color: #4a4a4a;
     margin-right: 0.5rem;
 }
 
@@ -694,18 +711,17 @@ select {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: #333;
+    color: #4a4a4a;
 }
 
 /* Sort dropdown */
 .facet-filters .select {
-    border-radius: 0 !important;
-    border: 2px solid var(--sport-black, #000000);
+    border-radius: 8px !important;
+    border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .facet-filters .select:hover {
-    background: var(--sport-black, #000000);
-    color: var(--sport-white, #ffffff);
+    border-color: var(--sport-accent, #d4a5a5);
 }
 
 .facet-filters__sort {
@@ -728,21 +744,21 @@ select {
     margin-right: 0.75rem;
 }
 
-/* Badge styling - Sport style red accent */
+/* Badge styling - Clean rose accent */
 .product-grid .badge,
 .collection .badge,
 #product-grid .badge {
-    background: var(--sport-accent, #ff0000) !important;
+    background: var(--sport-accent, #d4a5a5) !important;
     color: var(--sport-white, #ffffff) !important;
     font-size: 1rem !important;
     font-weight: 700 !important;
     letter-spacing: 0.08em !important;
     padding: 0.5rem 1rem !important;
-    border-radius: 0 !important;
+    border-radius: 4px !important;
     text-transform: uppercase !important;
 }
 
-/* Mobile collection styling - Sport style */
+/* Mobile collection styling - Clean modest style */
 @media screen and (max-width: 749px) {
     /* Force 2-column grid on mobile */
     .collection .product-grid,
@@ -762,7 +778,7 @@ select {
     .product-grid .grid__item .card-wrapper,
     .collection .grid__item .card-wrapper,
     #product-grid .card-wrapper {
-        border-radius: 0 !important;
+        border-radius: 10px !important;
     }
 
     .product-grid .card__media,
@@ -777,7 +793,7 @@ select {
     .product-grid .card--standard .card__inner,
     .collection .card--standard .card__inner,
     #product-grid .card--standard .card__inner {
-        border-radius: 0 !important;
+        border-radius: 10px !important;
     }
 
     .product-grid .card__heading,
@@ -786,6 +802,7 @@ select {
         font-size: 1.4rem !important;
         font-family: 'Bebas Neue', 'Impact', sans-serif !important;
         text-transform: uppercase !important;
+        color: #2d2d2d !important;
     }
 
     .product-grid .price,
@@ -796,6 +813,7 @@ select {
     #product-grid .price-item {
         font-size: 1.3rem !important;
         font-weight: 600 !important;
+        color: #2d2d2d !important;
     }
 
     .product-grid .card__content,
@@ -830,11 +848,11 @@ select {
     text-transform: uppercase !important;
 }
 
-/* Pagination styling - Sport style */
+/* Pagination styling - Clean modest style */
 .pagination {
     margin-top: 3rem;
     padding-top: 2rem;
-    border-top: 2px solid var(--sport-black, #000000);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .pagination__list {
@@ -844,18 +862,18 @@ select {
 .pagination__item {
     min-width: 4.5rem;
     height: 4.5rem;
-    border-radius: 0 !important;
+    border-radius: 8px !important;
     font-weight: 600;
-    border: 2px solid var(--sport-black, #000000);
+    border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
 .pagination__item--current {
-    background: var(--sport-black, #000000);
+    background: var(--sport-black, #2d2d2d);
     color: var(--sport-white, #ffffff);
-    border-color: var(--sport-black, #000000);
+    border-color: var(--sport-black, #2d2d2d);
 }
 
 .pagination__item:hover:not(.pagination__item--current) {
-    background: var(--sport-black, #000000);
-    color: var(--sport-white, #ffffff);
+    border-color: var(--sport-accent, #d4a5a5);
+    background: rgba(212, 165, 165, 0.1);
 }

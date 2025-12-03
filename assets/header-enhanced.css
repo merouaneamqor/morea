@@ -1,23 +1,23 @@
 /* ==============================================
-   NIKE SPORT STYLE - ENHANCED HEADER
-   Bold, black, athletic navigation
+   MOREA SPORT STYLE - CLEAN LIGHT HEADER
+   Modest, girly, clean navigation
    ============================================== */
 
-/* Header Wrapper - Black Bar */
+/* Header Wrapper - White/Light */
 .section-header.header-wrapper {
-    background: #000000 !important;
-    border-bottom: none !important;
+    background: #ffffff !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
     position: relative;
     z-index: 1000;
 }
 
 .header-wrapper {
-    background: #000000 !important;
+    background: #ffffff !important;
 }
 
 .header {
     align-items: center;
-    background: #000000 !important;
+    background: #ffffff !important;
     padding: 0.8rem 2rem !important;
 }
 
@@ -28,36 +28,36 @@
     }
 }
 
-/* Logo - White */
+/* Logo */
 .header__heading-link {
-    color: #ffffff !important;
+    color: #2d2d2d !important;
 }
 
 .header__heading-logo {
-    filter: brightness(0) invert(1);
+    filter: none;
 }
 
 .header__heading-link .h2,
 .header__heading-link span {
-    color: #ffffff !important;
+    color: #2d2d2d !important;
     font-family: 'Bebas Neue', 'Impact', sans-serif !important;
     font-size: 2.4rem !important;
     letter-spacing: 0.1em !important;
     text-transform: uppercase !important;
 }
 
-/* Menu typography: Bold uppercase sport style */
+/* Menu typography: Elegant uppercase */
 .list-menu__item--link {
     text-transform: uppercase !important;
     letter-spacing: 0.08em !important;
     font-weight: 500 !important;
     font-size: 1.3rem !important;
-    color: #ffffff !important;
+    color: #2d2d2d !important;
     position: relative !important;
     padding: 1rem 1.2rem !important;
 }
 
-/* Underline hover effect */
+/* Underline hover effect - Rose accent */
 .list-menu__item--link::after {
     content: '' !important;
     position: absolute !important;
@@ -65,7 +65,7 @@
     left: 1.2rem !important;
     right: 1.2rem !important;
     height: 2px !important;
-    background: #ffffff !important;
+    background: #d4a5a5 !important;
     transform: scaleX(0) !important;
     transform-origin: center !important;
     transition: transform 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
@@ -85,45 +85,45 @@
 .list-menu__item--link:hover,
 .list-menu__item--link:focus {
     opacity: 1 !important;
-    color: #ffffff !important;
+    color: #d4a5a5 !important;
 }
 
 .header-wrapper--border-bottom {
-    border-bottom: none !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
 }
 
-/* Header icons - White */
+/* Header icons */
 .header__icons {
     gap: 1rem;
 }
 
 .header__icon {
-    color: #ffffff !important;
+    color: #2d2d2d !important;
 }
 
 .header__icon svg {
-    color: #ffffff !important;
+    color: #2d2d2d !important;
     width: 22px;
     height: 22px;
 }
 
 .header__icon .svg-wrapper {
-    color: #ffffff !important;
+    color: #2d2d2d !important;
 }
 
 .header__icons .svg-wrapper {
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    color: #ffffff !important;
+    transition: opacity 0.2s ease, transform 0.2s ease, color 0.2s ease;
+    color: #2d2d2d !important;
 }
 
 .header__icons a:hover .svg-wrapper {
-    opacity: 0.8;
+    color: #d4a5a5 !important;
     transform: scale(1.05);
 }
 
-/* Cart count bubble - Red accent */
+/* Cart count bubble - Rose accent */
 #cart-icon-bubble .cart-count-bubble {
-    background: #ff0000 !important;
+    background: #d4a5a5 !important;
     color: #ffffff !important;
     font-weight: 700 !important;
     font-size: 1.1rem !important;
@@ -135,17 +135,17 @@
 /* Search modal trigger */
 .header__search .modal__toggle-open,
 details[id^="Details-header-search"] summary {
-    color: #ffffff !important;
+    color: #2d2d2d !important;
 }
 
-/* Sticky header - Solid black */
+/* Sticky header - White with subtle shadow */
 .shopify-section-header-sticky .header,
 .scrolled-past-header .header {
-    background: #000000 !important;
+    background: rgba(255, 255, 255, 0.98) !important;
     padding-top: 0.6rem !important;
     padding-bottom: 0.6rem !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4) !important;
-    backdrop-filter: none !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    backdrop-filter: saturate(120%) blur(10px) !important;
 }
 
 .scrolled-past-header .header__heading-logo-wrapper {
@@ -156,7 +156,7 @@ details[id^="Details-header-search"] summary {
 /* Dropdown caret icon */
 .header__menu-item .icon-caret,
 .list-menu__item .icon-caret {
-    color: #ffffff !important;
+    color: #2d2d2d !important;
     width: 10px;
     height: 10px;
     margin-left: 0.4rem;
@@ -169,29 +169,29 @@ details[open] .icon-caret {
 
 /* Hamburger icon - Mobile */
 .header__icon--menu svg {
-    color: #ffffff !important;
+    color: #2d2d2d !important;
     width: 24px;
     height: 24px;
 }
 
 /* Account icon */
 .header__icon--account svg {
-    color: #ffffff !important;
+    color: #2d2d2d !important;
 }
 
 /* Localization selectors */
 .header-localization .localization-form__select {
-    color: #ffffff !important;
+    color: #2d2d2d !important;
     background: transparent !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    border-radius: 0 !important;
+    border: 1px solid rgba(0, 0, 0, 0.15) !important;
+    border-radius: 8px !important;
     font-size: 1.2rem !important;
     text-transform: uppercase !important;
     letter-spacing: 0.05em !important;
 }
 
 .header-localization .disclosure__button {
-    color: #ffffff !important;
+    color: #2d2d2d !important;
 }
 
 /* Desktop menu alignment */
