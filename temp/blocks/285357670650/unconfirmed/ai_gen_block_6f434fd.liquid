@@ -1,6 +1,344 @@
+{% doc %}
+  @prompt
+    genrate a 404 page 
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-404-page-{{ ai_gen_id }} {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-404-container-{{ ai_gen_id }} {
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .ai-404-code-{{ ai_gen_id }} {
+    font-size: {{ block.settings.error_code_size }}px;
+    font-weight: 700;
+    color: {{ block.settings.error_code_color }};
+    margin: 0 0 20px;
+    line-height: 1;
+    letter-spacing: -2px;
+  }
+
+  .ai-404-heading-{{ ai_gen_id }} {
+    font-size: {{ block.settings.heading_size }}px;
+    font-weight: 600;
+    color: {{ block.settings.heading_color }};
+    margin: 0 0 16px;
+    line-height: 1.2;
+  }
+
+  .ai-404-text-{{ ai_gen_id }} {
+    font-size: {{ block.settings.text_size }}px;
+    color: {{ block.settings.text_color }};
+    margin: 0 0 40px;
+    line-height: 1.6;
+  }
+
+  .ai-404-buttons-{{ ai_gen_id }} {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .ai-404-button-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    font-size: {{ block.settings.button_text_size }}px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    transition: all 0.3s ease;
+    min-width: 140px;
+  }
+
+  .ai-404-button-primary-{{ ai_gen_id }} {
+    background-color: {{ block.settings.primary_button_bg }};
+    color: {{ block.settings.primary_button_text }};
+    border: 1px solid {{ block.settings.primary_button_bg }};
+  }
+
+  .ai-404-button-primary-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.primary_button_hover_bg }};
+    border-color: {{ block.settings.primary_button_hover_bg }};
+    color: {{ block.settings.primary_button_hover_text }};
+  }
+
+  .ai-404-button-secondary-{{ ai_gen_id }} {
+    background-color: transparent;
+    color: {{ block.settings.secondary_button_text }};
+    border: 1px solid {{ block.settings.secondary_button_border }};
+  }
+
+  .ai-404-button-secondary-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.secondary_button_hover_bg }};
+    color: {{ block.settings.secondary_button_hover_text }};
+    border-color: {{ block.settings.secondary_button_hover_bg }};
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-404-page-{{ ai_gen_id }} {
+      min-height: 60vh;
+      padding: 40px 20px;
+    }
+
+    .ai-404-code-{{ ai_gen_id }} {
+      font-size: {{ block.settings.error_code_size | times: 0.6 }}px;
+    }
+
+    .ai-404-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size | times: 0.7 }}px;
+    }
+
+    .ai-404-text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.text_size | times: 0.9 }}px;
+      margin-bottom: 32px;
+    }
+
+    .ai-404-buttons-{{ ai_gen_id }} {
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .ai-404-button-{{ ai_gen_id }} {
+      width: 100%;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-404-page-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-404-container-{{ ai_gen_id }}">
+    {% if block.settings.show_error_code %}
+      <div class="ai-404-code-{{ ai_gen_id }}">404</div>
+    {% endif %}
+
+    {% if block.settings.heading != blank %}
+      <h1 class="ai-404-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h1>
+    {% endif %}
+
+    {% if block.settings.text != blank %}
+      <div class="ai-404-text-{{ ai_gen_id }}">{{ block.settings.text }}</div>
+    {% endif %}
+
+    <div class="ai-404-buttons-{{ ai_gen_id }}">
+      <a href="{{ block.settings.primary_button_link }}" class="ai-404-button-{{ ai_gen_id }} ai-404-button-primary-{{ ai_gen_id }}">
+        {{ block.settings.primary_button_label }}
+      </a>
+
+      {% if block.settings.show_secondary_button %}
+        <a href="{{ block.settings.secondary_button_link }}" class="ai-404-button-{{ ai_gen_id }} ai-404-button-secondary-{{ ai_gen_id }}">
+          {{ block.settings.secondary_button_label }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "404 page",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_error_code",
+      "label": "Show 404 code",
+      "default": true
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Page not found"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>The page you're looking for doesn't exist. Check the URL or return to the homepage.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Primary button"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "primary_button_label",
+      "label": "Label",
+      "default": "Continue shopping"
+    },
+    {
+      "type": "url",
+      "id": "primary_button_link",
+      "label": "Link"
+    },
+    {
+      "type": "color",
+      "id": "primary_button_bg",
+      "label": "Background",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "primary_button_text",
+      "label": "Text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "primary_button_hover_bg",
+      "label": "Hover background",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "primary_button_hover_text",
+      "label": "Hover text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Secondary button"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_button",
+      "label": "Show secondary button",
+      "default": true
+    },
+    {
+      "type": "inline_richtext",
+      "id": "secondary_button_label",
+      "label": "Label",
+      "default": "Contact us"
+    },
+    {
+      "type": "url",
+      "id": "secondary_button_link",
+      "label": "Link"
+    },
+    {
+      "type": "color",
+      "id": "secondary_button_text",
+      "label": "Text",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "secondary_button_border",
+      "label": "Border",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "secondary_button_hover_bg",
+      "label": "Hover background",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "secondary_button_hover_text",
+      "label": "Hover text",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "error_code_color",
+      "label": "Error code color",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#121212"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#121212"
+    },
+    {
+      "type": "range",
+      "id": "error_code_size",
+      "min": 60,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "Error code size",
+      "default": 120
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_text_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Button text size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Button border radius",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "404 page"
+    }
+  ]
+}
 {% endschema %}
