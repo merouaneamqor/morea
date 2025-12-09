@@ -1,0 +1,62 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "1765283217ac8962aa": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_6f434fd_RFiz3f": {
+          "type": "ai_gen_block_6f434fd",
+          "settings": {
+            "show_error_code": true,
+            "heading": "Page not found",
+            "text": "<p>The page you're looking for doesn't exist. Check the URL or return to the homepage.</p>",
+            "primary_button_label": "Continue shopping",
+            "primary_button_link": "",
+            "primary_button_bg": "#121212",
+            "primary_button_text": "#ffffff",
+            "primary_button_hover_bg": "#000000",
+            "primary_button_hover_text": "#ffffff",
+            "show_secondary_button": true,
+            "secondary_button_label": "Contact us",
+            "secondary_button_link": "",
+            "secondary_button_text": "#121212",
+            "secondary_button_border": "#121212",
+            "secondary_button_hover_bg": "#121212",
+            "secondary_button_hover_text": "#ffffff",
+            "background_color": "#ffffff",
+            "error_code_color": "#121212",
+            "heading_color": "#121212",
+            "text_color": "#121212",
+            "error_code_size": 120,
+            "heading_size": 32,
+            "text_size": 16,
+            "button_text_size": 14,
+            "button_border_radius": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_6f434fd_RFiz3f"
+      ],
+      "settings": {}
+    },
+    "main": {
+      "type": "main-404",
+      "disabled": true,
+      "settings": {}
+    }
+  },
+  "order": [
+    "1765283217ac8962aa",
+    "main"
+  ]
+}
